@@ -1,0 +1,66 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="927" measuredH="606" mockupW="927" mockupH="606">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="927" h="606" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>DashBoard%20-%20NewHostel%0Ahttp%3A//newhostel.hpms.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="215" y="76" w="-1" h="-1" measuredW="86" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16770457</color>
+        <state>selected</state>
+        <text>DashBoard</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="307" y="76" w="-1" h="-1" measuredW="65" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16770457</color>
+        <state>disabled</state>
+        <text>E-mails</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="383" y="76" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16770457</color>
+        <state>disabled</state>
+        <text>Reports</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="461" y="76" w="-1" h="-1" measuredW="71" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16770457</color>
+        <state>disabled</state>
+        <text>Settings</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="814" y="76" w="-1" h="-1" measuredW="66" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>15374745</color>
+        <text>LogOut</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="33" y="77" w="-1" h="-1" measuredW="177" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>New%20PMS%20Hostel%20%289999%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::SearchBox" x="670" y="77" w="-1" h="-1" measuredW="120" measuredH="25" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>search</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Button" x="547" y="76" w="-1" h="-1" measuredW="59" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16370588</color>
+        <state>disabled</state>
+        <text>To%20Do</text>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::Image" x="0" y="106" w="926" h="465" measuredW="1277" measuredH="520" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/dashboard.png</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

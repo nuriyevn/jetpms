@@ -1,0 +1,3 @@
+https://admin.booking.com/hotel/hoteladmin/content/room_creator.html?lang=ru;add=1;ses=d0236f5c46d8850351ef8c69da6f3d1b;hotel_id=780542;action=edit;room_id=0
+перерисовать форму добавления комнаты
+написать базу для этой формы

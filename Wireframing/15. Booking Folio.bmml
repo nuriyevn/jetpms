@@ -1,0 +1,148 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="906" measuredH="679" mockupW="906" mockupH="679">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="906" h="679" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>DashBoard%20-%20NewHostel%0Ahttp%3A//newhostel.hpms.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="265" y="76" w="-1" h="-1" measuredW="86" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16770457</color>
+        <state>disabled</state>
+        <text>DashBoard</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="307" y="76" w="-1" h="-1" measuredW="65" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16770457</color>
+        <state>selected</state>
+        <text>E-mails</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="383" y="76" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16770457</color>
+        <state>disabled</state>
+        <text>Reports</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="461" y="76" w="-1" h="-1" measuredW="71" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16770457</color>
+        <state>disabled</state>
+        <text>Settings</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="814" y="76" w="-1" h="-1" measuredW="66" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>15374745</color>
+        <text>LogOut</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="33" y="77" w="-1" h="-1" measuredW="177" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>New%20PMS%20Hostel%20%289999%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::SearchBox" x="670" y="77" w="-1" h="-1" measuredW="120" measuredH="25" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>search</text>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::Label" x="592" y="128" w="-1" h="-1" measuredW="84" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%20is%20a%20link</text>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::SubTitle" x="150" y="178" w="-1" h="-1" measuredW="607" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>+380980238180%20%3B%20email@mail.com%20%3B%20date%20of%20order%2015/02/20125%2C%202%20persons%2C%20200%20uah</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::Title" x="273" y="128" w="-1" h="-1" measuredW="291" measuredH="50" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alex%20Panfilovaka</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::HRule" x="271" y="169" w="293" h="-1" measuredW="100" measuredH="10" zOrder="11" locked="false" isInGroup="-1"/>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::DataGrid" x="18" y="202" w="354" h="443" measuredW="179" measuredH="443" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Booking%20details%2C%20%20%0AGest_1%2C%0AGuest%27s%20name%2C%20Alex%0ACheck%20in%2C%2020%20jul%202015%0AVheck%20out%2C%2021%20jul%202015%0ANights%2C%201%0ACost%2C%20100%0AComission%2C%2015%0AGest_2%2C%0AGuest%27s%20name%2C%20Galina%0ACheck%20in%2C%2020%20jul%202015%0AVheck%20out%2C%2021%20jul%202015%0ANights%2C%201%0ACost%2C%20100%0AComission%2C%2015</text>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::DataGrid" x="411" y="235" w="430" h="267" measuredW="279" measuredH="263" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Message%20%2313%20date%2016%20feb%202015%20Fro%20guest%0ALorem%20ipsum%20pikoanto%20de%20la%20vergase%0Ase%20prego%20de%20l%3Ba%20vadrse%20kle%20mano%20usgo%20spesso%0AMessage%20%2312%20date%2016%20feb%202015%20to%20guest%0ALorem%20ipsum%20pikoanto%20de%20la%20vergase%0Ase%20prego%20de%20l%3Ba%20vadrse%20kle%20mano%20usgo%20spesso%0AMessage%20%2311%20date%2016%20feb%202015%20from%20guest%0ALorem%20ipsum%20pikoanto%20de%20la%20vergase%0Ase%20prego%20de%20l%3Ba%20vadrse%20kle%20mano%20usgo%20spesso</text>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Button" x="682" y="403" w="-1" h="-1" measuredW="52" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>11982760</color>
+        <text>reply</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Button" x="682" y="235" w="-1" h="-1" measuredW="52" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>11982760</color>
+        <text>reply</text>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::Button" x="411" y="202" w="430" h="27" measuredW="178" measuredH="27" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16770457</color>
+        <text>New%20message%20to%20the%20guest</text>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Button" x="547" y="76" w="-1" h="-1" measuredW="59" measuredH="27" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16370588</color>
+        <state>up</state>
+        <text>To%20Do</text>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::Button" x="411" y="554" w="164" h="42" measuredW="122" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <text>Confirmation%20sent</text>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::Arrow" x="592" y="570" w="40" h="10" measuredW="150" measuredH="100" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::Button" x="682" y="562" w="-1" h="-1" measuredW="153" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>PrePayment%20Recieved</text>
+      </controlProperties>
+    </control>
+    <control controlID="99" controlTypeID="com.balsamiq.mockups::Image" x="814" y="122" w="45" h="33" measuredW="346" measuredH="346" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/help.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="100" controlTypeID="com.balsamiq.mockups::Image" x="532" y="564" w="26" h="22" measuredW="346" measuredH="346" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/help.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::Button" x="427" y="512" w="-1" h="-1" measuredW="46" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>11982760</color>
+        <text>Pay</text>
+      </controlProperties>
+    </control>
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::Button" x="512" y="512" w="-1" h="-1" measuredW="76" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>11982760</color>
+        <text>Add%20nota</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
