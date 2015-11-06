@@ -27,8 +27,8 @@ $room_count = $_POST['room_count'];
 				{
 					echo "<tr>";
 					echo "<td>" . ($i + 1) . "</td>";
-					echo "<td><input type=\"text\" name=\"room_name\"" .($i+1) . "></td>";
-					echo "<td><input type=\"number\" name=\"bed_count\"" . ($i+1) . "></td>";
+					echo "<td><input type='text' name='room_name' " .($i+1) . " min='1' max='24' ></td>";
+					echo "<td><input type='number' name='bed_count' " . ($i+1) .  " min='1' max='24' ></td>";
 					echo "</tr>";
 				}
 	 		?>
