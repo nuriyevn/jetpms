@@ -1,0 +1,35 @@
+h1, h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+table, tr, td {
+    margin: 50px auto;
+
+    border: none;
+}
+
+input[type="submit"] {
+    color: coral;
+    background: #719450;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input[type="text"], input[type="number"], input[type="email"] {
+    background-color: yellow;
+}
+
+.topsiguppage {
+    background-color: #B8DEF3;
+    height: 200px;
+    margin: 0px;
+    padding: 0px;
+    clear: both;
+}
+
+#bottomsign {
+    background-color: #B8DEF3;
+    height: 400px;
+}
