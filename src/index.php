@@ -1,6 +1,3 @@
-<?php
-header('Content-type: text/html; charset=utf-8');
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +7,14 @@ header('Content-type: text/html; charset=utf-8');
 </head>
 <body>
 	<h1>New hostel sign Up </h1>
-	<form method="post" action="./addRooms.php">
+	<form method="POST" action="./addRooms.php">
 		<table>
 			<tr>
 				<td>Введите имя хостела:</td>
 				<td><input type="text" name="hostel_name" ></td>
 			</tr>
 			<tr>
-				<td>Ведите количество номеров:</td>
+				<td>Введите количество комнат:</td>
 				<td><input type="number" name="room_count" min="1" max="10" ></td>
 			</tr>
 			<tr>
