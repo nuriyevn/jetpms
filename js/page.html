@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>
+Привет, Javascript
+</title>
+<style>
+.reddd {
+color : red;
+}
+</style>
+<script Language="javascript">
+alert('Hello');
+window.onload = function()
+{
+	var span2 = document.getElementById('s2');
+	span2.onclick= function()
+	{
+		span2.className = "reddd";
+	}
+	print_r (span2);
+}
+
+function print_r(obj)
+{
+	var s = '<h1>' + obj + '</h1>';	
+	s += '<ol>';
+	for (p in obj)
+		s += '<li><b>' + p + '</b>:' + obj[p] + '</li>';
+	s += '</ol>';
+	window.document.body.innerHTML = s;
+}
+
+</script>
+</head>
+<body>
+<div>
+<span>
+Раз
+</span>
+<span id="sp2">Два</span>
+</div>
+</body>
+</html>
