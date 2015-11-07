@@ -4,5 +4,5 @@ $database='jetms';
 $user='jetpms';
 $pswd='qwerty123';
 
-$dbh = mysql_connect($host, $user, $pswd) or die("Не могу соединиться с MySQL.");
-mysql_select_db($database) or die("Не могу подключиться к базе.");
+$dbh = mysql_connect($host, $user, $pswd) or die("РќРµ РјРѕРіСѓ СЃРѕРµРґРёРЅРёС‚СЊСЃСЏ СЃ MySQL.");
+mysql_select_db($database) or die("РќРµ РјРѕРіСѓ РїРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ Рє Р±Р°Р·Рµ.");

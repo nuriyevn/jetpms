@@ -1,7 +1,10 @@
 <?php
+include './scripts/db.php';
+header('Content-type: text/html; charset=utf-8');
 $hostel_name = $_POST['hostel_name'];
 $room_count = $_POST['room_count'];
 //echo $hostel_name. " " . $room_count;
+echo $dbh;
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +17,7 @@ $room_count = $_POST['room_count'];
 	<h1>Add new rooms </h1>
 	<p>Заполните таблицу</p>
 	
-	<form>
+	<form method="post" action="calendar.php">
 		<table>
 			<tr>
 				<td># п/п</td>
