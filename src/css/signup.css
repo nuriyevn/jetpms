@@ -1,7 +1,13 @@
+body {
+    position: relative;
+    background-color: #B8DEF3;
+}
+
 h1, h2 {
     font-size: 2em;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 table, tr, td {
@@ -13,6 +19,15 @@ table, tr, td {
 input[type="submit"] {
     color: coral;
     background: #719450;
+    border-radius: 5px;
+    padding: 10px;
+    border: double 1px transparent;
+}
+
+input[type="submit"]:hover {
+    color: #719450;
+    background: coral;
+    border: double 1px coral;
     border-radius: 5px;
     padding: 10px;
 }
@@ -28,8 +43,14 @@ input[type="text"], input[type="number"], input[type="email"] {
     padding: 0px;
     clear: both;
 }
+#middlesiguppage {
+    background-color: #FFDCB5;
+}
 
 #bottomsign {
     background-color: #B8DEF3;
-    height: 400px;
+    position: absolute;
+    bottom: 0;
+
 }
+
