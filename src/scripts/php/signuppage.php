@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8">
     <title>Sign Up Today! ! !</title>
-    <link rel="stylesheet" href="./css/maincss.css">
-    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="../../css/maincss.css">
+    <link rel="stylesheet" href="../../css/signup.css">
 </head>
 <body>
 <div class="topsiguppage">
@@ -23,7 +23,8 @@
                 <td>Let us know who you are</td>
             </tr>
             <tr>
-                <td><input type="number" name="hostelcountbed" min="1" max="100"  size="50" placeholder="Number of beds in Hostel"></td>
+                <td><input type="number" name="amountofbeds" min="1" max="100" size="50"
+                           placeholder="Number of beds in Hostel"></td>
                 <td>Price depends of number people fitable in the hostel</td>
             </tr>
             <tr>

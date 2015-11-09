@@ -1,22 +1,17 @@
 <?php
-include './scripts/db.php';
-header('Content-type: text/html; charset=utf-8');
-$hostel_name = $_POST['hostel_name'];
-$room_count = $_POST['room_count'];
-//echo $hostel_name. " " . $room_count;
-echo $dbh;
+// TODO php scripts should be configured here
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="./css/maincss.css">
+    <link rel="stylesheet" href="../../css/maincss.css">
 </head>
 <body>
 	<h1>Add new rooms </h1>
 	<p>Заполните таблицу</p>
-	
+
 	<form method="post" action="calendar.php">
 		<table>
 			<tr>
@@ -25,7 +20,7 @@ echo $dbh;
 				<td>Количество кроватей</td>
 			</tr>
 
-			<?php 
+            <?php
 				for ($i = 0; $i < $room_count; $i++ )
 				{
 					echo "<tr>";
@@ -44,3 +39,5 @@ echo $dbh;
 	</form>
 </body>
 </html>
+
+
