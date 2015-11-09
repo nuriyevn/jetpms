@@ -4,7 +4,9 @@
     <file url="file://$PROJECT_DIR$/src/calendar.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/css/maincss.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/index.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/scripts/db.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/signuppage.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/scripts/config.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/scripts/db.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/scripts/php/firstloginpage.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/scripts/php/signuppage.php" charset="UTF-8" />
   </component>
 </project>
