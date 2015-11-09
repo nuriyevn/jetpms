@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html ng-app>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="./scripts/js/todo.js"></script>
+    <link rel="stylesheet" href="./css/todo.css">
 </head>
 <body>
 
@@ -25,6 +27,22 @@
     </li>
 </ol>
 
+<h2>Список дел</h2>
 
+<div ng-controller="TodoCtrl">
+    <span>Осталось {{remaining()}} из {{todos.length}}</span>
+    [ <a href="" ng-click="archive()">очистить</a> ]
+    <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+    </ul>
+    <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText" size="30"
+               placeholder="впишите новое дело">
+        <input class="btn-primary" type="submit" value="добавить">
+    </form>
+</div>
 </body>
 </html>
