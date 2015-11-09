@@ -11,7 +11,17 @@
 <h1>Main web site's page</h1>
 
 <p>Here I will put general description of workflow</p>
+
+<h2>task for Nusrat</h2>
 <ol>
+    <li>create config files to connect this script to postgre DB</li>
+    <li>refresh files on web server jetpms.com</li>
+    <li>create a table to save assigned and finished tasks</li>
+    <li>сделать так, чтоб у список дел подгружался из базы</li>
+    <li>сделать так, чтоб можно было просмотреть выполненые таски</li>
+</ol>
+
+<ol class="done-true">
     <li>index.php file should be designed as landing page</li>
     <li>in some place we will put calc which calculate price for service as far price depens on^
         <ul>

@@ -127,45 +127,6 @@
 		}
 	</style>
 
-	<!-- Fix block calculator 
-	<script type="text/javascript">
-	    $(document).ready(function(){
-	        
-	        var $menu = $("#dapper-box");
-	            
-	        $(window).scroll(function(){
-			var offset = $(this).scrollTop();
-	            if ( (offset > 360) && $menu.hasClass("default") ){
-			//console.log(offset);
-	                $menu.fadeOut('fast',function(){
-	                    $(this).removeClass("default")
-	                           .addClass("fixed_box transbg")
-	                           .fadeIn('fast');
-	                });
-	            } else if($(this).scrollTop() <= 360 && $menu.hasClass("fixed_box")) {
-	                $menu.fadeOut('fast',function(){
-	                    $(this).removeClass("fixed_box transbg")
-	                           .addClass("default")
-	                           .fadeIn('fast');
-	                });
-	            }
-	        });//scroll
-	        
-	        $menu.hover(
-	            function(){
-	                if( $(this).hasClass('fixed_box') ){
-	                    $(this).removeClass('transbg');
-	                }
-	            },
-	            function(){
-	                if( $(this).hasClass('fixed_box') ){
-	                    $(this).addClass('transbg');
-	                }
-	            });//hover
-	    });//jQuery
-	</script> 
-	-->
-
 
 	<!-- PmsCloud Javascript Library Eventually, put it inside your <head/> tag -->
 
@@ -255,7 +216,7 @@
 
 				<a class="button grey" href="./index2.php">
 
-					Вход
+					Task tracker here
 				</a>
 				<!--				<div id="navbar" class="navbar">-->
 				<!--					<nav id="site-navigation" class="navigation main-navigation" role="navigation">-->
@@ -764,7 +725,7 @@
 
 						<section id="home_reviews" class="dnd_section_DD  dnd-parallax"
 								 data-background_image="/wp-content/uploads/main_reviews-bg.jpg" data-parallax="0.1"
-								 style="background-image:url(/wp-content/uploads/main_reviews-bg.jpg);">
+								 style="background-image:url(http://www.pmscloud.com/wp-content/uploads/main_reviews-bg.jpg);">
 
 							<div class="dnd_section_content">
 								<div class="dnd_container">
