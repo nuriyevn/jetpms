@@ -7,6 +7,16 @@
 .reddd {
 color : red;
 }
+.class
+{
+top:100;
+left:100;
+}
+
+.blueee
+{
+color : blue;
+}
 </style>
 <script Language="javascript">
 alert('Hello');
@@ -17,8 +27,35 @@ window.onload = function()
 	{
 		span2.className = "reddd";
 	}
-	print_r (span2);
+	var span1 = document.getElementById('s1');
+	span1.onmouseover = function()
+	{
+		span1.className = "reddd";
+
+	}
+	span1.onmouseout= function()
+	{
+		span1.className ="blueee";
+		print_r(span2);
+	}
+	//print_r (span2);
+	   setInterval(timer_callback, 500, "HelloWorld");
+
 }
+
+function timer_callback(string)
+{
+	
+	var button = document.getElementById('run_button');
+	var top = button.getStyle('top');
+	
+	top += 5;
+
+	console.log(top);
+	
+}
+
+
 
 function print_r(obj)
 {
@@ -34,10 +71,11 @@ function print_r(obj)
 </head>
 <body>
 <div>
-<span>
+<h1><span id="s1">
 Раз
-</span>
-<span id="sp2">Два</span>
+</span></h1>
+<span id="s2">Два</span>
 </div>
+<input className="class" type="button" id="run_button" value="OK"/>
 </body>
 </html>

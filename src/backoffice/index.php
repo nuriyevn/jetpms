@@ -1,4 +1,4 @@
-<!doctype html>
+<doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,8 @@
     </tr>
     <?php
     $countsignups = 1; //здесь надо доставать количество заявок из базы
-    for ($i = 0; $i < $countsignups; $countsignups++) {
+    for ($i = 0; $i < $countsignups; $i++) 
+	{
         echo "<tr>";
         echo "<td>";
         echo "порядковый номер";
