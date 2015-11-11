@@ -32,6 +32,10 @@
                 <td>Also price is different for every counrtry</td>
             </tr>
             <tr>
+                <td><input type="text" name="hostelcity" placeholder="City" title="Optional field"></td>
+                <td>Indicate hostel's city.</td>
+            </tr>
+            <tr>
                 <td><input type="email" name="hostelmail" placeholder="E-mail@mail.com"></td>
                 <td>We will send to you registration data to let you try JetPMS in action ! </td>
             </tr>

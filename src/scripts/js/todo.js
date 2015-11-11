@@ -1,5 +1,7 @@
 function TodoCtrl($scope) {
-    $scope.todos = [];
+    $scope.todos = [
+        // этот массив выводит на экран задачи
+    ];
 
     $scope.addTodo = function () {
         $scope.todos.push({text: $scope.todoText, done: false});
