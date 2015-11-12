@@ -1,4 +1,5 @@
 <?php
+// phpinfo();
 ?>
 <!doctype html>
 <html lang="ru">

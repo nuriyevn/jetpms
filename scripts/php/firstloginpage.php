@@ -15,8 +15,9 @@ if (!isset($_POST['submitsignuppage'])) {
     or die('Could not connect. ' . pg_last_error());
 
     $query = "INSERT INTO inquiries (time_and_date, hostel_name,bed_count, hostel_country, hostel_city, telephone, email, is_active)
-    VALUES(NULL, $hostel_name, $bed_count, $hostel_country, $hostel_city, $telephone, $email, TRUE)";
+    VALUES(NULL, '$hostel_name', $bed_count, '$hostel_country', '$hostel_city', '$telephone', '$email', TRUE)";
 
+    echo $query;
     $result = pg_query($query)
     or die('Illegal query:' . pg_last_error());
 
