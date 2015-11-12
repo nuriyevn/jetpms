@@ -6,7 +6,7 @@
 	<!--link rel="stylesheet" href="main.css"-->
 </head>
 <body>
-<h1>inserting row to rooms table</h2>
+<h1>inserting row to rooms table</h1>
 <?php
 // Connecting and selecting database
 

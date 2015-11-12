@@ -23,7 +23,7 @@
                 <td>Let us know who you are</td>
             </tr>
             <tr>
-                <td><input type="number" name="amountofbeds" min="1" max="100" size="50"
+                <td><input type="number" name="bed_count" min="1" max="100" size="50"
                            placeholder="Number of beds in Hostel"></td>
                 <td>Price depends of number people fitable in the hostel</td>
             </tr>
@@ -32,11 +32,15 @@
                 <td>Also price is different for every counrtry</td>
             </tr>
             <tr>
-                <td><input type="text" name="hostelcity" placeholder="City" title="Optional field"></td>
+                <td><input type="text" name="hostelcity" placeholder="City"></td>
+                <td>Also price is different for every counrtry</td>
+            </tr>
+            <tr>
+                <td><input type="tel" name="telephone" placeholder="12 didgits telephone"></td>
                 <td>Indicate hostel's city.</td>
             </tr>
             <tr>
-                <td><input type="email" name="hostelmail" placeholder="E-mail@mail.com"></td>
+                <td><input type="email" name="mail" placeholder="E-mail@mail.com"></td>
                 <td>We will send to you registration data to let you try JetPMS in action ! </td>
             </tr>
             <tr>

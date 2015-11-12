@@ -32,7 +32,7 @@ input[type="submit"]:hover {
     padding: 10px;
 }
 
-input[type="text"], input[type="number"], input[type="email"] {
+input[type="text"], input[type="number"], input[type="email"], input[type="tel"] {
     background-color: yellow;
 }
 

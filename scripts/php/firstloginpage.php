@@ -4,26 +4,19 @@ if (!isset($_POST['submitsignuppage'])) {
 
 } else {
     $hostel_name = $_POST['hostelname'];
-    $amount_of_beds = $_POST['amountofbeds'];
+    $bed_count = $_POST['bed_count'];
     $hostel_country = $_POST['hostelcountry'];
-    $hostel_mail = $_POST['hostelmail'];
+    $hostel_city = $_POST['hostelcity'];
+    $telephone = $_POST['telephone'];
+    $email = $_POST['mail'];
+    $timestamp = date('F-d-Y ; H:i');
 
-    include('./scripts/db.php');
+    $dbconn = pg_connect("gost=localhost dbname=jetpms user=jetuser password=qwerty123")
+    or die('Could not connect. ' . pg_last_error());
 
+    $query = "INSERT INTO inquiries (time_and_date, hostel_name,bed_count, country, city, telephone, email, is_active)
+    VALUES($timestamp, $hostel_name, $bed_count, $hostel_country, $hostel_city, $telephone, $email, TRUE)";
 
-    $sql = "INSERT INTO signup(hostel_name, count_beds, country, email)
-            VALUES('mama', '24', 'ukr', 'naum@com.ua')"
-    or die ("Invalid query: " . mysql_error());
-
-    // '".$hostel_name."', '".$amount_of_beds."', '".$hostel_country."', '".$hostel_mail."'
-
-
-    mysql_query($sql);
-    if (!mysql_query($sql)) {
-        echo "ошибка при добавлении данных";
-    } else {
-        echo "Данные успешно добавлены";
-    }
 }
 
 
