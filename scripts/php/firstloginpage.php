@@ -3,19 +3,19 @@ if (!isset($_POST['submitsignuppage'])) {
     header('Location: ./signuppage.php');
 
 } else {
-    $hostel_name = $_POST['hostelname'];
+    $hostel_name = $_POST['hostel_name'];
     $bed_count = $_POST['bed_count'];
-    $hostel_country = $_POST['hostelcountry'];
-    $hostel_city = $_POST['hostelcity'];
+    $hostel_country = $_POST['hostel_country'];
+    $hostel_city = $_POST['hostel_city'];
     $telephone = $_POST['telephone'];
-    $email = $_POST['mail'];
+    $email = $_POST['email'];
     $timestamp = date('F-d-Y ; H:i');
 
-    $dbconn = pg_connect("gost=localhost dbname=jetpms user=jetuser password=qwerty123")
+    $dbconn = pg_connect("host=localhost dbname=jetpms user=jetuser password=qwerty123")
     or die('Could not connect. ' . pg_last_error());
 
-    $query = "INSERT INTO inquiries (time_and_date, hostel_name,bed_count, country, city, telephone, email, is_active)
-    VALUES($timestamp, $hostel_name, $bed_count, $hostel_country, $hostel_city, $telephone, $email, TRUE)";
+    $query = "INSERT INTO inquiries (time_and_date, hostel_name,bed_count, hostel_country, hostel_city, telephone, email, is_active)
+    VALUES(NULL, $hostel_name, $bed_count, $hostel_country, $hostel_city, $telephone, $email, TRUE)";
 
 }
 
