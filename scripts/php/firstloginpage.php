@@ -17,6 +17,14 @@ if (!isset($_POST['submitsignuppage'])) {
     $query = "INSERT INTO inquiries (time_and_date, hostel_name,bed_count, hostel_country, hostel_city, telephone, email, is_active)
     VALUES(NULL, $hostel_name, $bed_count, $hostel_country, $hostel_city, $telephone, $email, TRUE)";
 
+    $result = pg_query($query)
+    or die('Illegal query:' . pg_last_error());
+
+    echo "Successfully executed";
+
+    pg_free_result($result);
+    pg_close($dbconn);
+
 }
 
 
