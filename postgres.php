@@ -1,27 +1,32 @@
-<doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Postgresql+PHP example Page</title>
+    <title>Postgresql select example Page</title>
     <!--link rel="stylesheet" href="main.css"-->
 </head>
 <body>
-<h1>Content of database</h1>
+<h1>Content of room table</h1>
 
 <?php
 
+
+
 	// Connecting and selecting database
-	$dbconn = pg_connect("host=localhost dbname=jetpms user=jetuser password=qwerty123");
-	or die('Cound not connect: ' , pg_last_error());
+	$dbconn = pg_connect("host=localhost dbname=jetpms user=jetuser password=qwerty123")
+	or die('Cound not connect. '.pg_last_error());
 	// Running SQL Query
-/*	
-$query = 'SELECT * FROM room';
+	$query = 'SELECT * FROM room';
 	$result = pg_query($query) 
 	or die('Illegal query:' . pg_last_error());
 	
 	// Output of results in HTML
 	
 	echo "<table>\n";
+	/*echo "<tr>\n";
+	echo "<th>"
+	</th>
+	echo "</tr>\n";*/
 	while ($line = pg_fetch_array($result, null, PGSQL_ASSOC))
 	{
 		echo "\t<tr>\n";
@@ -38,7 +43,7 @@ $query = 'SELECT * FROM room';
 	
 	// Close connection
 	pg_close($dbconn);
-*/
+
 ?>
 
 <!--table>
