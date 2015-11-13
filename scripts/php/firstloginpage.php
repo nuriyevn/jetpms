@@ -11,19 +11,19 @@ if (!isset($_POST['submitsignuppage'])) {
     $email = $_POST['email'];
     $timestamp = date('F-d-Y ; H:i');
 
-    $dbconn = pg_connect("host=localhost dbname=jetpms user=jetuser password=qwerty123")
+    $dbconn = pg_connect("host=62.75.216.31 dbname=jetpms user=jetuser password=qwerty123")
     or die('Could not connect. ' . pg_last_error());
 
     $query = "INSERT INTO inquiries (time_and_date, hostel_name,bed_count, hostel_country, hostel_city, telephone, email, is_active)
     VALUES(NULL, '$hostel_name', $bed_count, '$hostel_country', '$hostel_city', '$telephone', '$email', TRUE)";
 
-    echo $query;
     $result = pg_query($query)
     or die('Illegal query:' . pg_last_error());
 
     echo "Successfully executed";
 
-    pg_free_result($result);
+    pg_free_result($result)
+    or die('Could not connect. ' . pg_last_error());
     pg_close($dbconn);
 
 }
