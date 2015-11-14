@@ -42,11 +42,13 @@
 
             pg_free_result($update_result);
         }
-		var_dump($host_ip);
 
         // Connecting and selecting database
-        $dbconn = pg_connect("host=$host_ip dbname=jetpms user=jetuser password=qwerty123")
-        or die('Cound not connect. ' . pg_last_error());
+        $dbconn = pg_connect("host=localhost dbname=jetpms user=jetuser password=qwerty123")
+        or 
+		$dbconn = pg_connect("host=$jet_ip dbname=jetpms user=jetuser password=qwerty123")
+		or  
+		die('Cound not connect. ' . pg_last_error());
         // Running SQL Query
 
         $query = "SELECT request_id, time_and_date, hostel_name, hostel_country, hostel_city, telephone, email, bed_count, is_active FROM inquiries WHERE is_active=TRUE";
