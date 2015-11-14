@@ -1,4 +1,9 @@
 <?php
+$path_to_hostconfig = $_SERVER['DOCUMENT_ROOT'];
+$path_to_hostconfig .= "/scripts/php/hostconfig.php";
+
+include_once($path_to_hostconfig);
+
 if (!isset($_POST['submitsignuppage'])) {
     header('Location: ./signuppage.php');
 
@@ -11,7 +16,7 @@ if (!isset($_POST['submitsignuppage'])) {
     $email = $_POST['email'];
     $timestamp = date('F-d-Y ; H:i');
 
-    $dbconn = pg_connect("host=62.75.216.31 dbname=jetpms user=jetuser password=qwerty123")
+    $dbconn = pg_connect("host=$host_ip dbname=jetpms user=jetuser password=qwerty123")
     or die('Could not connect. ' . pg_last_error());
 
     $query = "INSERT INTO inquiries (time_and_date, hostel_name,bed_count, hostel_country, hostel_city, telephone, email, is_active)

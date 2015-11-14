@@ -21,7 +21,9 @@
             <td>Деактивировать</td>
         </tr>
         <?php
-		include 'hostconfig.php';
+		$path_to_hostconfig = $_SERVER['DOCUMENT_ROOT'];
+		$path_to_hostconfig .= "/scripts/php/hostconfig.php";
+		include_once($path_to_hostconfig);
 
         function console_log($data)
         {
