@@ -21,6 +21,7 @@
             <td>Деактивировать</td>
         </tr>
         <?php
+		include 'hostconfig.php';
 
         function console_log($data)
         {
@@ -39,10 +40,10 @@
 
             pg_free_result($update_result);
         }
-
+		var_dump($host_ip);
 
         // Connecting and selecting database
-        $dbconn = pg_connect("host=62.75.216.31 dbname=jetpms user=jetuser password=qwerty123")
+        $dbconn = pg_connect("host=$host_ip dbname=jetpms user=jetuser password=qwerty123")
         or die('Cound not connect. ' . pg_last_error());
         // Running SQL Query
 
