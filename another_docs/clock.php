@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>Clock sample in JavaScript</title>
-<script src="./clock2.js"> 
+    <script src="clock2.js">
 </script>
 </head>
 
