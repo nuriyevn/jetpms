@@ -15,7 +15,7 @@ if (!isset($_POST['submitsignuppage'])) {
     $telephone = $_POST['telephone'];
     $email = $_POST['email'];
     $timestamp = date('F-d-Y ; H:i');
-
+    var_dump($jet_ip);
     $dbconn = pg_connect("host=localhost dbname=jetpms user=jetuser password=qwerty123")
     or
 	$dbconn = pg_connect("host=$jet_ip dbname=jetpms user=jetuser password=qwerty123")
