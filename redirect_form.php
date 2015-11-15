@@ -13,6 +13,8 @@
 		<input id="email" name="email" type='text' value="myemail">
 		<?php
 		include "redirect.php";
+		
+		
 		//echo "$email_str";
 		?>
 	</form>

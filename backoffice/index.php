@@ -8,7 +8,7 @@
 <body>
 <h1>Поданные заявки</h1>
 
-<form action="index.php" method="post">
+<form action="index.php" name="form" value="FALSE" method="post">
     <table>
         <tr>
             <td># заявки</td>
@@ -34,17 +34,6 @@
             echo '</script>';
         }
 
-        /* function inquiry_false($dbconn, $id)
-         {
-             // UPDATE inquiries SET is_active=FALSE WHERE request_id=2 ;
-             $update_query = "UPDATE inquiries SET is_active=FALSE  WHERE request_id=$id";
-             $update_result = pg_query($dbconn, $update_query)
-             or die('Illegal query:' . pg_last_error());
-             console_log($update_query);
-
-             pg_free_result($update_result);
-         }*/
-
         // Connecting and selecting database
         $dbconn = pg_connect("host=localhost dbname=jetpms user=jetuser password=qwerty123")
         or
@@ -62,33 +51,35 @@
 
         while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
             echo "<tr>";
+			
             foreach ($line as $col_value) {
                 echo "<td>$col_value</td>";
             }
 
-            var_dump($line["request_id"]);
-
-            echo "<td><input type='submit' name=" . $line['request_id'] . " value=" . $line['request_id'] . " ></td>";
+            echo "<td><input type='submit' name='submit' value=" . $line['request_id'] . " ></td>";
             echo "</tr>";
         }
+		pg_free_result($result);
+		pg_close($dbconn);
 
         ?>
     </table>
     <?php
 
     $path_to_update = $_SERVER['DOCUMENT_ROOT'];
-    $path_to_update .= "/update_inquiries.php";
+    $path_to_update .= "/backoffice/update_inquiries.php";
     include_once($path_to_update);
-
-    var_dump($update_query);
-    var_dump($update_result);
+	var_dump($request_id);
+	var_dump($update_query);
+	var_dump($update_result);
     ?>
 </form>
 
 <h2>Обработанные заявки</h2>
+<form action="index.php" name="form" value="TRUE" method="post">
 <table>
     <tr>
-        <td># заявки</td>
+        <td># заявки</td>`
         <td>Дата и время</td>
         <td>Название хостела</td>
         <td>Страна</td>
@@ -101,11 +92,18 @@
     </tr>
     <?php
 
+	$dbconn = pg_connect("host=localhost dbname=jetpms user=jetuser password=qwerty123")
+    or
+    $dbconn = pg_connect("host=$jet_ip dbname=jetpms user=jetuser password=qwerty123")
+    or
+    die('Cound not connect. ' . pg_last_error());
+	
+
     $query = "SELECT request_id, time_and_date, hostel_name, hostel_country, hostel_city, telephone, email, bed_count, is_active FROM inquiries WHERE is_active=FALSE";
-    //var_dump(pg_query($query));
+    var_dump($query);
 
     $result = pg_query($dbconn, $query)
-    or die('Illegal query:' . pg_last_error());
+    or die('Illegal query of selecting inactive:' . pg_last_error());
 
     // Output of results in HTML
 
@@ -114,12 +112,13 @@
         foreach ($line as $col_value) {
             echo "<td>$col_value</td>";
         }
-        echo "<td><input type='button' value='change'></td>";
+        echo "<td><input type='button' name='submit' value=".$line['request_id']."></td>";
         echo "</tr>";
     }
 
     ?>
 </table>
+</form>
 <?php
 // Cleaning the result
 pg_free_result($result);
