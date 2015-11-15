@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-    <script src="./scripts/js/todo.js"></script>
-    <link rel="stylesheet" href="./css/todo.css">
+    <script src="../scripts/js/todo.js"></script>
+    <link rel="stylesheet" href="../css/todo.css">
 </head>
 <body>
 
