@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Sign Up Today! ! !</title>
-    <link rel="stylesheet" href="../../css/maincss.css">
-    <link rel="stylesheet" href="../../css/signup.css">
+    <link rel="stylesheet" href="../css/maincss.css">
+    <link rel="stylesheet" href="../css/signup.css">
 </head>
 <body>
 <div class="topsiguppage">

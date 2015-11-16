@@ -43,10 +43,10 @@ if (!isset($_POST['submitsignuppage'])) {
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="windows-1251">
+    <meta charset="utf-8">
     <title>First login Page</title>
-    <link rel="stylesheet" href="../../css/maincss.css">
-    <link rel="stylesheet" href="../../css/firstloginpage.css">
+    <link rel="stylesheet" href="../css/maincss.css">
+    <link rel="stylesheet" href="../css/firstloginpage.css">
 
 </head>
 <body>
@@ -55,35 +55,35 @@ if (!isset($_POST['submitsignuppage'])) {
 ?>
 <!--<div class="tabs">-->
 <!--<input id="tab1" type="radio" name="tabs" checked>-->
-<!--<label for="tab1" title="Вкладка 1">Вкладка 1</label>-->
+<!--<label for="tab1" title="Р’РєР»Р°РґРєР° 1">Р’РєР»Р°РґРєР° 1</label>-->
 <!---->
 <!--<input id="tab2" type="radio" name="tabs">-->
-<!--<label for="tab2" title="Вкладка 2">Вкладка 2</label>-->
+<!--<label for="tab2" title="Р’РєР»Р°РґРєР° 2">Р’РєР»Р°РґРєР° 2</label>-->
 <!---->
 <!--<input id="tab3" type="radio" name="tabs">-->
-<!--<label for="tab3" title="Вкладка 3">Вкладка 3</label>-->
+<!--<label for="tab3" title="Р’РєР»Р°РґРєР° 3">Р’РєР»Р°РґРєР° 3</label>-->
 <!---->
 <!--<input id="tab4" type="radio" name="tabs">-->
-<!--<label for="tab4" title="Вкладка 4">Вкладка 4</label>-->
+<!--<label for="tab4" title="Р’РєР»Р°РґРєР° 4">Р’РєР»Р°РґРєР° 4</label>-->
 <!---->
 <!--<section id="content1">-->
 <!--    <p>-->
-<!--        Здесь размещаете любое содержание....<br>-->
+<!--        Р—РґРµСЃСЊ СЂР°Р·РјРµС‰Р°РµС‚Рµ Р»СЋР±РѕРµ СЃРѕРґРµСЂР¶Р°РЅРёРµ....<br>-->
 <!--    </p>-->
 <!--</section>-->
 <!--<section id="content2">-->
 <!--    <p>-->
-<!--        Здесь размещаете любое содержание....-->
+<!--        Р—РґРµСЃСЊ СЂР°Р·РјРµС‰Р°РµС‚Рµ Р»СЋР±РѕРµ СЃРѕРґРµСЂР¶Р°РЅРёРµ....-->
 <!--    </p>-->
 <!--</section>-->
 <!--<section id="content3">-->
 <!--    <p>-->
-<!--        Здесь размещаете любое содержание....-->
+<!--        Р—РґРµСЃСЊ СЂР°Р·РјРµС‰Р°РµС‚Рµ Р»СЋР±РѕРµ СЃРѕРґРµСЂР¶Р°РЅРёРµ....-->
 <!--    </p>-->
 <!--</section>-->
 <!--<section id="content4">-->
 <!--    <p>-->
-<!--        Здесь размещаете любое содержание....-->
+<!--        Р—РґРµСЃСЊ СЂР°Р·РјРµС‰Р°РµС‚Рµ Р»СЋР±РѕРµ СЃРѕРґРµСЂР¶Р°РЅРёРµ....-->
 <!--    </p>-->
 <!--</section>-->
 <!--</div>-->

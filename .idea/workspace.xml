@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6fc4161-2965-4ad8-927b-caf9c3419677" name="Default" comment="all test files I put to folder nother docs">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest_files/MindJet/1_sign_up_page.mmap" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rest_files/Wireframing/JetPMS.bmpr" afterPath="$PROJECT_DIR$/rest_files/Wireframing/JetPMS.bmpr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\MindJet\Основные функции со стороны клиента.mmap" afterPath="$PROJECT_DIR$/rest_files/MindJet/Основные функции со стороны клиента.mmap" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\Wireframing\JetPMS.bmpr" afterPath="$PROJECT_DIR$/rest_files/Wireframing/JetPMS.bmpr" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\WorkBench\jetpms.mwb" afterPath="$PROJECT_DIR$/rest_files/WorkBench/jetpms.mwb" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\cats.txt" afterPath="$PROJECT_DIR$/a_dox/cats.txt" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\clock.js" afterPath="$PROJECT_DIR$/a_dox/clock.js" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\clock.php" afterPath="$PROJECT_DIR$/a_dox/clock.php" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\clock2.js" afterPath="$PROJECT_DIR$/a_dox/clock2.js" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\index2.php" afterPath="$PROJECT_DIR$/a_dox/index2.php" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\insert.php" afterPath="$PROJECT_DIR$/a_dox/insert.php" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\onclick_test.php" afterPath="$PROJECT_DIR$/a_dox/onclick_test.php" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\phpinfo.php" afterPath="$PROJECT_DIR$/a_dox/phpinfo.php" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\postgres.php" afterPath="$PROJECT_DIR$/a_dox/postgres.php" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\proccess.php" afterPath="$PROJECT_DIR$/a_dox/proccess.php" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\redirect.php" afterPath="$PROJECT_DIR$/a_dox/redirect.php" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\redirect_form.php" afterPath="$PROJECT_DIR$/a_dox/redirect_form.php" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\another_docs\update_inquiries.php" afterPath="$PROJECT_DIR$/a_dox/update_inquiries.php" />
-      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\xMind\Функции программы.xmind" afterPath="$PROJECT_DIR$/rest_files/xMind/Функции программы.xmind" />
+      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\scripts\php\addRooms.php" afterPath="$PROJECT_DIR$/registration/addRooms.php" />
+      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\scripts\php\firstloginpage.php" afterPath="$PROJECT_DIR$/registration/firstloginpage.php" />
+      <change type="MOVED" beforePath="D:\OpenServer\domains\jetpms\scripts\php\signuppage.php" afterPath="$PROJECT_DIR$/registration/signuppage.php" />
     </list>
     <ignored path="PMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,14 +30,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backoffice/index.php">
+      <file leaf-file-name="signuppage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/registration/signuppage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.51990634">
-              <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+            <state vertical-scroll-proportion="-14.774194">
+              <caret line="46" column="87" selection-start-line="46" selection-start-column="87" selection-end-line="46" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="firstloginpage.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/registration/firstloginpage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.618267">
+              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
               <folding>
-                <marker date="1447515765250" expanded="true" signature="1760:1910" placeholder="SELECT reque..inquiries..." />
-                <marker date="1447515765250" expanded="true" signature="3057:3208" placeholder="SELECT reque..inquiries..." />
+                <marker date="1447708827760" expanded="true" signature="800:1036" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -101,17 +98,20 @@
         <option value="$PROJECT_DIR$/insert.php" />
         <option value="$PROJECT_DIR$/css/signup.css" />
         <option value="$PROJECT_DIR$/postgres.php" />
-        <option value="$PROJECT_DIR$/scripts/php/signuppage.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/scripts/php/hostconfig.php" />
-        <option value="$PROJECT_DIR$/scripts/php/firstloginpage.php" />
         <option value="$PROJECT_DIR$/onclick_test.php" />
         <option value="$PROJECT_DIR$/proccess.php" />
-        <option value="$PROJECT_DIR$/backoffice/index.php" />
         <option value="$PROJECT_DIR$/update_inquiries.php" />
         <option value="$PROJECT_DIR$/another_docs/clock.php" />
         <option value="$PROJECT_DIR$/another_docs/index2.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/backoffice/index.php" />
+        <option value="$PROJECT_DIR$/scripts/php/signuppage.php" />
+        <option value="$PROJECT_DIR$/scripts/php/firstloginpage.php" />
+        <option value="$PROJECT_DIR$/registration/signuppage.php" />
+        <option value="$PROJECT_DIR$/registration/addRooms.php" />
+        <option value="$PROJECT_DIR$/registration/firstloginpage.php" />
       </list>
     </option>
   </component>
@@ -204,7 +204,89 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="backoffice" />
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetpms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetpms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest_files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetpms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest_files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wireframing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetpms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest_files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MindJet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetpms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="registration" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -223,11 +305,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\domains\jetpms\registration" />
       <recent name="D:\OpenServer\domains\jetpms\rest_files" />
       <recent name="D:\OpenServer\domains\jetpms\another_docs" />
       <recent name="D:\openserver\domains\jetpms\src\backoffice\css" />
       <recent name="D:\openserver\domains\jetpms\src\scripts\php" />
-      <recent name="D:\openserver\domains\jetpms\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -413,14 +495,20 @@
       <option name="project" value="LOCAL" />
       <updated>1447517416427</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fixed error bug of putting date to DB">
+      <created>1447697560949</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1447697560950</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10779082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10992529" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -489,7 +577,8 @@
     <MESSAGE value="updating inquiries 2" />
     <MESSAGE value="after half day of work" />
     <MESSAGE value="all test files I put to folder nother docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="all test files I put to folder nother docs" />
+    <MESSAGE value="fixed error bug of putting date to DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed error bug of putting date to DB" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -499,11 +588,50 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/backoffice/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+          <folding>
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration/signuppage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="87" selection-start-line="46" selection-start-column="87" selection-end-line="46" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration/firstloginpage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1447708827760" expanded="true" signature="800:1036" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/a_dox/index2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -511,8 +639,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a_dox/postgres.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a_dox/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration/signuppage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration/firstloginpage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1447517500110" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
           </folding>
         </state>
       </provider>
@@ -531,14 +695,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/signuppage.php">
+    <entry file="file://$PROJECT_DIR$/registration/signuppage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/firstloginpage.php">
+    <entry file="file://$PROJECT_DIR$/registration/firstloginpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="35" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="35" />
@@ -550,47 +714,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1447515765250" expanded="true" signature="1760:1910" placeholder="SELECT reque..inquiries..." />
-            <marker date="1447515765250" expanded="true" signature="3057:3208" placeholder="SELECT reque..inquiries..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a_dox/postgres.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a_dox/insert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/signuppage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/firstloginpage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backoffice/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1447515765250" expanded="true" signature="1760:1910" placeholder="SELECT reque..inquiries..." />
-            <marker date="1447515765250" expanded="true" signature="3057:3208" placeholder="SELECT reque..inquiries..." />
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
           </folding>
         </state>
       </provider>
@@ -602,14 +727,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/signuppage.php">
+    <entry file="file://$PROJECT_DIR$/registration/signuppage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/firstloginpage.php">
+    <entry file="file://$PROJECT_DIR$/registration/firstloginpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="35" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="35" />
@@ -621,8 +746,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
           <folding>
-            <marker date="1447515765250" expanded="true" signature="1760:1910" placeholder="SELECT reque..inquiries..." />
-            <marker date="1447515765250" expanded="true" signature="3057:3208" placeholder="SELECT reque..inquiries..." />
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
           </folding>
         </state>
       </provider>
@@ -641,14 +766,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/signuppage.php">
+    <entry file="file://$PROJECT_DIR$/registration/signuppage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/firstloginpage.php">
+    <entry file="file://$PROJECT_DIR$/registration/firstloginpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
@@ -690,39 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/signuppage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.225806">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/hostconfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025761124">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/php/firstloginpage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.387097">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.8387096">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a_dox/update_inquiries.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3188406">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -779,9 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.077283375">
           <caret line="200" column="0" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
-          <folding>
-            <marker date="1447517500110" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -789,17 +882,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backoffice/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.51990634">
-          <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
           <folding>
-            <marker date="1447515765250" expanded="true" signature="1760:1910" placeholder="SELECT reque..inquiries..." />
-            <marker date="1447515765250" expanded="true" signature="3057:3208" placeholder="SELECT reque..inquiries..." />
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
+            <marker date="1447694510110" expanded="true" signature="-1:-1" placeholder="SELECT reque..inquiries..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/php/hostconfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration/signuppage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.774194">
+          <caret line="46" column="87" selection-start-line="46" selection-start-column="87" selection-end-line="46" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration/addRooms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration/firstloginpage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.618267">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+          <folding>
+            <marker date="1447708827760" expanded="true" signature="800:1036" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>

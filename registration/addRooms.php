@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <link rel="stylesheet" href="../../css/maincss.css">
+	<link rel="stylesheet" href="../css/maincss.css">
 </head>
 <body>
 	<h1>Add new rooms </h1>
