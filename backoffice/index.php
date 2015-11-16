@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
 <body>
 <h1>Поданные заявки</h1>
 
-<form action="index.php" name="form" value="FALSE" method="post">
+<form action="index.php" name="form_true" value="FALSE" method="post">
     <table>
         <tr>
             <td># заявки</td>
@@ -60,13 +61,17 @@
         pg_free_result($result);
         pg_close($dbconn);
 
+        $echo = $_POST['form_true'];
+        echo $echo;
+
         ?>
     </table>
 </form>
 
 <h2>Обработанные заявки</h2>
 
-<form action="index.php" name="form" value="TRUE" method="post">
+
+<form action="index.php" name="form_true" value="TRUE" method="post">
     <table>
         <tr>
             <td># заявки</td>

@@ -1,5 +1,5 @@
 <?php
-
+var_dump($_POST);
 
 function inquiry_false($id)
 {
@@ -53,3 +53,7 @@ if (isset($_POST['submit_true'])) {
     inquiry_true($request_id);
 }
 
+if (isset($_POST['form_true'])) {
+    $echo = $_POST['form_true'];
+    echo $echo;
+}

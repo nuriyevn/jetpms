@@ -14,8 +14,10 @@ if (!isset($_POST['submitsignuppage'])) {
     $hostel_city = $_POST['hostel_city'];
     $telephone = $_POST['telephone'];
     $email = $_POST['email'];
-    $timestamp = date('F-d-Y ; H:i');
-    var_dump($jet_ip);
+    $timestamp = date('j-M-Y H:i');
+    $timestamp = (string)$timestamp;
+
+
     $dbconn = pg_connect("host=localhost dbname=jetpms user=jetuser password=qwerty123")
     or
 	$dbconn = pg_connect("host=$jet_ip dbname=jetpms user=jetuser password=qwerty123")
@@ -23,7 +25,7 @@ if (!isset($_POST['submitsignuppage'])) {
  	die('Could not connect. ' . pg_last_error());
 
     $query = "INSERT INTO inquiries (time_and_date, hostel_name,bed_count, hostel_country, hostel_city, telephone, email, is_active)
-    VALUES(NULL, '$hostel_name', $bed_count, '$hostel_country', '$hostel_city', '$telephone', '$email', TRUE)";
+    VALUES('$timestamp', '$hostel_name', $bed_count, '$hostel_country', '$hostel_city', '$telephone', '$email', TRUE)";
 
     $result = pg_query($query)
     or die('Illegal query:' . pg_last_error());
@@ -48,6 +50,9 @@ if (!isset($_POST['submitsignuppage'])) {
 
 </head>
 <body>
+<?php
+
+?>
 <!--<div class="tabs">-->
 <!--<input id="tab1" type="radio" name="tabs" checked>-->
 <!--<label for="tab1" title="¬кладка 1">¬кладка 1</label>-->
