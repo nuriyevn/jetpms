@@ -17,12 +17,14 @@ if (!isset($_POST['submitsignuppage'])) {
     $timestamp = date('j-M-Y H:i');
     $timestamp = (string)$timestamp;
 
+//    echo $timestamp."<hr><br>";
+//    var_dump($timestamp)."<hr>";
+
 
     $dbconn = pg_connect("host=localhost dbname=jetpms user=jetuser password=qwerty123")
     or
-	$dbconn = pg_connect("host=$jet_ip dbname=jetpms user=jetuser password=qwerty123")
-	or
- 	die('Could not connect. ' . pg_last_error());
+    $dbconn = pg_connect("host=$jet_ip dbname=jetpms user=jetuser password=qwerty123")
+    or die('Could not connect. ' . pg_last_error());
 
     $query = "INSERT INTO inquiries (time_and_date, hostel_name,bed_count, hostel_country, hostel_city, telephone, email, is_active)
     VALUES('$timestamp', '$hostel_name', $bed_count, '$hostel_country', '$hostel_city', '$telephone', '$email', TRUE)";
@@ -31,6 +33,8 @@ if (!isset($_POST['submitsignuppage'])) {
     or die('Illegal query:' . pg_last_error());
 
     echo "Successfully executed";
+    // redirecting to thxpage.php
+
 
     pg_free_result($result)
     or die('Could not connect. ' . pg_last_error());
@@ -40,19 +44,16 @@ if (!isset($_POST['submitsignuppage'])) {
 
 
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>First login Page</title>
-    <link rel="stylesheet" href="../css/maincss.css">
-    <link rel="stylesheet" href="../css/firstloginpage.css">
-
-</head>
-<body>
-<?php
-
-?>
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <title>First login Page</title>-->
+<!--    <link rel="stylesheet" href="../css/maincss.css">-->
+<!--    <link rel="stylesheet" href="../css/firstloginpage.css">-->
+<!---->
+<!--</head>-->
+<!--<body>-->
 <!--<div class="tabs">-->
 <!--<input id="tab1" type="radio" name="tabs" checked>-->
 <!--<label for="tab1" title="Вкладка 1">Вкладка 1</label>-->
@@ -88,5 +89,5 @@ if (!isset($_POST['submitsignuppage'])) {
 <!--</section>-->
 <!--</div>-->
 <!---->
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->

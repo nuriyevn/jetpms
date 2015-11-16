@@ -15,7 +15,7 @@
     <h1>Welcome to Hostel Property Managment System! </h1>
     <h2>Please do sign up!</h2>
 
-    <form action="firstloginpage.php" method="post">
+    <form action="thxpage.php" method="post">
         <table>
             <tr>
                 <td><input type="text" name="hostel_name" value="dummy hostel name" placeholder="Hostel's name"></td>
@@ -50,7 +50,7 @@
     </form>
 
 </div>
-<div id="bottomsign">
+
 
 </div>
 

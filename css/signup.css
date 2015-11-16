@@ -47,10 +47,3 @@ input[type="text"], input[type="number"], input[type="email"], input[type="tel"]
     background-color: #FFDCB5;
 }
 
-#bottomsign {
-    background-color: #B8DEF3;
-    position: absolute;
-    bottom: 0;
-
-}
-
