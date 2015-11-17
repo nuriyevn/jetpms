@@ -16,7 +16,17 @@ include_once('puttodb.php');
 <div id="middlesiguppage">
     <h1>Welcome to Hostel Property Managment System! </h1>
 
-    <h2>Please do sign up!</h2>
+    <div id="check">
+        <h2>Please, follow those steps:</h2>
+        <ol>
+            <li>You need to check your e-mail {email} for further instructions.</li>
+            <br>
+            <strong>If did not recieve email from us:</strong>
+            <br>
+            <li>Check it in trash or spam folder</li>
+            <li>Or ask for support by mailing to <a href="mailto:support@jetpms.com">support@jetpms.com</a></li>
+        </ol>
+    </div>
 
 
 </div>

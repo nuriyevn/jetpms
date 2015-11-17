@@ -32,7 +32,7 @@ input[type="submit"]:hover {
     padding: 10px;
 }
 
-input[type="text"], input[type="number"], input[type="email"], input[type="tel"] {
+input[type="text"], input[type="number"], input[type="email"], input[type="tel"], input[type="password"] {
     background-color: yellow;
 }
 
@@ -47,3 +47,15 @@ input[type="text"], input[type="number"], input[type="email"], input[type="tel"]
     background-color: #FFDCB5;
 }
 
+#check {
+    width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+#check ol {
+    margin-top: 25px;
+
+    font: 1.5em sansserif;
+}
