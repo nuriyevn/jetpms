@@ -1,0 +1,11 @@
+{
+  "name": "yiisoft/yii2",
+  "authors": [
+    {
+      "name": "Naum Oleks",
+      "email": "naum.oleks@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {}
+}

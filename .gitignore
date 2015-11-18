@@ -3,3 +3,4 @@ phpMyAdm/
 downloads/
 .idea/
 scripts/php/hostconfig.php
+/vendor/
