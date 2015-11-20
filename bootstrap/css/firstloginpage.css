@@ -7,6 +7,7 @@
     padding: 0px;
     margin: 100px auto;
 }
+
 /* стили секций с содержанием */
 section {
     display: none;
@@ -14,9 +15,11 @@ section {
     background: #fff;
     border: 1px solid #ddd;
 }
+
 .tabs input {
     display: none;
 }
+
 /* стили вкладок (табов) */
 .tabs label {
     display: inline-block;
@@ -29,29 +32,36 @@ section {
     background: #f1f1f1;
     border-radius: 3px 3px 0 0;
 }
+
 /* шрифт-иконки от Font Awesome в формате Unicode */
 .tabs label:before {
     font-family: fontawesome;
     font-weight: normal;
     margin-right: 10px;
 }
+
 .tabs label[for*="1"]:before {
     content: "\f19a";
 }
+
 .tabs label[for*="2"]:before {
     content: "\f18a";
 }
+
 .tabs label[for*="3"]:before {
     content: "\f13b";
 }
+
 .tabs label[for*="4"]:before {
     content: "\f13a";
 }
+
 /* изменения стиля заголовков вкладок при наведении */
 .tabs label:hover {
     color: #888;
     cursor: pointer;
 }
+
 /* стили для активной вкладки */
 .tabs input:checked + label {
     color: #555;
@@ -60,6 +70,7 @@ section {
     border-bottom: 1px solid #fff;
     background: #fff;
 }
+
 /* активация секций с помощью переключателя :checked */
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content1,
@@ -67,6 +78,7 @@ section {
 #tab4:checked ~ #content1 {
     display: block;
 }
+
 /* медиа запросы для различных типов носителей */
 @media screen and (max-width: 680px) {
     .tabs label {
@@ -78,6 +90,7 @@ section {
         font-size: 18px;
     }
 }
+
 @media screen and (max-width: 400px) {
     .tabs label {
         padding: 15px;
