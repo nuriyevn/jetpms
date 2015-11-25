@@ -9,13 +9,13 @@
 <br>
 <br>
 <label>To:</label>
-<input type="text" name="to_" value="mamahostel.od@gmail.com">
+<input type="text" name="to_" value="naum.oleks@gmail.com">
 <br>
 <br>
 <input type="text" name="subject_box" value="Some subject">
 <br>
 <br>
-<textarea rows="4" cols="70">
+<textarea rows="4" cols="70" name="message_text" value="Default text">
 Put some text here...
 </textarea>
 <br>
@@ -31,16 +31,28 @@ Put some text here...
 
 if (isset($_POST['sendbutton']))
 {
+	
+	if (isset($_POST['subject_box']))
+		$subject = $_POST['subject_box'];
 
-	$subject = $_POST['subject_box'];
-	$to = $_POST['to_'];
+	if (isset($_POST['to_']))
+		$to = $_POST['to_'];
+	
+	if (isset($_POST['message_text']))
+		$message = $_POST['message_text'];
 
+	echo "<br/>";
 	var_dump($subject);
-
-	$message = "Line1\rLine2\rLine3";
+	echo "<br/>";
+	var_dump($to_);
+	echo "<br>";
+	var_dump($message);
+	echo "<br>";
 	$message = wordwrap($message, 70, "\r\n");
-
-	mail($to, $subject, $message);
+	$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+	
+	mail($to, $subject, $message, $headers);
 }
 ?>
 
