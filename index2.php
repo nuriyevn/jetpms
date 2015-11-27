@@ -104,7 +104,6 @@
             background: url(http://www.pmscloud.com/wp-content/plugins/qtranslate/flags/gb.png) no-repeat
         }
 
-        .qtrans_flag_ru {
             background: url(http://www.pmscloud.com/wp-content/plugins/qtranslate/flags/ru.png) no-repeat
         }
     </style>
@@ -213,7 +212,7 @@
                     </script>
                 </div>
 
-                <a class="button grey" href="a_dox/index2.php">
+                <a class="button grey" href="a_dox_test_files/index2.php">
 
                     Task tracker here
                 </a>

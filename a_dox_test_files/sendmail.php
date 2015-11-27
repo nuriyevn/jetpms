@@ -3,7 +3,7 @@
 <title>Email sender program on PHP</title>
 </head>
 <body>
-<form action="./sendmail.php" method="post">
+<form action="sendmail.php" method="post">
 <label>From:</label>
 <label for="from_">customer-care@jetpms.com</label>
 <br>
