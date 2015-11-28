@@ -36,6 +36,7 @@ if (isset($_POST['csubmit'])) {
 <head>
     <meta charset="UTF-8">
     <title>rate calculator</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <style>
         td {
             padding: 5px;
@@ -43,7 +44,7 @@ if (isset($_POST['csubmit'])) {
     </style>
 </head>
 <body class="container">
-<h1>calc the cost</h1>
+<h1>Calc the cost</h1>
 
 <p>this page contain base form which will calculate monthly price for using JetPMS </p>
 
