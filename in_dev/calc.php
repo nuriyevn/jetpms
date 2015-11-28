@@ -44,11 +44,7 @@ if (isset($_POST['csubmit'])) {
     <meta charset="UTF-8">
     <title>rate calculator</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <style>
-        td {
-            padding: 5px;
-        }
-    </style>
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
 </head>
 <body class="container">
 <h1>Calc the cost</h1>
