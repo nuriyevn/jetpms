@@ -1,6 +1,7 @@
 <?php
 if (isset($_GET['email'])) {
     $email = $_GET['email'];
+    $token = $_GET['token'];
 }
 ?>
 <!doctype html>
@@ -24,6 +25,7 @@ if (isset($_GET['email'])) {
                 <td>Your login is :</td>
                 <td>
                     <input type="email" name="email" value="<?php echo $email; ?>">
+                    <input hidden name="token" value="<?php echo $token; ?>">
                 </td>
             </tr>
             <tr>

@@ -1,6 +1,11 @@
 <?php
 
-if ($_POST['csubmit'] == 'calc') {
+$script_parent_dir = __DIR__;
+$document_root = $_SERVER["DOCUMENT_ROOT"];
+$http_host = $_SERVER['HTTP_HOST'];
+$script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir);
+
+if ($_POST['csubmit'] == 'Calculate') {
     $bedscount= $_POST['amountofbeds'];
     $country = $_POST['country'];
 
@@ -53,7 +58,7 @@ if ($_POST['csubmit'] == 'calc') {
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
 </head>
 <body class="container">
-<h1>Calc the cost</h1>
+<h1>Calculate the cost</h1>
 
 <p>this page contain base form which will calculate monthly price for using JetPMS </p>
 
@@ -94,14 +99,14 @@ if (!isset($_POST['csubmit']))
         <tr>
             <td></td>
             <td>
-                <input type="submit" name="csubmit" value="calc">
+                <input type="submit" name="csubmit" value="Calculate">
 
             </td>
         </tr>
     </table>
 </form>
     <?php
-    } else if ($_POST["csubmit"] == 'calc') {
+    } else if ($_POST["csubmit"] == 'Calculate') {
         ?>
     <form action="" method="post">
 
@@ -130,7 +135,7 @@ if (!isset($_POST['csubmit']))
                     <input hidden name="bedscount" value="<?php echo $bedscount; ?>">
                     <input hidden name="country" value="<?php echo $country; ?>">
                     <input hidden name="b_price" value="<?php echo $b_price; ?>">
-                    <input required type="email" name="email" >
+                    <input required type="email" name="email" value="jetpmscom@gmail.com" >
 
 
                 </td>
@@ -158,21 +163,30 @@ if (!isset($_POST['csubmit']))
 		{
 
 
+
 			$send_to = $_POST["email"];
 			$subject = "JetPMS.com Registration Request";
-			$message = "Dear customer, <br>We are glad to inform that you have almost done with the registration at JetPMS.<br/> Please, follow further simple instruction and be ready for evaluating our product.<br>";
+			$message = "Dear customer, <br><br><br>We are glad to inform that you have almost done with the registration at JetPMS.<br/> Please, follow further simple instruction and be ready for evaluating our product.<br>";
 			$message .= "So far, you have requested JetPMS for:<br>";
 
 			$message .= "Beds <b>".$_POST["bedscount"] . "</b><br/>";
 			$message .= "Country <b>".$_POST["country"]."</b><br/>";
 			$message .= "Total price: <b>".$_POST["b_price"]."$/month</b><br>";
+
+            $message .= "Please, click to this activation link: ";
+
+            $activation_link = $script_parent_dir."/register.php?email=".$send_to;
+            $href_tag = '<a href=http://'.$activation_link.">$activation_link</a>";
+
+            var_dump($href_tag);
+
 			$message .= "<br><br>Best Wishes,<br/>JetPMS.com Team<br/>+380980238180<br>";
 			$headers = "MIME-Version: 1.0" . "\r\n";
 			$headers = "Content-type:text/html;charset=UTF-8"."\r\n";
 
             echo "$_POST";
             echo "mail functioncall <br>";
-			var_dump(mail($send_to, $subject, $message, $headers));
+			//var_dump(mail($send_to, $subject, $message, $headers));
 			echo "Registration info is sent. Please check email (also, check spam if you will have not found the email)<br/>";
             echo "Email message:<br>";
             var_dump($message);
