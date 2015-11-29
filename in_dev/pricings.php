@@ -154,9 +154,19 @@ if (!isset($_POST['csubmit']))
 	?>
 
 	<?php
+   
+   $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT'];
+   $path_to_hostconfig .= "/scripts/php/hostconfig.php";
+   
+   include_once($path_to_hostconfig);
+
 	if ($_POST["csubmit"] === 'Do register')
 	{
-
+      
+      
+      $dbconn = pg_connect("host=localhost dbname=$database user=$user password=$pswd")
+      or
+      $dbconn = pg_
 
 
 		if (($_POST["email"]) != "")
@@ -173,12 +183,11 @@ if (!isset($_POST['csubmit']))
 			$message .= "Country <b>".$_POST["country"]."</b><br/>";
 			$message .= "Total price: <b>".$_POST["b_price"]."$/month</b><br>";
 
-            $message .= "Please, click to this activation link: ";
+         $message .= "Please, click to this activation link: ";
 
-            $activation_link = $script_parent_dir."/register.php?email=".$send_to;
-            $href_tag = '<a href=http://'.$activation_link.">$activation_link</a>";
-
-            $message .= $href_tag."<br>";
+         $activation_link = $script_parent_dir."/register.php?email=".$send_to;
+         $href_tag = '<a href=http://'.$activation_link.">$activation_link</a>";
+         $message .= $href_tag."<br>";
 
 			$message .= "<br><br>Best Wishes,<br/>JetPMS.com Team<br/>+380980238180<br>";
 			$headers = "MIME-Version: 1.0" . "\r\n";
