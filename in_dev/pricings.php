@@ -178,7 +178,7 @@ if (!isset($_POST['csubmit']))
             $activation_link = $script_parent_dir."/register.php?email=".$send_to;
             $href_tag = '<a href=http://'.$activation_link.">$activation_link</a>";
 
-            //var_dump($href_tag);
+            $message .= $href_tag."<br>";
 
 			$message .= "<br><br>Best Wishes,<br/>JetPMS.com Team<br/>+380980238180<br>";
 			$headers = "MIME-Version: 1.0" . "\r\n";
