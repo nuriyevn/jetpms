@@ -1,6 +1,5 @@
 <?php
 
-
 if ($_POST['csubmit'] == 'calc') {
     $bedscount= $_POST['amountofbeds'];
     $country = $_POST['country'];
@@ -59,10 +58,12 @@ if ($_POST['csubmit'] == 'calc') {
 <p>this page contain base form which will calculate monthly price for using JetPMS </p>
 
 <p>Price depends on: <b>amount of beds and country</b></p>
+
 <?php
 if (!isset($_POST['csubmit']))
 {
 ?>
+
 <form action="" method="post">
     <table>
         <tr>
@@ -89,6 +90,7 @@ if (!isset($_POST['csubmit']))
                 </select>
             </td>
         </tr>
+
         <tr>
             <td></td>
             <td>
@@ -102,6 +104,7 @@ if (!isset($_POST['csubmit']))
     } else if ($_POST["csubmit"] == 'calc') {
         ?>
     <form action="" method="post">
+
 
         <table>
 
@@ -123,10 +126,12 @@ if (!isset($_POST['csubmit']))
             <tr>
                 <td>Hostel's corporate e-mail:</td>
                 <td>
+
                     <input hidden name="bedscount" value="<?php echo $bedscount; ?>">
                     <input hidden name="country" value="<?php echo $country; ?>">
                     <input hidden name="b_price" value="<?php echo $b_price; ?>">
                     <input required type="email" name="email" >
+
 
                 </td>
             </tr>
@@ -136,7 +141,9 @@ if (!isset($_POST['csubmit']))
                 </td>
             </tr>
         </table>
+
     </form>
+
         <?php
     }
 	?>
@@ -146,13 +153,16 @@ if (!isset($_POST['csubmit']))
 	{
 
 
+
 		if (($_POST["email"]) != "")
 		{
+
 
 			$send_to = $_POST["email"];
 			$subject = "JetPMS.com Registration Request";
 			$message = "Dear customer, <br>We are glad to inform that you have almost done with the registration at JetPMS.<br/> Please, follow further simple instruction and be ready for evaluating our product.<br>";
 			$message .= "So far, you have requested JetPMS for:<br>";
+
 			$message .= "Beds <b>".$_POST["bedscount"] . "</b><br/>";
 			$message .= "Country <b>".$_POST["country"]."</b><br/>";
 			$message .= "Total price: <b>".$_POST["b_price"]."$/month</b><br>";
@@ -166,6 +176,7 @@ if (!isset($_POST['csubmit']))
 			echo "Registration info is sent. Please check email (also, check spam if you will have not found the email)<br/>";
             echo "Email message:<br>";
             var_dump($message);
+
 		}
 		else
 		{
