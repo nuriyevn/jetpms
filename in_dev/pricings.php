@@ -9,8 +9,8 @@ if ($_POST['csubmit'] == 'Calculate') {
     $bedscount= $_POST['amountofbeds'];
     $country = $_POST['country'];
 
-	var_dump($bedscount);
-	var_dump($country);
+	//var_dump($bedscount);
+	//var_dump($country);
 	
     switch ($bedscount) {
         case 1:
@@ -178,7 +178,7 @@ if (!isset($_POST['csubmit']))
             $activation_link = $script_parent_dir."/register.php?email=".$send_to;
             $href_tag = '<a href=http://'.$activation_link.">$activation_link</a>";
 
-            var_dump($href_tag);
+            //var_dump($href_tag);
 
 			$message .= "<br><br>Best Wishes,<br/>JetPMS.com Team<br/>+380980238180<br>";
 			$headers = "MIME-Version: 1.0" . "\r\n";
@@ -186,10 +186,10 @@ if (!isset($_POST['csubmit']))
 
             echo "$_POST";
             echo "mail functioncall <br>";
-			//var_dump(mail($send_to, $subject, $message, $headers));
+			mail($send_to, $subject, $message, $headers);
 			echo "Registration info is sent. Please check email (also, check spam if you will have not found the email)<br/>";
             echo "Email message:<br>";
-            var_dump($message);
+            //var_dump($message);
 
 		}
 		else
