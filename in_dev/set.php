@@ -114,6 +114,25 @@ if (isset($_POST['step2'])) {
 
     ?>
     <h2>Configuring the prices</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="tabs">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1" data-toogle="tab">Вкладка 1</a></li>
+                    <li><a href="#tab2" data-toggle="tab">Вклада 2</a></li>
+                    <li><a href="#tab3" data-toggle="tab">Вкладка 3</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane">
+                        First paragraf
+                    </div>
+                    <div class="tab-pane">Second paragraf</div>
+                    <div class="tab-pane">Third paragraf</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php
     }
     ?>
