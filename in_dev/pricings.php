@@ -76,7 +76,7 @@ if (!isset($_POST['csubmit']))
             <td>
 
                 <select name="amountofbeds" id="">
-                    <!--option selected>How many beds</option-->
+                    <option disabled selected>How many beds</option-->
                     <option value="1">from 1 to 10</option>
                     <option value="2">from 11 to 18</option>
                     <option value="3">from 19 to 26</option>
@@ -88,7 +88,7 @@ if (!isset($_POST['csubmit']))
             <td>Country</td>
             <td>
                 <select name="country" id="">
-                    <!--option selected>What country hostel from?</option-->
+                    <option disabled selected>What country hostel from?</option-->
                     <option value="1">Ukraine</option>
                     <option value="2">Russia</option>
                     <option value="3">Another country</option>
@@ -155,51 +155,57 @@ if (!isset($_POST['csubmit']))
 
 	<?php
    
-   $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT'];
-   $path_to_hostconfig .= "/scripts/php/hostconfig.php";
+   $path_to_cdbconn = $_SERVER['DOCUMENT_ROOT']."/scripts/php/CDBConn.php";
+   $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/scripts/php/hostconfig.php";
    
+   include_once($path_to_cdbconn);
    include_once($path_to_hostconfig);
 
 	if ($_POST["csubmit"] === 'Do register')
 	{
       
-      
-      $dbconn = pg_connect("host=localhost dbname=$database user=$user password=$pswd")
-      or
-      $dbconn = pg_
-
-
-		if (($_POST["email"]) != "")
+      if (($_POST["email"]) != "")
 		{
+         $send_to = $_POST["email"];
+         $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
 
+         $conn->connect();
+      
+         
+         $conn->run_select("SELECT * FROM inquiries WHERE email='$send_to'");         
+         if ($conn->affected_rows() > 0)
+         {
+            echo "This '$send_to' is in use. Please select another email.<br>";
+         }
+         else
+         {
+            echo "Confirmation mail will be sent to '$send_to'<br>";
+                        $subject = "JetPMS.com Registration Request";
+            $message = "Dear customer, <br><br><br>We are glad to inform that you have almost done with the registration at JetPMS.<br/> Please, follow further simple instruction and be ready for evaluating our product.<br>";
+            $message .= "So far, you have requested JetPMS for:<br>";
 
+            $message .= "Beds <b>".$_POST["bedscount"] . "</b><br/>";
+            $message .= "Country <b>".$_POST["country"]."</b><br/>";
+            $message .= "Total price: <b>".$_POST["b_price"]."$/month</b><br>";
 
-			$send_to = $_POST["email"];
-			$subject = "JetPMS.com Registration Request";
-			$message = "Dear customer, <br><br><br>We are glad to inform that you have almost done with the registration at JetPMS.<br/> Please, follow further simple instruction and be ready for evaluating our product.<br>";
-			$message .= "So far, you have requested JetPMS for:<br>";
+            $message .= "Please, click to this activation link: ";
 
-			$message .= "Beds <b>".$_POST["bedscount"] . "</b><br/>";
-			$message .= "Country <b>".$_POST["country"]."</b><br/>";
-			$message .= "Total price: <b>".$_POST["b_price"]."$/month</b><br>";
+            $token= bin2hex(openssl_random_pseudo_bytes(16));
+            $activation_link = "http://".$script_parent_dir."/register.php?email=".$send_to."&token=".$token;
+            $href_tag = "<a href=".$activation_link.">$activation_link</a>";
+   
+            $conn->run_insert("INSERT INTO inquiries (email, token, hostel_name, telephone, is_active) VALUES('$send_to', '$token','', '', FALSE)");
 
-         $message .= "Please, click to this activation link: ";
+            $message .= $href_tag."<br>";
 
-         $activation_link = $script_parent_dir."/register.php?email=".$send_to;
-         $href_tag = '<a href=http://'.$activation_link.">$activation_link</a>";
-         $message .= $href_tag."<br>";
+            $message .= "<br><br>Best Wishes,<br/>JetPMS.com Team<br/>+380980238180<br>";
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers = "Content-type:text/html;charset=UTF-8"."\r\n";
 
-			$message .= "<br><br>Best Wishes,<br/>JetPMS.com Team<br/>+380980238180<br>";
-			$headers = "MIME-Version: 1.0" . "\r\n";
-			$headers = "Content-type:text/html;charset=UTF-8"."\r\n";
-
-            echo "$_POST";
-            echo "mail functioncall <br>";
-			mail($send_to, $subject, $message, $headers);
-			echo "Registration info is sent. Please check email (also, check spam if you will have not found the email)<br/>";
-            echo "Email message:<br>";
-            //var_dump($message);
-
+            mail($send_to, $subject, $message, $headers);
+            echo "Registration info is sent. Please check email (also, check spam if you will have not found the email)<br/>";
+         }
+         $conn->close();
 		}
 		else
 		{

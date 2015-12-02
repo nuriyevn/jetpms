@@ -1,7 +1,7 @@
 <?php 
 
 $dbconnect_script = $_SERVER['DOCUMENT_ROOT'];
-$dbconnect_script .= "/scripts/php/connect_to_database.php";
+$dbconnect_script .= "/scripts/php/CDBConn.php";
 
 
 include_once($dbconnect_script);
