@@ -13,7 +13,10 @@ if (isset($_POST['step2'])) {
     <meta charset="UTF-8">
     <title>JetPMS [Set up step first]</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+
 
 </head>
 <body>
@@ -115,20 +118,26 @@ if (isset($_POST['step2'])) {
     ?>
     <h2>Configuring the prices</h2>
 
-    <div class="row">
-        <div class="col-md-8">
-            <div class="tabs">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#tab1" data-toogle="tab">Вкладка 1</a></li>
-                    <li><a href="#tab2" data-toggle="tab">Вклада 2</a></li>
-                    <li><a href="#tab3" data-toggle="tab">Вкладка 3</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane">
-                        First paragraf
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab-1" data-toogle="tab">Вкладка 1</a></li>
+                        <li><a href="#tab-2" data-toggle="tab">Вклада 2</a></li>
+                        <li><a href="#tab-3" data-toggle="tab">Вкладка 3</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab-1">
+                            <p>First paragraf</p>
+                        </div>
+                        <div class="tab-pane fade" id="tab-2">
+                            <p>Second paragraf</p>
+                        </div>
+                        <div class="tab-pane fade" id="tab-3">
+                            <p>Third paragraf</p>
+                        </div>
                     </div>
-                    <div class="tab-pane">Second paragraf</div>
-                    <div class="tab-pane">Third paragraf</div>
                 </div>
             </div>
         </div>
