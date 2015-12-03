@@ -9,6 +9,7 @@
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
     <link href="bootstrap/css/id.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
 </head>
 <body>
 <div class="blue_block">
