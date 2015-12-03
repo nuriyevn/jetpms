@@ -22,7 +22,7 @@ if (isset($_POST['step2'])) {
 <body>
 <div class="container">
 
-    <!----- step one begins here ------------------------------------------------------------------->
+    <!----- step one begins here ------------------------------------------------------------------ ->
 
     <?php
     if (!isset($step1) && !isset($step2))
