@@ -26,20 +26,20 @@ if (isset($_GET['email'])) {
             <tr>
                 <td>Your login is :</td>
                 <td>
-                    <input type="email" name="email" value="<?php echo $email; ?>">
+                    <input required type="email" name="email" value="<?php echo $email; ?>">
                     <input hidden name="token" value="<?php echo $token; ?>">
                 </td>
             </tr>
             <tr>
                 <td>Create your password</td>
                 <td>
-                    <input type="password" name="password1">
+                    <input required type="password" name="password1">
                 </td>
             </tr>
             <tr>
                 <td>Re type your password</td>
                 <td>
-                    <input type="password" name="password2">
+                    <input required type="password" name="password2">
                 </td>
             </tr>
             <tr>

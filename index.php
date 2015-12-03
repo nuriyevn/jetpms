@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="2; url='http://jetpms.com/index2.php'" /> 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta charset="utf-8">
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
@@ -18,7 +19,7 @@
     <![endif]-->
 </head>
 <body>
-<h1>Hello, world!</h1>
+<h1>Forwarding...</h1>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
