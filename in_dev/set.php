@@ -1,3 +1,4 @@
+
 <?php
 if (isset($_POST['step1'])) {
     $step1 = $_POST['step1'];
@@ -5,7 +6,16 @@ if (isset($_POST['step1'])) {
 if (isset($_POST['step2'])) {
     $step2 = $_POST['step2'];
 }
+
+
+if (isset($_POST['step3']))
+{
+    
+}
 ?>
+
+
+
 
 <!doctype html>
 <html lang="en">
