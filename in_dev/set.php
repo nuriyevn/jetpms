@@ -10,7 +10,7 @@ if (isset($_POST['step2'])) {
 
 if (isset($_POST['step3']))
 {
-    
+    $step3 = $_POST['step3'];
 }
 ?>
 
