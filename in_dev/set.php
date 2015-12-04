@@ -1,13 +1,16 @@
 <?php
-if (isset($_POST['step1'])) {
+if (isset($_POST['step1']))
+{
     $step1 = $_POST['step1'];
 }
-if (isset($_POST['step2'])) {
+if (isset($_POST['step2']))
+{
     $step2 = $_POST['step2'];
 }
 
 
-if (isset($_POST['step3'])) {
+if (isset($_POST['step3']))
+{
     $step3 = $_POST['step3'];
 }
 ?>
@@ -85,7 +88,8 @@ if (isset($_POST['step3'])) {
     ?>
     <form action="" method="post">
         <?php
-        for ($i = 0; $i < $roomscount; $i++) {
+        for ($i = 0; $i < $roomscount; $i++)
+        {
             ?>
             <hr>
             <h3>Room # <?php echo $i + 1; ?></h3>
@@ -128,86 +132,53 @@ if (isset($_POST['step3'])) {
     <!------- step three begins here -------------------------------------------------------------------------------->
 
     <?php
-    if (isset($step2)) {
-    var_dump($_POST);
-    $arr = $_POST;
-
-    echo "<br>";
-    foreach ($arr as $key => $value) {
-
-        if (strstr($key, "nazv")) {
-            echo "<br><br>Название комнаты: " . $value;
-        }
-        if (strstr($key, "type")) {
-            echo "<br><br>Категрия номера: " . $value;
-        }
-        if (strstr($key, "capacity")) {
-            echo "<br><br>Вместимость номера: " . $value . "<hr>";
-        }
-
-
-    }
+    if (isset($step2))
+    {
+    //    var_dump($_POST);
+    $r = (int)(count($_POST) / 3);
 
     ?>
     <h2>Configuring the prices</h2>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <div class="tabs">
-                    <ul class="nav nav-tabs">
+            <div class="col-md-10">
+                <form action="thx.php" method="post">
+                    <table id="table-set">
+                        <tr>
+                            <th>ROOM NAME</th>
+                            <th>ROOM TYPE</th>
+                            <th>CAPACITY, <sub>pers.</sub></th>
+                            <th>PRICE</th>
+                        </tr>
+                        <?php
+                        for ($i = 0; $i < $r; $i++)
+                        {
+                            ?>
+                            <tr>
+                                <td><?php echo($_POST["nazv" . ($i + 1)]); ?></td>
+                                <td><?php echo($_POST["type" . ($i + 1)]); ?></td>
+                                <td><?php echo($_POST["capacity" . ($i + 1)]); ?></td>
+                                <td><input type="number" value="0" min="0"></td>
+                            </tr>
+                            <?php
+                        }
 
-                        <li class="active"><a href="#tab-1" data-toggle="tab">Вклада 1</a></li>
-                        <li><a href="#tab-2" data-toggle="tab">Вкладка 2</a></li>
-                        <li><a href="#tab-3" data-toggle="tab">Вкладка 3</a></li>
-
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tab-1">
-                            <p>first paragraf</p>
-                        </div>
-                        <div class="tab-pane" id="tab-2">
-                            <p>Second paragraf</p>
-                        </div>
-                        <div class="tab-pane" id="tab-3">
-                            <p>Third paragraf</p>
-                        </div>
-                    </div>
-                </div>
+                        ?>
+                    </table>
+                    <br><br>
+                    <input type="submit" class="btn-success" name="register" value="SAVE">
+                </form>
             </div>
-            <!--            -->
+            <?php
 
-            <div class="col-md-6">
-                <div class="tabs">
-                    <ul class="nav nav-tabs">
+            }
+            ?>
 
-                        <li class="active"><a href="#tab-4" data-toggle="tab">Вклада 1</a></li>
-                        <li><a href="#tab-5" data-toggle="tab">Вкладка 2</a></li>
-                        <li><a href="#tab-6" data-toggle="tab">Вкладка 3</a></li>
 
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tab-4">
-                            <p>first paragraf</p>
-                        </div>
-                        <div class="tab-pane" id="tab-5">
-                            <p>Second paragraf</p>
-                        </div>
-                        <div class="tab-pane" id="tab-6">
-                            <p>Third paragraf</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    <?php
-    }
-    ?>
-
 </div>
-
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
