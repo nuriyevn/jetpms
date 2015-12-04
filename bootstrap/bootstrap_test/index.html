@@ -8,7 +8,7 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,15 +22,49 @@
     <div class="container">
     	<div class="row">
     	<h1>Hello, world!</h1>
-    		<div class="navbar navbar-inverse">
-    			
-    		</div>
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#panel1">Панель 1</a></li>
+            <li><a data-toggle="tab" href="#panel2">Панель 2</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                Другие панели
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a data-toggle="tab" href="#panel3">Панель 3</a></li>
+                <li><a data-toggle="tab" href="#panel4">Панель 4</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="panel1" class="tab-pane fade in active">
+              <h3>Панель 1</h3>
+
+              <p>Содержимое 1 панели...</p>
+            </div>
+            <div id="panel2" class="tab-pane fade">
+              <h3>Панель 2</h3>
+
+              <p>Содержимое 2 панели...</p>
+            </div>
+            <div id="panel3" class="tab-pane fade">
+              <h3>Панель 3</h3>
+
+              <p>Содержимое 3 панели...</p>
+            </div>
+            <div id="panel4" class="tab-pane fade">
+              <h3>Панель 4</h3>
+
+              <p>Содержимое 4 панели...</p>
+            </div>
+          </div>
     	</div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>

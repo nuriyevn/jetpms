@@ -1,4 +1,3 @@
-
 <?php
 if (isset($_POST['step1'])) {
     $step1 = $_POST['step1'];
@@ -8,8 +7,7 @@ if (isset($_POST['step2'])) {
 }
 
 
-if (isset($_POST['step3']))
-{
+if (isset($_POST['step3'])) {
     $step3 = $_POST['step3'];
 }
 ?>
@@ -17,18 +15,30 @@ if (isset($_POST['step3']))
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>JetPMS [Set up step first]</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Bootstrap -->
+    <!--    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap/css/id.css">
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 <body>
-<div class="container">
+<div class="container" id="set">
 
-    <!--- - - step one begins here - - - - - - - - - - - - - ----------------------------------------------------- ->
+    <!--- - - step one begins here - - - - - - - - - - - - -  -->
 
     <?php
     if (!isset($step1) && !isset($step2))
@@ -64,7 +74,7 @@ if (isset($_POST['step3']))
     </form>
     </p>
 
-    <!----- step two begins here --------------------------------------------------------------------->
+    <!-- - step two begins here - - - - - - - -  -->
     <?php
     }elseif (isset($step1) && !isset($step2))
     {
@@ -83,11 +93,11 @@ if (isset($_POST['step3']))
                 <tr>
                     <td>
                         Give a name for this room: <br>
-                        <input required type="text" name="room<?php echo $i + 1; ?>">
+                        <input required type="text" name="nazv<?php echo $i + 1; ?>">
                     </td>
                     <td>
                         Define the type for this room: <br>
-                        <select required name="roomtype<?php echo $i + 1; ?>" id="">
+                        <select required name="type<?php echo $i + 1; ?>" id="">
                             <option value="Ensuite single">Ensuite single</option>
                             <option value="Ensuite double">Ensuite double</option>
                             <option value="Private single">Private single</option>
@@ -99,7 +109,7 @@ if (isset($_POST['step3']))
                     </td>
                     <td>
                         Define capacity of this room: <br>
-                        <input required type="number" name="roomcapacity<?php echo $i + 1; ?>" min="1" max="24">
+                        <input required type="number" name="capacity<?php echo $i + 1; ?>" min="1" max="24">
                     </td>
                 </tr>
             </table>
@@ -120,6 +130,23 @@ if (isset($_POST['step3']))
     <?php
     if (isset($step2)) {
     var_dump($_POST);
+    $arr = $_POST;
+
+    echo "<br>";
+    foreach ($arr as $key => $value) {
+
+        if (strstr($key, "nazv")) {
+            echo "<br><br>Название комнаты: " . $value;
+        }
+        if (strstr($key, "type")) {
+            echo "<br><br>Категрия номера: " . $value;
+        }
+        if (strstr($key, "capacity")) {
+            echo "<br><br>Вместимость номера: " . $value . "<hr>";
+        }
+
+
+    }
 
     ?>
     <h2>Configuring the prices</h2>
@@ -129,18 +156,44 @@ if (isset($_POST['step3']))
             <div class="col-md-6">
                 <div class="tabs">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab-1" data-toogle="tab">Вкладка 1</a></li>
-                        <li><a href="#tab-2" data-toggle="tab">Вклада 2</a></li>
+
+                        <li class="active"><a href="#tab-1" data-toggle="tab">Вклада 1</a></li>
+                        <li><a href="#tab-2" data-toggle="tab">Вкладка 2</a></li>
                         <li><a href="#tab-3" data-toggle="tab">Вкладка 3</a></li>
+
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane fade in active" id="tab-1">
-                            <p>First paragraf</p>
+                        <div class="tab-pane active" id="tab-1">
+                            <p>first paragraf</p>
                         </div>
-                        <div class="tab-pane fade" id="tab-2">
+                        <div class="tab-pane" id="tab-2">
                             <p>Second paragraf</p>
                         </div>
-                        <div class="tab-pane fade" id="tab-3">
+                        <div class="tab-pane" id="tab-3">
+                            <p>Third paragraf</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--            -->
+
+            <div class="col-md-6">
+                <div class="tabs">
+                    <ul class="nav nav-tabs">
+
+                        <li class="active"><a href="#tab-4" data-toggle="tab">Вклада 1</a></li>
+                        <li><a href="#tab-5" data-toggle="tab">Вкладка 2</a></li>
+                        <li><a href="#tab-6" data-toggle="tab">Вкладка 3</a></li>
+
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab-4">
+                            <p>first paragraf</p>
+                        </div>
+                        <div class="tab-pane" id="tab-5">
+                            <p>Second paragraf</p>
+                        </div>
+                        <div class="tab-pane" id="tab-6">
                             <p>Third paragraf</p>
                         </div>
                     </div>
@@ -154,5 +207,10 @@ if (isset($_POST['step3']))
 
 </div>
 
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
