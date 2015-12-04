@@ -13,10 +13,6 @@ if (isset($_POST['step3']))
     $step3 = $_POST['step3'];
 }
 ?>
-
-
-
-
 <!doctype html>
 <html lang="en">
 <head>
