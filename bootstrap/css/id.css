@@ -18,6 +18,7 @@
 	padding: 7px 30px;
 	font-size: 14px;
 	line-height: 1.8;
+
 }
 #button_hr:hover {
 	background-color: #00BFFF;
@@ -47,7 +48,7 @@ li {
 	border-radius: 10px;
 	border: 1px solid #D3D3D3;
 	padding: 30px;
-	height: 400px;
+	height: 420px;
 
 }
 .client_block:hover {
@@ -70,7 +71,7 @@ li {
 #happy_clients {
 	position: relative;
 	top: 30px;
-	right: 300px;
+	/*right: 300px;*/
 }
 .hotel_comments {
 	color: #696969;
@@ -91,3 +92,21 @@ li {
    position: relative;
    right: 80px;
 }
+.center-table, .center-table td {
+	margin: 0 auto !important;
+	float: none !important;
+	text-align: left;
+	padding: 2px;
+	font-size: larger;
+}
+#calc_button {
+	margin-top: 20px;
+	font-size: large;
+	width: 200px;
+}
+#price {
+	vertical-align: middle;
+	font-size: 4em;
+
+}
+

@@ -77,7 +77,7 @@ if (!isset($_POST['csubmit']))
             <td>
 
                 <select name="amountofbeds" id="" class="btn-success">
-                    <option disabled selected>How many beds</option-->
+                    <option disabled selected>How many beds</option>
                     <option value="1">from 1 to 10</option>
                     <option value="2">from 11 to 18</option>
                     <option value="3">from 19 to 26</option>

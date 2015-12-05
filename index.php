@@ -1,3 +1,55 @@
+<?php
+
+$script_parent_dir = __DIR__;
+$document_root = $_SERVER["DOCUMENT_ROOT"];
+$http_host = $_SERVER['HTTP_HOST'];
+$script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir);
+
+if ($_POST['csubmit'] == 'Calculate') {
+    $bedscount = $_POST['amountofbeds'];
+    $country = $_POST['country'];
+
+    //var_dump($bedscount);
+    //var_dump($country);
+
+    switch ($bedscount) {
+        case 1:
+            $b_price = 2;
+            $bedscount = "from 1 to 10";
+            break;
+        case 2:
+            $b_price = 5;
+            $bedscount = "from 11 to 18";
+            break;
+        case 3:
+            $b_price = 10;
+            $bedscount = "from 19 to 26";
+            break;
+        case 4:
+            $b_price = 12;
+            $bedscount = "more than 26";
+            break;
+    }
+
+    switch ($country) {
+        case 1:
+            $b_price *= 1;
+            $country = "Ukraine";
+            break;
+        case 2:
+            $b_price *= 1.25;
+            $country = "Russia";
+            break;
+        case 3:
+            $b_price *= 1.5;
+            $country = "Another country";
+            break;
+    }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,48 +57,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jet PMS</title>
+
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
     <link href="bootstrap/css/id.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
-   <script src="http://code.jquery.com/jquery.min.js"></script>
-   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-
 
 
 <div class="blue_block">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-6">
-              <div class="btn-group">
-                  <a href="#" class="btn btn-lg btn-primary">Продукт</a>
-                  <a href="#" class="btn btn-lg btn-primary">Цена</a>
-                  <a href="#" class="btn btn-lg btn-primary">Контакты</a>
-              </div>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-lg btn-primary">Продукт</a>
+                    <a href="#" class="btn btn-lg btn-primary">Цена</a>
+                    <a href="#" class="btn btn-lg btn-primary">Контакты</a>
+                </div>
             </div>
             <div class="col-md-2" id="login_split">
-               <div class="btn-group">
-                  <button type="button" class="btn btn-success btn-lg">Войти</button>
-                  <button type="button" class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>  <!-- caret -->
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                 
-                  <ul class="dropdown-menu" role="menu"> <!-- class dropdown-menu -->
-                    <li><a href="#">Войти</a></li>
-                    <li><a href="#">Зарегистрироваться</a></li>
-                    <!--li class="divider"></li>
-                    <li><a href="#">Google +</a></li-->
-                  </ul>
-               </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-lg">Войти</button>
+                    <button type="button" class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span> <!-- caret -->
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+
+                    <ul class="dropdown-menu" role="menu"> <!-- class dropdown-menu -->
+                        <li><a href="#">Войти</a></li>
+                        <li><a href="#">Зарегистрироваться</a></li>
+                        <!--li class="divider"></li>
+                        <li><a href="#">Google +</a></li-->
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
+
         <p style="font-size: 60px"><b>Jet PMS</b></p>
 
         <h2>Облачная система автоматизации хостелов<br>Один продукт и идеальный!</h2>
@@ -233,8 +283,138 @@
                 операции в несколько кликов.</p>
         </div>
     </div>
+    <div class="blue_block">
+        <div class="container">
+            <div class="row" id="calc">
+                <h1><b>Calculate the cost</b></h1><br>
+
+                <h3>this page contain base form which will calculate monthly price for using JetPMS</h3>
+                <h4><br>Price depends on: <b>amount of beds and country</b></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" method="post">
+                    <table class="center-table">
+                        <tr>
+                            <td>Amount of beds</td>
+                            <td>
+                                <select name="amountofbeds" id="" class="btn-primary">
+                                    <option disabled selected>How many beds</option-->
+                                    <option value="1">from 1 to 10</option>
+                                    <option value="2">from 11 to 18</option>
+                                    <option value="3">from 19 to 26</option>
+                                    <option value="4">more than 26</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Country</td>
+                            <td>
+                                <select name="country" id="" class="btn-primary">
+                                    <option disabled selected>What country hostel from?</option>
+                                    <option value="1">Ukraine</option>
+                                    <option value="2">Russia</option>
+                                    <option value="3">Another country</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <a href="#calc"><p><input type="button" class="btn-success" name="csubmit" value="Calculate"
+                                              id="calc_button"></p></a>
+
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h1 id="price">
+                    <?php
+                    if ($_POST["csubmit"] == 'Calculate') {
+                    echo $b_price . " "; ?> $ / month</h1>
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+<!--        --><?php
+//        if ($_POST["csubmit"] == 'Calculate') {
+//
+//            ?>
+<!--            <div class="row">-->
+<!--                <div class="col-md-offset-2 col-md-8">-->
+<!--                    <table class="center-table">-->
+<!--                        <tr>-->
+<!--                            <td colspan="2"><p>Like price and features? <br> Do register in one easy single step. </p>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Hostel's corporate e-mail:</td>-->
+<!--                            <td>-->
+<!---->
+<!--                                <input hidden name="bedscount" value="--><?php //echo $bedscount; ?><!--">-->
+<!--                                <input hidden name="country" value="--><?php //echo $country; ?><!--">-->
+<!--                                <input hidden name="b_price" value="--><?php //echo $b_price; ?><!--">-->
+<!--                                <input required type="email" name="email" value="jetpmscom@gmail.com">-->
+<!---->
+<!---->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td colspan="2">-->
+<!--                                <input type="submit" class="btn-success" name="csubmit" value="Do register">-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            --><?php
+//
+//        }
+//        ?>
+
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <h1 id="happy_clients"><b><i>Довольные клиенты</i></b></h1>
+            <hr>
+
+            <a href="#">
+                <div class="col-md-4 client_block">
+                    <img src="img/hotel_1.jpg" alt="hotel_1" class="hotel_logo">
+                    <h4 class="hotel_name">Отель "Беспечный тюлень"</h4>
+                    <h4 class="hotel_city"><b>Сахалин</b></h4>
+
+                    <p class="hotel_comments">Погожего тюленьего утречка! Начиная сотрудничать с Вами, даже не могли
+                        предположить, что Ваш продукт настолько кавественный и удобный в обращении. Все интуитивно
+                        понятно
+                        даже тюленю. Спасибо<br><br></p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="col-md-4 client_block">
+                    <img src="img/hotel_2.jpg" alt="hotel_2" class="hotel_logo">
+                    <h4 class="hotel_name">Апартаменты "Лежбище тюленей"</h4>
+                    <h4 class="hotel_city"><b>Берега Охотского моря</b></h4>
+
+                    <p class="hotel_comments">Наше лежбище только недавно стало пользоваться услугами ДЖЕТПМС, но уже с
+                        первого дня нами было высоко оценено учтивое и оперативное обслуживание<br><br><br></p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="col-md-4 client_block">
+                    <img src="img/hotel_3.jpg" alt="hotel_3" class="hotel_logo">
+                    <h4 class="hotel_name">Загородный клуб "Тюлененок"</h4>
+                    <h4 class="hotel_city"><b>Побережье Тихого океана</b></h4>
+
+                    <p class="hotel_comments">Загородный клуб "Тюлененок" уже несколько месяцев пользуется данным
+                        сайтом,
+                        поток тюленей-клиентов существенно увеличился, гораздо удобнее бронировать места, очень довольны
+                        приятным дизайном</p>
+                </div>
+            </a></div>
+    </div>
+
     <hr>
-    <div>
+    <div class="row">
         <h1><b>Технология системы</b></h1>
 
         <p><img src="img/tehno.png" alt="tehno_logo"></p>
@@ -246,54 +426,14 @@
     </div>
 </div>
 
-</div>
-<div class="container">
-   <div class="row">
-    <h1 id="happy_clients"><b><i>Довольные клиенты</i></b></h1>
-    <hr>
-   </div>
-</div>
+
 <div class="container">
     <div class="row">
-        <a href="#">
-            <div class="col-md-4 client_block">
-                <img src="img/hotel_1.jpg" alt="hotel_1" class="hotel_logo">
-                <h4 class="hotel_name">Отель "Беспечный тюлень"</h4>
-                <h4 class="hotel_city"><b>Сахалин</b></h4>
-
-                <p class="hotel_comments">Погожего тюленьего утречка! Начиная сотрудничать с Вами, даже не могли
-                    предположить, что Ваш продукт настолько кавественный и удобный в обращении. Все интуитивно понятно
-                    даже тюленю. Спасибо<br><br></p>
-            </div>
-        </a>
-        <a href="#">
-            <div class="col-md-4 client_block">
-                <img src="img/hotel_2.jpg" alt="hotel_2" class="hotel_logo">
-                <h4 class="hotel_name">Апартаменты "Лежбище тюленей"</h4>
-                <h4 class="hotel_city"><b>Берега Охотского моря</b></h4>
-
-                <p class="hotel_comments">Наше лежбище только недавно стало пользоваться услугами ДЖЕТПМС, но уже с
-                    первого дня нами было высоко оценено учтивое и оперативное обслуживание<br><br><br></p>
-            </div>
-        </a>
-        <a href="#">
-            <div class="col-md-4 client_block">
-                <img src="img/hotel_3.jpg" alt="hotel_3" class="hotel_logo">
-                <h4 class="hotel_name">Загородный клуб "Тюлененок"</h4>
-                <h4 class="hotel_city"><b>Побережье Тихого океана</b></h4>
-
-                <p class="hotel_comments">Загородный клуб "Тюлененок" уже несколько месяцев пользуется данным сайтом,
-                    поток тюленей-клиентов существенно увеличился, гораздо удобнее бронировать места, очень довольны
-                    приятным дизайном</p>
-            </div>
-        </a>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <a href="#">
-            <button type="button" id="button_hr">все отзывы</button>
-        </a>
+        <div class="col-md-offset-5">
+            <a href="#">
+                <button type="button" id="button_hr">все отзывы</button>
+            </a>
+        </div>
         <hr>
     </div>
 </div>
@@ -314,7 +454,7 @@
         </a></p>
 </div>
 </body>
-<footer style="text-align: center;">
+<footer class="blue_block">
     Copyright © 2014 bla-bla-bla
 </footer>
 </html>
