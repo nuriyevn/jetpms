@@ -82,3 +82,8 @@ li {
 #set {
     text-align: left;
 }
+
+#table-set th, #table-set tr, #table-set td {
+	padding: 5px;
+	border: 1px solid #00BFFF;
+}

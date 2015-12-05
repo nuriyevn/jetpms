@@ -26,7 +26,7 @@ function loadRoomTypes()
    {
      while ($arr = pg_fetch_array($my_conn->getResult()))
       {
-         $html_room_types .="<option value=\"$arr[1]\">$arr[1]</option>"; 
+         $html_room_types .="<option value=$arr[0]>$arr[1]</option>"; 
       }
    }
    
@@ -65,59 +65,51 @@ function loadRoomTypes()
 
     <!--- - - step one begins here - - - - - - - - - - - - -  -->
 
-    <?php
-    if (!isset($step1) && !isset($step2))
-    {
-    ?>
+    <?php if (!isset($step1) && !isset($step2) && !isset($step3)): ?>
+       <h1>Welcome to JetPMS!</h1>
 
-    <h1>Welcome to JetPMS!</h1>
+       <h2>1-st step: Adding rooms</h2>
 
-    <h2>Adding rooms</h2>
+       <p>that is important to add properly room and rates in order to let the rooms to be sold</p>
 
-    <p>that is important to add properly room and rates in order to let the rooms to be sold</p>
+       <h3>How many rooms in your hostel?</h3>
 
-    <h3>How many rooms in your hostel?</h3>
+       <p>FOR EXAMPLE: <br> in Mama hostel there are four rooms:
+       <ul>
+           <li>Private ensuite double room</li>
+           <li>Shared mixed dorm for four</li>
+           <li>Shared female dorm for eight</li>
+           <li>Shared mixed dorm for eight</li>
+       </ul>
+       ANOTHER EXAMPLE: <br>in Centro Hostel there are three rooms:
+       <ul>
+           <li>Shared mixed dorm for eight</li>
+           <li>Shared female dorm for eight</li>
+           <li>Shared mixed dorm for eight</li>
+       </ul>
+       <h3>So, how many rooms in the hostel?</h3>
 
-    <p>FOR EXAMPLE: <br> in Mama hostel there are four rooms:
-    <ul>
-        <li>Private ensuite double room</li>
-        <li>Shared mixed dorm for four</li>
-        <li>Shared female dorm for eight</li>
-        <li>Shared mixed dorm for eight</li>
-    </ul>
-    ANOTHER EXAMPLE: <br>in Centro Hostel there are three rooms:
-    <ul>
-        <li>Shared mixed dorm for eight</li>
-        <li>Shared female dorm for eight</li>
-        <li>Shared mixed dorm for eight</li>
-    </ul>
-    <h3>So, how many rooms in the hostel?</h3>
-
-    <form action="" method="post">
-        <input type="number" name="roomscount" min="1" max="99">
-        <input type="submit" name="step1" value="next">
-    </form>
-    </p>
+       <form action="" method="post">
+           <input type="number" name="roomscount" min="1" max="99">
+           <input type="submit" name="step1" value="Proceed to 2-nd step">
+       </form>
+       </p>
 
     <!-- - step two begins here - - - - - - - -  -->
-    <?php
-    }elseif (isset($step1) && !isset($step2))
-    {
-    ?>
-    <h2>Configuring the rooms</h2>
-    <?php
-    $roomscount = $_POST['roomscount'];
-    ?>
-    <form action="" method="post">
+    <?php elseif ($_POST["step1"] == "Proceed to 2-nd step"): ?>
+
+         <h2>Configuring the rooms</h2>
+         <?php
+         $roomscount = $_POST['roomscount'];
+         ?>
+         <form action="" method="post">
         
 
-         <input hidden name="roomscount" value="<?php echo $roomscount?>">; 
-        <?php
-         $html_room_type_options = loadRoomTypes();
-         /*echo "<input hidden  name=\"\" value=\"";
-         echo $roomscount;
-         echo "\">";
-         */for ($i = 0; $i < $roomscount; $i++) {
+            <input hidden name="roomscount" value="<?php echo $roomscount?>">; 
+            <?php
+            $html_room_type_options = loadRoomTypes();
+            for ($i = 0; $i < $roomscount; $i++) 
+            {
             ?>
             <hr>
             <h3>Room # <?php echo $i + 1; ?></h3>
@@ -144,24 +136,20 @@ function loadRoomTypes()
                 </tr>
             </table>
             <?php
-        }
-        ?>
-        <br><br>
-        <input type="submit" name="step2" value="next">
-        <br><br>
-        <hr>
-        <?php
-        }
-        ?>
-    </form>
+            }
+            ?>
+            <br><br>
+            <input type="submit" name="step2" value="Proceed to 3-rd step">
+            <br><br>
+            <hr>
+         </form>
 
     <!------- step three begins here -------------------------------------------------------------------------------->
 
+    <?php elseif ($_POST["step2"] == "Proceed to 3-rd step"): ?> 
     <?php
-       if (isset($step2)) {
        $arr = $_POST;
        $rcount = $_POST["roomscount"];
-       echo "<br>";
        $room_info = array();
       
       
@@ -176,27 +164,24 @@ function loadRoomTypes()
             $my_conn->connect();
             for ($i = 1; $i <= $rcount; $i++)
             {
-            $nazv = "nazv".$i;
-            $room_info[$i] .= "<br><br>Room name: ".$arr[$nazv];
-            $type = "type".$i;
-            $room_info[$i] .= "<br><br>Category of room: ".$arr[$type];
-
-            $q_select = "SELECT room_type_id FROM room_type WHERE room_type_name = '".$arr[$type]."'";
-            $my_conn->run_query($q_select);
-            $line = pg_fetch_array($my_conn->getResult());
-            //$room_info[$i] .= "<br><br>ID of room category: ".$line[0];
-
-            $type_id = "type_id".$i;
-            $arr[$type_id] = $line[0];
-
-            $capacity = "capacity".$i;
-            $room_info[$i] .= "<br><br>Capacity of the room: ".$arr[$capacity]."<hr>";
-
-            $q_insert = "INSERT INTO room (room_name, room_type_id, bed_count) VALUES('".$arr[$nazv]."',".$line[0].",".$arr[$capacity].")";
-            $my_conn->run_insert($q_insert);
+               $nazv = "nazv".$i;
+               $room_info[$i] .= "<br><br>Room name: ".$arr[$nazv];
+               $type_id = "type".$i;
 
 
+               $q_select = "SELECT room_type_name FROM room_type WHERE room_type_id = '".$arr[$type_id]."'";
+               $my_conn->run_query($q_select);
+               $line = pg_fetch_array($my_conn->getResult());
 
+               $type_name = "type_name".$i;
+               $arr[$type_name] = $line[0];
+               $room_info[$i] .= "<br><br>Category of room: ".$arr[$type_name];
+
+               $capacity = "capacity".$i;
+               $room_info[$i] .= "<br><br>Capacity of the room: ".$arr[$capacity];
+
+               //$q_insert = "INSERT INTO room (room_name, room_type_id, bed_count) VALUES('".$arr[$nazv]."',".$arr[$type_id].",".$arr[$capacity].")";
+               //$my_conn->run_insert($q_insert);
             }
 
             $my_conn->close();
@@ -204,73 +189,121 @@ function loadRoomTypes()
        }
 
        $room_info = putRoomsToDatabase($arr, $rcount);
+    // 161
     ?>
     <h2>Configuring the prices</h2>
 
     <div class="container">
         <div class="row">
             <div class="col-md-6">
+            <form action="" method="post">
                 <div class="tabs">
-      <?php 
-         if (isset($step2))
-         {
-            echo "<ul class=\"nav nav-tabs\">";
-            for ($i = 1; $i <= $rcount; $i++)
-            {
-               if ($i == 1)
-                  echo "<li class=\"active\"><a href=\"#tab-".$i."\" data-toggle=\"tab\">"."Room #$i"."</a></li>";
-               else
-                  echo "<li><a href=\"#tab-".$i."\" data-toggle=\"tab\">"."Room #$i"."</a></li>";
-            }
-            echo "</ul>";
-         
-            echo "<div class=\"tab-content\">";
-            for ($i = 1; $i <= $rcount; $i++)
-            {
-               // open tag
-               if ($i == 1)
-                  echo "<div class=\"tab-pane active\" id=\"tab-".$i."\">";
-               else
-                  echo "<div class=\"tab-pane\" id=\"tab-".$i."\">";
-               // content of tag 
-               echo "<p>".$room_info[$i]."<p>";
-               // close tag
+               <?php 
+                     echo "<ul class=\"nav nav-tabs\">";
+                     for ($i = 1; $i <= $rcount; $i++)
+                     {
+                        if ($i == 1)
+                           echo "<li class=\"active\"><a href=\"#tab-".$i."\" data-toggle=\"tab\">"."Room #$i"."</a></li>";
+                        else
+                           echo "<li><a href=\"#tab-".$i."\" data-toggle=\"tab\">"."Room #$i"."</a></li>";
+                     }
+                     echo "</ul>";
+                  
+                     echo "<div class=\"tab-content\">";
+                     for ($i = 1; $i <= $rcount; $i++)
+                     {
+                        // open tag
+                        if ($i == 1)
+                           echo "<div class=\"tab-pane active\" id=\"tab-".$i."\">";
+                        else
+                           echo "<div class=\"tab-pane\" id=\"tab-".$i."\">";
+                        // content of tag 
+                        echo "<table id=\"table-set\"> ";
+                        echo "<p>".$room_info[$i]."<p>";
+                        
+                        $price_i = "price".$i;
+                        echo "<input type=\"number\" name=\"".$price_i."\" value=\"0\" min=\"0\"/>";
+                        
+                        $nazv_i = "nazv".$i;
+                        echo "<input type=\"hidden\" name=\"nazv".$i."\" value=\"".$arr[$nazv_i]."\" />";
 
-               echo "</div>";      
-               
-            }
-            echo "</div>";
-         }
-      ?>
+                        $type_i = "type".$i;
+                        echo "<input type=\"hidden\" name=\"type".$i."\" value=".$arr[$type_i]." />";
+
+                        $capacity_i = "capacity".$i;
+                        echo "<input type=\"hidden\" name=\"capacity".$i."\" value=".$arr[$capacity_i]." />";
+                        
+
+                        echo "</table>";
+
+                        
+
+                        // submit button to thx.php
+                        echo "<input type=\"submit\" class=\"btn-success\" name=\"step3\" value=\"SAVE ALL & FINISH\"/>";
+                        // close tag
+
+                        echo "</div>";      
+                        
+                     }
+                     echo "<input type=\"hidden\" name=\"roomscount\" value=".$rcount." />";
+                     echo "</div>";
+               // 217
+               ?>
                  </div>
+                </form>
             </div>
-            <!--div class="col-md-6">
-                <div class="tabs">
-                    <ul class="nav nav-tabs">
 
-                        <li class="active"><a href="#tab-4" data-toggle="tab">Вкладка 1</a></li>
-                        <li><a href="#tab-5" data-toggle="tab">Вкладка 2</a></li>
-                        <li><a href="#tab-6" data-toggle="tab">Вкладка 3</a></li>
+                                                         <!--div class="col-md-6">
+                                                             <div class="tabs">
+                                                                 <ul class="nav nav-tabs">
 
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tab-4">
-                            <p>first paragraf</p>
-                        </div>
-                        <div class="tab-pane" id="tab-5">
-                            <p>Second paragraf</p>
-                        </div>
-                        <div class="tab-pane" id="tab-6">
-                            <p>Third paragraf</p>
-                        </div>
-                    </div>
-                </div>
-            </div-->
+                                                                     <li class="active"><a href="#tab-4" data-toggle="tab">Вкладка 1</a></li>
+                                                                     <li><a href="#tab-5" data-toggle="tab">Вкладка 2</a></li>
+                                                                     <li><a href="#tab-6" data-toggle="tab">Вкладка 3</a></li>
+
+                                                                 </ul>
+                                                                 <div class="tab-content">
+                                                                     <div class="tab-pane active" id="tab-4">
+                                                                         <p>first paragraf</p>
+                                                                     </div>
+                                                                     <div class="tab-pane" id="tab-5">
+                                                                         <p>Second paragraf</p>
+                                                                     </div>
+                                                                     <div class="tab-pane" id="tab-6">
+                                                                         <p>Third paragraf</p>
+                                                                     </div>
+                                                                 </div>
+                                                              </div>
+                                                          </div-->
         </div>
     </div>
-    <?php
-    }
-    ?>
+    <?php elseif ($_POST["step3"] == "SAVE ALL & FINISH"): ?>
+        <?php  
+            $arr = $_POST;
+            $rcount = $_POST["roomscount"];
+            $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/scripts/php/hostconfig.php";
+            include_once($path_to_hostconfig);
+            $path_to_cdbconn = $_SERVER["DOCUMENT_ROOT"]."/scripts/php/CDBConn.php";
+            include_once($path_to_cdbconn);
+
+            $my_conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
+            $my_conn->connect();
+            for ($i = 1; $i <= $rcount; $i++)
+            {
+               $nazv = "nazv".$i;
+               $type_id = "type".$i;
+               $capacity = "capacity".$i;
+               $price = "price".$i;
+               
+               $q_insert = "INSERT INTO room (room_name, room_type_id, bed_count, room_rate) VALUES('".$arr[$nazv]."',".$arr[$type_id].",".$arr[$capacity].",".$arr[$price].")";
+               $my_conn->run_insert($q_insert);
+            }
+
+            $my_conn->close(); 
+            header('Refresh: 1; url=thx.php');
+         
+        ?>
+    <?php endif; ?>
 </div>
 
 
