@@ -54,8 +54,10 @@ if ($_POST['csubmit'] == 'Calculate') {
 <head>
     <meta charset="UTF-8">
     <title>rate calculator</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!--link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"-->
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/css/pricings.css">
 </head>
 <body class="container">
 <h1>Calculate the cost</h1>
@@ -68,14 +70,13 @@ if ($_POST['csubmit'] == 'Calculate') {
 if (!isset($_POST['csubmit']))
 {
 ?>
-
 <form action="" method="post">
-    <table>
+    <table class="center-table">
         <tr>
             <td>Amount of beds</td>
             <td>
 
-                <select name="amountofbeds" id="">
+                <select name="amountofbeds" id="" class="btn-success">
                     <option disabled selected>How many beds</option-->
                     <option value="1">from 1 to 10</option>
                     <option value="2">from 11 to 18</option>
@@ -87,7 +88,7 @@ if (!isset($_POST['csubmit']))
         <tr>
             <td>Country</td>
             <td>
-                <select name="country" id="">
+                <select name="country" id="" class="btn-success">
                     <option disabled selected>What country hostel from?</option-->
                     <option value="1">Ukraine</option>
                     <option value="2">Russia</option>
@@ -99,7 +100,7 @@ if (!isset($_POST['csubmit']))
         <tr>
             <td></td>
             <td>
-                <input type="submit" name="csubmit" value="Calculate">
+                <input type="submit" class="btn-success" name="csubmit" value="Calculate">
 
             </td>
         </tr>
@@ -111,7 +112,7 @@ if (!isset($_POST['csubmit']))
     <form action="" method="post">
 
 
-        <table>
+        <table class="center-table">
 
             <tr>
                 <td>Beds</td>
@@ -125,6 +126,9 @@ if (!isset($_POST['csubmit']))
                 <td>Total price</td>
                 <td><?php echo $b_price . " "; ?> $ / month</td>
             </tr>
+         </table>
+
+         <table class="center-table">
 			<tr>
 			<td colspan="2"><p>Like price and features? <br> Do register in one easy single step. </p></td>
             </tr>
@@ -142,7 +146,7 @@ if (!isset($_POST['csubmit']))
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" name="csubmit" value="Do register">
+                    <input type="submit" class="btn-success" name="csubmit" value="Do register">
                 </td>
             </tr>
         </table>
@@ -214,6 +218,5 @@ if (!isset($_POST['csubmit']))
 		}
 	}
     ?>
-
 </body>
 </html>

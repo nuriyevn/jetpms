@@ -87,3 +87,7 @@ li {
 	padding: 5px;
 	border: 1px solid #00BFFF;
 }
+#login_split {
+   position: relative;
+   right: 80px;
+}

@@ -90,7 +90,10 @@ function loadRoomTypes()
        <h3>So, how many rooms in the hostel?</h3>
 
        <form action="" method="post">
-           <input type="number" name="roomscount" min="1" max="99">
+           <input required type="number" name="roomscount" value="2" min="1" max="99">
+            <h4>Hostel name:</h4>
+           <input required type="text" name="hostel" value="Dummy Hostel"/>
+           <br>
            <input type="submit" name="step1" value="Proceed to 2-nd step">
        </form>
        </p>

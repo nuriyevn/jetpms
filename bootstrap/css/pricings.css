@@ -1,0 +1,21 @@
+body {
+   background-color: #00BFFF; 
+   text-align: center;
+   padding-top: 60px;
+   color: #FFF;
+   font-size: 2em;
+}
+
+.center-table, .center-table td
+{
+  margin: 0 auto !important;
+  #float: none !important;
+  text-align: left;
+  padding: 2px;
+}
+
+td {
+   padding-left: 20px;
+}
+
+
