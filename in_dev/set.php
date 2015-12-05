@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_POST['step1'])) {
     $step1 = $_POST['step1'];
 }
@@ -6,10 +7,34 @@ if (isset($_POST['step2'])) {
     $step2 = $_POST['step2'];
 }
 
-
 if (isset($_POST['step3'])) {
     $step3 = $_POST['step3'];
 }
+
+
+function loadRoomTypes()
+{
+   $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/scripts/php/hostconfig.php";
+   include_once($path_to_hostconfig);
+   $path_to_cdbconn = $_SERVER["DOCUMENT_ROOT"]."/scripts/php/CDBConn.php";
+   include_once($path_to_cdbconn);
+
+   $my_conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
+   $my_conn->connect();
+     
+   if ($my_conn->run_query("SELECT room_type_id, room_type_name FROM room_type"))
+   {
+     while ($arr = pg_fetch_array($my_conn->getResult()))
+      {
+         $html_room_types .="<option value=\"$arr[1]\">$arr[1]</option>"; 
+      }
+   }
+   
+   $my_conn->close();
+   return $html_room_types;
+ }
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -84,8 +109,15 @@ if (isset($_POST['step3'])) {
     $roomscount = $_POST['roomscount'];
     ?>
     <form action="" method="post">
+        
+
+         <input hidden name="roomscount" value="<?php echo $roomscount?>">; 
         <?php
-        for ($i = 0; $i < $roomscount; $i++) {
+         $html_room_type_options = loadRoomTypes();
+         /*echo "<input hidden  name=\"\" value=\"";
+         echo $roomscount;
+         echo "\">";
+         */for ($i = 0; $i < $roomscount; $i++) {
             ?>
             <hr>
             <h3>Room # <?php echo $i + 1; ?></h3>
@@ -97,16 +129,14 @@ if (isset($_POST['step3'])) {
                     </td>
                     <td>
                         Define the type for this room: <br>
-                        <select required name="type<?php echo $i + 1; ?>" id="">
-                            <option value="Ensuite single">Ensuite single</option>
-                            <option value="Ensuite double">Ensuite double</option>
-                            <option value="Private single">Private single</option>
-                            <option value="Private double">Private double</option>
-                            <option value="Shared mixed dorm">Shared mixed dorm</option>
-                            <option value="Shared female dorm">Shared female dorm</option>
-                            <option value="Shared male dorm">Shared male dorm</option>
-                        </select>
-                    </td>
+                        <?php
+                           echo "<select required name=\"type";
+                           echo $i+1;
+                           echo "\" id=\"\">";
+                           echo $html_room_type_options;    
+                           echo "</select>"
+                        ?>
+                        </td>
                     <td>
                         Define capacity of this room: <br>
                         <input required type="number" name="capacity<?php echo $i + 1; ?>" min="1" max="24">
@@ -128,26 +158,52 @@ if (isset($_POST['step3'])) {
     <!------- step three begins here -------------------------------------------------------------------------------->
 
     <?php
-    if (isset($step2)) {
-    var_dump($_POST);
-    $arr = $_POST;
+       if (isset($step2)) {
+       $arr = $_POST;
+       $rcount = $_POST["roomscount"];
+       echo "<br>";
+       $room_info = array();
+      
+      
+       function putRoomsToDatabase(&$arr, $rcount)
+       {
+            $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/scripts/php/hostconfig.php";
+            include_once($path_to_hostconfig);
+            $path_to_cdbconn = $_SERVER["DOCUMENT_ROOT"]."/scripts/php/CDBConn.php";
+            include_once($path_to_cdbconn);
 
-    echo "<br>";
-    foreach ($arr as $key => $value) {
+            $my_conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
+            $my_conn->connect();
+            for ($i = 1; $i <= $rcount; $i++)
+            {
+            $nazv = "nazv".$i;
+            $room_info[$i] .= "<br><br>Room name: ".$arr[$nazv];
+            $type = "type".$i;
+            $room_info[$i] .= "<br><br>Category of room: ".$arr[$type];
 
-        if (strstr($key, "nazv")) {
-            echo "<br><br>Название комнаты: " . $value;
-        }
-        if (strstr($key, "type")) {
-            echo "<br><br>Категрия номера: " . $value;
-        }
-        if (strstr($key, "capacity")) {
-            echo "<br><br>Вместимость номера: " . $value . "<hr>";
-        }
+            $q_select = "SELECT room_type_id FROM room_type WHERE room_type_name = '".$arr[$type]."'";
+            $my_conn->run_query($q_select);
+            $line = pg_fetch_array($my_conn->getResult());
+            //$room_info[$i] .= "<br><br>ID of room category: ".$line[0];
+
+            $type_id = "type_id".$i;
+            $arr[$type_id] = $line[0];
+
+            $capacity = "capacity".$i;
+            $room_info[$i] .= "<br><br>Capacity of the room: ".$arr[$capacity]."<hr>";
+
+            $q_insert = "INSERT INTO room (room_name, room_type_id, bed_count) VALUES('".$arr[$nazv]."',".$line[0].",".$arr[$capacity].")";
+            $my_conn->run_insert($q_insert);
 
 
-    }
 
+            }
+
+            $my_conn->close();
+            return $room_info;
+       }
+
+       $room_info = putRoomsToDatabase($arr, $rcount);
     ?>
     <h2>Configuring the prices</h2>
 
@@ -155,33 +211,44 @@ if (isset($_POST['step3'])) {
         <div class="row">
             <div class="col-md-6">
                 <div class="tabs">
-                    <ul class="nav nav-tabs">
+      <?php 
+         if (isset($step2))
+         {
+            echo "<ul class=\"nav nav-tabs\">";
+            for ($i = 1; $i <= $rcount; $i++)
+            {
+               if ($i == 1)
+                  echo "<li class=\"active\"><a href=\"#tab-".$i."\" data-toggle=\"tab\">"."Room #$i"."</a></li>";
+               else
+                  echo "<li><a href=\"#tab-".$i."\" data-toggle=\"tab\">"."Room #$i"."</a></li>";
+            }
+            echo "</ul>";
+         
+            echo "<div class=\"tab-content\">";
+            for ($i = 1; $i <= $rcount; $i++)
+            {
+               // open tag
+               if ($i == 1)
+                  echo "<div class=\"tab-pane active\" id=\"tab-".$i."\">";
+               else
+                  echo "<div class=\"tab-pane\" id=\"tab-".$i."\">";
+               // content of tag 
+               echo "<p>".$room_info[$i]."<p>";
+               // close tag
 
-                        <li class="active"><a href="#tab-1" data-toggle="tab">Вклада 1</a></li>
-                        <li><a href="#tab-2" data-toggle="tab">Вкладка 2</a></li>
-                        <li><a href="#tab-3" data-toggle="tab">Вкладка 3</a></li>
-
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tab-1">
-                            <p>first paragraf</p>
-                        </div>
-                        <div class="tab-pane" id="tab-2">
-                            <p>Second paragraf</p>
-                        </div>
-                        <div class="tab-pane" id="tab-3">
-                            <p>Third paragraf</p>
-                        </div>
-                    </div>
-                </div>
+               echo "</div>";      
+               
+            }
+            echo "</div>";
+         }
+      ?>
+                 </div>
             </div>
-            <!--            -->
-
-            <div class="col-md-6">
+            <!--div class="col-md-6">
                 <div class="tabs">
                     <ul class="nav nav-tabs">
 
-                        <li class="active"><a href="#tab-4" data-toggle="tab">Вклада 1</a></li>
+                        <li class="active"><a href="#tab-4" data-toggle="tab">Вкладка 1</a></li>
                         <li><a href="#tab-5" data-toggle="tab">Вкладка 2</a></li>
                         <li><a href="#tab-6" data-toggle="tab">Вкладка 3</a></li>
 
@@ -198,13 +265,12 @@ if (isset($_POST['step3'])) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>
     </div>
     <?php
     }
     ?>
-
 </div>
 
 

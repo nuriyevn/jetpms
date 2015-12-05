@@ -18,7 +18,8 @@ if (isset($_GET['email'])) {
 <body>
 <div class="container">
     <h1>Welcome to JetPMS!</h1>
-
+    <?php if (isset($_POST["submit"]) != "Finish registration"): ?>
+    
     <h2>You are one step away to finish registration</h2>
 
     <form action="./register.php" method="POST">
@@ -50,6 +51,7 @@ if (isset($_GET['email'])) {
             </tr>
         </table>
     </form>
+   <?php else: ?>
     <?php
       $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/scripts/php/hostconfig.php";
       $path_to_cdbconn = $_SERVER['DOCUMENT_ROOT']."/scripts/php/CDBConn.php";
@@ -140,6 +142,7 @@ if (isset($_GET['email'])) {
 There are four simple steps to set up Hostel's profile in order to let you start to work.\n</p>";
       */}
    ?>
+   <?php endif; ?>
 </div>
 
 </body>

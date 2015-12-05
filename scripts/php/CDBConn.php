@@ -26,8 +26,9 @@ class CDBConn
 
 public function __construct($host, $dbname, $user, $password, $debug=null)
 {
-   if ($host == "" || $dbname == "" || $user == "" || $password == "")
+   /*if ($host == "" || $dbname == "" || $user == "" || $password == "")
       echo "One or more parameters were not specified.<br>";
+*/
 
    $this->_host = $host;
    $this->_dbname = $dbname;
