@@ -7,6 +7,7 @@ if (isset($_GET['email']))
 
 }
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -75,6 +76,7 @@ if (isset($_GET['email']))
                         </tr>
                     </table>
                 </form>
+
             <?php else: ?>
                 <?php
                 $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT'] . "/scripts/php/hostconfig.php";
