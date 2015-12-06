@@ -305,7 +305,7 @@ if ($_POST['csubmit'] == 'Calculate')
 <br><br>
 
 <!--THIRD BLOCK -->
-<div class="blue_block">
+<div class="blue_block" id="calc">
     <div class="container">
         <div class="row">
             <h2 class="line-height">Calculate the cost</h2>

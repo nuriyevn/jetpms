@@ -37,7 +37,7 @@
         <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
     </form>
-    <div class="row col-md-7 col-md-offset-3">
+    <div class="row col-md-5 col-md-offset-4">
         <h3 class="form-signin-heading">We will send an e-mail with login details</h3>
 
         <p>
@@ -49,10 +49,10 @@
         </p>
         <form action="">
 
-            <textarea name="signup" id="" cols="60" rows="10"
+            <textarea name="signup" class="form-signin-heading" id="" cols="60" rows="10"
                       placeholder="I got a question. Could you be so kind to help me?"></textarea><br>
-            <input type="email" placeholder="Email address" required="">
-            <input type="submit" class="btn-primary">
+            <input type="email" class="form-signin-heading" placeholder="Email address" required=""><br>
+            <input type="submit" class="btn-primary form-signin-heading">
         </form>
     </div>
 
