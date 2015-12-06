@@ -59,12 +59,14 @@ if ($_POST['csubmit'] == 'Calculate')
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Jet PMS | Speed up your business</title>
 
     <!-- Bootstrap -->
     <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+
+    <!-- Bootstrap customizable -->
     <link href="bootstrap/css/id.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -83,29 +85,16 @@ if ($_POST['csubmit'] == 'Calculate')
     <div class="container">
         <!--        nav& && login && signup  bar here -->
         <div class="row">
-            <div class="col-md-5 col-md-offset-5">
-                <ul class="nav nav-pills">
-                    <li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span> Главная</a>
-                    </li>
-                    <li><a href="#product"><span class="glyphicon glyphicon-list-alt"></span> Продукт</a></li>
-                    <li><a href="#price"><span class="glyphicon glyphicon-usd"></span> Цена</a></li>
-                    <li><a href="#contacts"><span class="glyphicon glyphicon-map-marker"></span> Контакты</a></li>
+            <div class="col-md-6 col-md-offset-4">
+                <ul class="nav nav-tabs">
+                    <li><a href="index.php"><span class="glyphicon glyphicon-home">  Main</span></a></li>
+                    <li><a href="#product"><span class="glyphicon glyphicon-list-alt"></span> How it works</a></li>
+                    <li><a href="#price"><span class="glyphicon glyphicon-usd"></span> Pricing</a></li>
+                    <li><a href="#contacts"><span class="glyphicon glyphicon-map-marker"></span> Contact us</a></li>
                 </ul>
             </div>
-            <div class="col-md-2" id="login_split">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-success btn-lg">Войти</button>
-                    <button type="button" class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span> <!-- caret -->
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-
-                    <ul class="dropdown-menu" role="menu"> <!-- class dropdown-menu -->
-                        <li><a href="#">Войти</a></li>
-                        <li><a href="#">Зарегистрироваться</a></li>
-
-                    </ul>
-                </div>
+            <div class="col-md-2">
+                <a href="login.php" class="btn btn-primary btn-lg" role="button">LOGIN</a>
             </div>
         </div>
         <!--            end of na bar-->
@@ -136,7 +125,7 @@ if ($_POST['csubmit'] == 'Calculate')
         </div>
         <div class="row">
             <p>
-                <a href="#">
+                <a href="signup.php">
                     <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно</button>
                 </a> <a href="#">
                     <button type="button" class="btn btn-success btn-lg">Демо версия</button>
@@ -157,7 +146,7 @@ if ($_POST['csubmit'] == 'Calculate')
             хостелом</h2>
 
         <div class="col-md-4">
-            <img src="img/jet_logo.png" alt="Oye_logo">
+            <img src="img/jet_logo.png" alt="jet_logo" class="img-cent">
             <a href="#"><h2>Jet PMS</h2></a><br>система для автоматизации хостела
             <ul>
                 <li class="glyphicon glyphicon-check">Выставляйте на продажу весь номерной фонд в системах
@@ -322,11 +311,12 @@ if ($_POST['csubmit'] == 'Calculate')
             <h2 class="line-height">Calculate the cost</h2>
 
             <h3 class="lead">this page contain base form which will calculate monthly price for using JetPMS</h3>
-            <h4 class="lead text-danger">Price depends on: <b>amount of beds and country</b></h4>
+            <h4 class="lead  text-muted">Price depends on: <b>amount of beds and country</b></h4>
         </div>
         <div class="row">
             <!--            <div class="col-md-6">-->
-            <form action="" method="post" id="price">
+
+            <div id="price">
                 <div class="col-md-4">
                     Amount of beds
                     <br>
@@ -348,8 +338,9 @@ if ($_POST['csubmit'] == 'Calculate')
                         <option value="3">Another country</option>
                     </select>
                 </div>
+            </div>
 
-            </form>
+
             <!--            </div>-->
             <div class="col-md-4">
                 <h2 id="big-price">$ 99</h2>
@@ -359,7 +350,7 @@ if ($_POST['csubmit'] == 'Calculate')
         <br>
 
         <div class="row">
-            <p><a href="#">
+            <p><a href="signup.php">
                     <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно</button>
                 </a> <a href="#">
                     <button type="button" class="btn btn-success btn-lg">Демо версия</button>
@@ -445,7 +436,7 @@ if ($_POST['csubmit'] == 'Calculate')
                 <br>Мы оперативно решаем все вопросы, связанные с работой системы
                 <br>Вы находитесь в надежных руках опытных специалистов</p>
 
-            <p><a href="#">
+            <p><a href="signup.php">
                     <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно</button>
                 </a> <a href="#">
                     <button type="button" class="btn btn-success btn-lg">Демо версия</button>

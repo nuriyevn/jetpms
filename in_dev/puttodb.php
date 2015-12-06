@@ -5,7 +5,7 @@ $path_to_hostconfig .= "/scripts/php/hostconfig.php";
 include_once($path_to_hostconfig);
 
 if (!isset($_POST['submitsignuppage'])) {
-    header('Location: ./signuppage.php');
+    header('Location: ./signup.php');
 
 } else {
     $hostel_name = $_POST['hostel_name'];

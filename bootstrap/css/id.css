@@ -48,7 +48,7 @@ li {
 	border-radius: 10px;
 	border: 1px solid #D3D3D3;
 	padding: 30px;
-	height: 420px;
+	height: inherit;
 
 }
 .client_block:hover {
@@ -107,12 +107,29 @@ li {
 	width: 200px;
 }
 #price {
-	vertical-align: middle;
+
 	font-size: 2em;
+
 }
 
 #big-price {
 	font-size: 5em;
 	vertical-align: middle;
+}
+
+.img-cent {
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 5em;
+}
+
+h2 {
+	font-size: 3em;
+}
+
+li, p {
+	font-size: 1.25em;
 }
 

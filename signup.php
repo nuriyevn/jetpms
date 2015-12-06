@@ -33,14 +33,28 @@
 <div class="container">
 
     <form class="form-signin" role="form">
-        <h2 class="form-signin-heading"><b>Please login</b></h2>
+        <h2 class="form-signin-heading"><b>Please signup</b></h2>
         <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
-        <input type="password" class="form-control" placeholder="Password" required="">
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
     </form>
+    <div class="row col-md-7 col-md-offset-3">
+        <h3 class="form-signin-heading">We will send an e-mail with login details</h3>
+
+        <p>
+        <ul>
+            <li>Link in your letter is valid for 24 hours</li>
+            <li>Check spam folder if you have not found our letter in inbox. Please, mark it *non spam*. Tnx.</li>
+            <li>Have a question? Send us a letter <a href="mailto:jetpmscom@gmail.com">jetpmscom@gmail.com</a></li>
+        </ul>
+        </p>
+        <form action="">
+
+            <textarea name="signup" id="" cols="60" rows="10"
+                      placeholder="I got a question. Could you be so kind to help me?"></textarea><br>
+            <input type="email" placeholder="Email address" required="">
+            <input type="submit" class="btn-primary">
+        </form>
+    </div>
 
 </div>
 <!-- /container 1 -->
