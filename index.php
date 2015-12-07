@@ -94,7 +94,7 @@ if ($_POST['csubmit'] == 'Calculate')
                 </ul>
             </div>
             <div class="col-md-2">
-                <a href="login.php" class="btn btn-primary btn-lg" role="button">LOGIN</a>
+                <a href="login.php" class="btn btn-primary btn-lg" role="button">LOGIN TO APP</a>
             </div>
         </div>
         <!--            end of na bar-->
@@ -127,12 +127,14 @@ if ($_POST['csubmit'] == 'Calculate')
             <p>
                 <a href="signup.php">
                     <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно</button>
-                </a> <a href="#">
-                    <button type="button" class="btn btn-success btn-lg">Демо версия</button>
                 </a>
+                <!--                <a href="#">-->
+                <!--                    <button type="button" class="btn btn-success btn-lg">Демо версия</button>-->
+                <!--                </a>-->
             </p>
-            <p>Мы гарантируем возврат средств в течении 30 дней с момента первой оплаты, если Вам, по каким либо
-                причинам не понравится наш продукт.</p>
+            <p>У вас будет более чем достаточно времени, чтоб оценить преимущества Jet PMS. <br>
+                Пользуйтесь сейчас без ограничений, никаких обязательств.
+            </p>
         </div>
     </div>
 </div>
@@ -146,8 +148,12 @@ if ($_POST['csubmit'] == 'Calculate')
             хостелом</h2>
 
         <div class="col-md-4">
-            <img src="img/jet_logo.png" alt="jet_logo" class="img-cent">
-            <a href="#"><h2>Jet PMS</h2></a><br>система для автоматизации хостела
+            <div class="row text-center">
+                <img src="img/jet_logo.png" alt="jet_logo" class="img-cent">
+            </div>
+            <a href="#">
+                <h2>Jet PMS</h2>
+            </a><br>система для автоматизации хостела
             <ul>
                 <li class="glyphicon glyphicon-check">Выставляйте на продажу весь номерной фонд в системах
                     online-бронирования и на рецепции в одной программе
@@ -163,8 +169,12 @@ if ($_POST['csubmit'] == 'Calculate')
         </div>
 
         <div class="col-md-4">
-            <img src="img/Chanel_manager_logo.png" alt="Chanel_manager_logo.png">
-            <a href="#"><h2>Channel Manager</h2></a><br>инструмент управления online продажами
+            <div class="row text-center">
+                <img src="img/Chanel_manager_logo.png" alt="Chanel_manager_logo.png">
+            </div>
+            <a href="#">
+                <h2>Channel Manager</h2>
+            </a><br>инструмент управления online продажами
             <ul>
                 <li class="glyphicon glyphicon-check">Обновляйте информацию об хостеле во всех системах бронирования
                     одновременно
@@ -180,8 +190,11 @@ if ($_POST['csubmit'] == 'Calculate')
         </div>
 
         <div class="col-md-4">
-            <img src="img/Booking_buttom_logo.png" alt="OBooking_buttom_logo">
-            <a href="#"><h2>Booking Button</h2></a><br>модуль online бронирования на сайте отеля
+            <div class="row text-center">
+                <img src="img/Booking_buttom_logo.png" alt="OBooking_buttom_logo">
+            </div>
+            <a href="#">
+                <h2>Booking Button</h2></a><br>модуль online бронирования на сайте отеля
             <ul>
                 <li class="glyphicon glyphicon-check">Продавайте номера напрямую через сайт – удобно и без
                     посредников
@@ -237,7 +250,7 @@ if ($_POST['csubmit'] == 'Calculate')
         <div class="col-md-1"></div>
     </div>
     <div class="row">
-        <img src="img/baner.png" alt="baner" width="100%" class="margin">
+        <img src="img/baner.png" alt="baner" width="100%">
     </div>
 
     <h2 class="line-height">Преимущества работы с PMS Сloud</h2>
@@ -321,7 +334,6 @@ if ($_POST['csubmit'] == 'Calculate')
                     Amount of beds
                     <br>
                     <select name="amountofbeds" class="btn-primary">
-                        <option disabled selected>How many beds</option>
                         <option value="1">from 1 to 10</option>
                         <option value="2">from 11 to 18</option>
                         <option value="3">from 19 to 26</option>
@@ -332,7 +344,6 @@ if ($_POST['csubmit'] == 'Calculate')
                 <div class="col-md-4">
                     Country<br>
                     <select name="country" class="btn-primary">
-                        <option disabled selected>What country hostel from?</option>
                         <option value="1">Ukraine</option>
                         <option value="2">Russia</option>
                         <option value="3">Another country</option>
@@ -343,7 +354,7 @@ if ($_POST['csubmit'] == 'Calculate')
 
             <!--            </div>-->
             <div class="col-md-4">
-                <h2 id="big-price">$ 99</h2>
+                <h2 id="big-price">$ 3</h2>
 
             </div>
         </div>
@@ -352,9 +363,17 @@ if ($_POST['csubmit'] == 'Calculate')
         <div class="row">
             <p><a href="signup.php">
                     <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно</button>
-                </a> <a href="#">
-                    <button type="button" class="btn btn-success btn-lg">Демо версия</button>
-                </a></p>
+                </a>
+                <!--                <a href="#">-->
+                <!--                    <button type="button" class="btn btn-success btn-lg">Демо версия</button>-->
+                <!--                </a>-->
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p>Мы гарантируем возврат средств в течении 30 дней с момента первой оплаты, если Вам, по каким либо
+                    причинам не понравится наш продукт.</p>
+            </div>
         </div>
     </div>
 </div>
@@ -368,7 +387,9 @@ if ($_POST['csubmit'] == 'Calculate')
 
             <a href="#">
                 <div class="col-md-4 client_block">
-                    <img src="img/hotel_1.jpg" alt="hotel_1" class="hotel_logo">
+                    <div class="row text-center">
+                        <img src="img/hotel_1.jpg" alt="hotel_1" class="hotel_logo">
+                    </div>
                     <h4 class="hotel_name">Отель "Беспечный тюлень"</h4>
                     <h4 class="hotel_city"><b>Сахалин</b></h4>
 
@@ -380,7 +401,9 @@ if ($_POST['csubmit'] == 'Calculate')
             </a>
             <a href="#">
                 <div class="col-md-4 client_block">
-                    <img src="img/hotel_2.jpg" alt="hotel_2" class="hotel_logo">
+                    <div class="row text-center">
+                        <img src="img/hotel_2.jpg" alt="hotel_2" class="hotel_logo">
+                    </div>
                     <h4 class="hotel_name">Апартаменты "Лежбище тюленей"</h4>
                     <h4 class="hotel_city"><b>Берега Охотского моря</b></h4>
 
@@ -390,7 +413,9 @@ if ($_POST['csubmit'] == 'Calculate')
             </a>
             <a href="#">
                 <div class="col-md-4 client_block">
-                    <img src="img/hotel_3.jpg" alt="hotel_3" class="hotel_logo">
+                    <div class="row text-center">
+                        <img src="img/hotel_3.jpg" alt="hotel_3" class="hotel_logo">
+                    </div>
                     <h4 class="hotel_name">Загородный клуб "Тюлененок"</h4>
                     <h4 class="hotel_city"><b>Побережье Тихого океана</b></h4>
 
@@ -438,9 +463,11 @@ if ($_POST['csubmit'] == 'Calculate')
 
             <p><a href="signup.php">
                     <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно</button>
-                </a> <a href="#">
-                    <button type="button" class="btn btn-success btn-lg">Демо версия</button>
-                </a></p>
+                </a>
+                <!--                <a href="#">-->
+                <!--                    <button type="button" class="btn btn-success btn-lg">Демо версия</button>-->
+                <!--                </a>-->
+            </p>
         </div>
         <div class="row">
             <footer class="blue_block">

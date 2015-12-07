@@ -8,14 +8,14 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Login | Jet PMS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="bootstrap/css/signin.css" rel="stylesheet">
+    <link href="bootstrap/css/login.css" rel="stylesheet">
 
     <!--    Bootstrap cor jquery link-->
     <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -28,19 +28,40 @@
 </head>
 
 <body>
+<div id="margin">
+
+</div>
 
 <!-- container 1 -->
 <div class="container">
 
-    <form class="form-signin" role="form">
-        <h2 class="form-signin-heading"><b>Please login</b></h2>
-        <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
-        <input type="password" class="form-control" placeholder="Password" required="">
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
+    <div class="header">
+        <h1>Jet PMS</h1>
+    </div>
+    <div id="headwrap">
+
+        <form class="form-signin" role="form">
+            <h2 class="form-signin-heading">Log in</h2>
+
+            <div id="formin">
+                <input type="email" class="form-control" placeholder="Email address" required="" autofocus=""><br>
+                <input type="password" class="form-control" placeholder="Password" required="">
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+                <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+            </div>
+            <br>
+            <div class="link">
+                <a href="#">Forgot password?</a>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="qa">
+            Don't have an account? <a href="signup.php">Sign Up</a>
+        </div>
+    </div>
 
 </div>
 <!-- /container 1 -->
