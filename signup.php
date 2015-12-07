@@ -32,11 +32,22 @@
 <!-- container 1 -->
 <div class="container">
 
-    <form class="form-signin" role="form">
-        <h2 class="form-signin-heading"><b>Please signup</b></h2>
-        <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-    </form>
+   <?php if ($_POST["sign_up"] == ""): ?>
+      <form class="form-signin" role="form" action="" method="post">
+         <h2 class="form-signin-heading"><b>Please signup</b></h2>
+         <input type="email" class="form-control" value="nuriyevn@gmail.com" 
+               placeholder="Email address" required="" autofocus=""/>
+         <input class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="Sign up"/>
+      </form>
+   <?php elseif ($_POST["sign_up"] == "Sign up"): ?>
+
+      <form class="form-signin" role="form" method="post" action="http://gmail.com">
+         <h2 class="form-singin-heading"><b>Go to check your email</b></h2>
+         <input class="btn btn-lg btn-primary btn-block" type="submit" name="Sign up" value="Check email gmail.com"/>
+      </form>
+   <?php endif; ?>
+
+     // header("Refresh: 0; Location: http://gmail.com");
     <div class="row col-md-5 col-md-offset-4">
         <h3 class="form-signin-heading">We will send an e-mail with login details</h3>
 
@@ -47,12 +58,12 @@
             <li>Have a question? Send us a letter <a href="mailto:jetpmscom@gmail.com">jetpmscom@gmail.com</a></li>
         </ul>
         </p>
-        <form action="">
+        <form action="" method="post">
 
             <textarea name="signup" class="form-signin-heading" id="" cols="60" rows="10"
                       placeholder="I got a question. Could you be so kind to help me?"></textarea><br>
             <input type="email" class="form-signin-heading" placeholder="Email address" required=""><br>
-            <input type="submit" class="btn-primary form-signin-heading">
+            <input type="submit" class="btn-primary form-signin-heading" name="Sign up">
         </form>
     </div>
 

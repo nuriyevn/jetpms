@@ -5,7 +5,7 @@ $document_root = $_SERVER["DOCUMENT_ROOT"];
 $http_host = $_SERVER['HTTP_HOST'];
 $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir);
 
-if ($_POST['csubmit'] == 'Calculate')
+/*if ($_POST['csubmit'] == 'Calculate')
 {
     $bedscount = $_POST['amountofbeds'];
     $country = $_POST['country'];
@@ -50,7 +50,7 @@ if ($_POST['csubmit'] == 'Calculate')
     }
 
 }
-
+*/
 ?>
 
 <!DOCTYPE html>
@@ -333,7 +333,7 @@ if ($_POST['csubmit'] == 'Calculate')
                 <div class="col-md-4">
                     Amount of beds
                     <br>
-                    <select name="amountofbeds" class="btn-primary">
+                    <select name="amountofbeds" id="bedscount_select" onclick="updatePrice()" class="btn-primary">
                         <option value="1">from 1 to 10</option>
                         <option value="2">from 11 to 18</option>
                         <option value="3">from 19 to 26</option>
@@ -343,7 +343,7 @@ if ($_POST['csubmit'] == 'Calculate')
 
                 <div class="col-md-4">
                     Country<br>
-                    <select name="country" class="btn-primary">
+                    <select name="country" id="country_select" onclick="updatePrice()" class="btn-primary">
                         <option value="1">Ukraine</option>
                         <option value="2">Russia</option>
                         <option value="3">Another country</option>
@@ -481,4 +481,5 @@ if ($_POST['csubmit'] == 'Calculate')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./bootstrap/js/bootstrap.min.js"></script>
+<script src="/bootstrap/js/updatePrice.js"></script>
 </body>

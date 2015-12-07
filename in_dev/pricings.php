@@ -15,19 +15,19 @@ if ($_POST['csubmit'] == 'Calculate') {
     switch ($bedscount) {
         case 1:
             $b_price = 2;
-            $bedscount = "from 1 to 10";
+//            $bedscount = "from 1 to 10";
             break;
         case 2:
             $b_price = 5;
-            $bedscount = "from 11 to 18";
+  //          $bedscount = "from 11 to 18";
             break;
         case 3:
             $b_price = 10;
-            $bedscount = "from 19 to 26";
+    ///        $bedscount = "from 19 to 26";
             break;
         case 4:
             $b_price = 12;
-            $bedscount = "more than 26";
+       //     $bedscount = "more than 26";
             break;
     }
 
@@ -58,6 +58,7 @@ if ($_POST['csubmit'] == 'Calculate') {
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/bootstrap/css/pricings.css">
+    <script src="/in_dev/updatePrice.js"></script>
 </head>
 <body class="container">
 <h1>Calculate the cost</h1>
