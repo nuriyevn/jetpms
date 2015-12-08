@@ -32,22 +32,18 @@
 <!-- container 1 -->
 <div class="container">
 
-   <?php if ($_POST["sign_up"] == ""): ?>
-      <form class="form-signin" role="form" action="" method="post">
-         <h2 class="form-signin-heading"><b>Please signup</b></h2>
-         <input type="email" class="form-control" value="nuriyevn@gmail.com" 
-               placeholder="Email address" required="" autofocus=""/>
-         <input class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="Sign up"/>
-      </form>
-   <?php elseif ($_POST["sign_up"] == "Sign up"): ?>
-
-      <form class="form-signin" role="form" method="post" action="http://gmail.com">
-         <h2 class="form-singin-heading"><b>Go to check your email</b></h2>
-         <input class="btn btn-lg btn-primary btn-block" type="submit" name="Sign up" value="Check email gmail.com"/>
-      </form>
-   <?php endif; ?>
-
-     // header("Refresh: 0; Location: http://gmail.com");
+    <div class="form-signin" role="form">
+    <!--form class="form-signin" role="form" -->
+        <h2 class="form-signin-heading"><b id="please_signup">Please signup</b></h2>
+        <input id="email_input"type="email" class="form-control" value="nuriyevn@gmail.com" placeholder="Email address" required="" autofocus="">
+        <input id="submit_input" class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="Sign up" onclick="modifySubmitValue()" />
+    <!--/form-->
+    </div>
+   <!--form class="form-signin" role="form" method="post" action="http://gmail.com">
+         <h2 class="form-singin-heading"><b>Click this button to check your email at:</b></h2>
+    <input type="submit" name="Sign up" value="Check email"></input>
+    </form-->
+     <!--table header("Refresh: 0; Location: http://gmail.com")-->
     <div class="row col-md-5 col-md-offset-4">
         <h3 class="form-signin-heading">We will send an e-mail with login details</h3>
 
@@ -74,6 +70,6 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-
+<script src="/bootstrap/js/getDomain.js"></script>
 </body>
 </html>
