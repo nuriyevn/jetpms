@@ -8,14 +8,14 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Signup | Jet PMS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="bootstrap/css/signin.css" rel="stylesheet">
+    <link href="bootstrap/css/signup.css" rel="stylesheet">
 
     <!--    Bootstrap cor jquery link-->
     <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -32,36 +32,50 @@
 <!-- container 1 -->
 <div class="container">
 
-    <div class="form-signin" role="form">
-    <!--form class="form-signin" role="form" -->
-        <h2 class="form-signin-heading"><b id="please_signup">Please signup</b></h2>
-        <input id="email_input"type="email" class="form-control" value="nuriyevn@gmail.com" placeholder="Email address" required="" autofocus="">
-        <input id="submit_input" class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="Sign up" onclick="modifySubmitValue()" />
-    <!--/form-->
-    </div>
-   <!--form class="form-signin" role="form" method="post" action="http://gmail.com">
-         <h2 class="form-singin-heading"><b>Click this button to check your email at:</b></h2>
-    <input type="submit" name="Sign up" value="Check email"></input>
-    </form-->
-     <!--table header("Refresh: 0; Location: http://gmail.com")-->
-    <div class="row col-md-5 col-md-offset-4">
-        <h3 class="form-signin-heading">We will send an e-mail with login details</h3>
+    <div id="maindiv">
+        <div id="margin">
 
-        <p>
-        <ul>
-            <li>Link in your letter is valid for 24 hours</li>
-            <li>Check spam folder if you have not found our letter in inbox. Please, mark it *non spam*. Tnx.</li>
-            <li>Have a question? Send us a letter <a href="mailto:jetpmscom@gmail.com">jetpmscom@gmail.com</a></li>
-        </ul>
-        </p>
-        <form action="" method="post">
+        </div>
 
-            <textarea name="signup" class="form-signin-heading" id="" cols="60" rows="10"
+        <h1>Jet PMS</h1>
+
+        <div id="white">
+            <div class="form-signin" role="form">
+                <h2 class="form-signin-heading"><b id="please_signup">Sign Up</b></h2>
+                <input id="email_input" type="email" class="form-control" value="nuriyevn@gmail.com" placeholder="Email address" required="" autofocus=""><br>
+                <input id="submit_input" class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="Sign up" onclick="modifySubmitValue()" />
+
+            </div>
+        </div>
+
+
+
+
+            <p>
+            <ul class="text-left">
+                <li>Link in your letter is valid for 24 hours</li>
+                <li>Check spam folder if you have not found our letter in inbox. Please, mark it *non spam*. Tnx.</li>
+                <li>Have a question? Send us a letter <a href="mailto:jetpmscom@gmail.com">jetpmscom@gmail.com</a></li>
+            </ul>
+            </p>
+            <form action="" method="post">
+
+            <textarea name="signup" class="form-signin-heading" id="" cols="" rows="10"
                       placeholder="I got a question. Could you be so kind to help me?"></textarea><br>
-            <input type="email" class="form-signin-heading" placeholder="Email address" required=""><br>
-            <input type="submit" class="btn-primary form-signin-heading" name="Sign up">
-        </form>
+                <input type="email" class="form-control" placeholder="Email address" required=""><br>
+                <input type="submit" class="btn btn-lg btn-primary btn-block" name="Sign up">
+            </form>
+
+        <footer>
+            All rights are right
+        </footer>
+
     </div>
+
+
+
+
+
 
 </div>
 <!-- /container 1 -->
