@@ -1,0 +1,63 @@
+body {
+    background-color: #00BFFF ;
+}
+#margin {
+    height: 50px;
+}
+#headwrap {
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    width: 400px;
+}
+.header {
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+.header h1 {
+    font-size: 3.5em ;
+    font-weight: 600;
+}
+form h2 {
+    text-align: center;
+    padding: 20px;
+    color: #909090;
+}
+
+#formin {
+    width: 300px;
+    margin: auto;
+}
+
+form {
+    margin-bottom: 25px;
+    padding-bottom: 35px;
+}
+.link, .qa {
+    text-align: center;
+}
+.link a  {
+    color: #ccc;
+}
+.qa, .qa a {
+    width: 400px;
+    margin: auto;
+    color: #FFFFFF;
+}
+.qa a {
+    font-weight: 700;
+    text-decoration: underline;
+}
+.qa a:hover{
+    color: #ccc;
+    text-decoration: none;
+}
+
+input[type="email"], input[type="password"] {
+    margin-bottom: 5px;
+    height: 50px;
+}
+
