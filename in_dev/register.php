@@ -25,8 +25,7 @@ if (isset($_GET['email']))
     <link href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../bootstrap/css/signin.css" rel="stylesheet">
-    <link href="../bootstrap/css/signin.css" rel="stylesheet">
+    <link href="../bootstrap/css/register.css" rel="stylesheet">
 
     <!--    Bootstrap cor jquery link-->
     <script src="http://code.jquery.com/jquery.min.js"></script>
