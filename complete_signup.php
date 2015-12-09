@@ -1,3 +1,6 @@
+<!-- навесить стили-->
+<!-- переверстать по бутстраповски-->
+<!--подключить нужные стили-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,11 +14,11 @@
     <title>JetPMS [Registration]</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../bootstrap/css/register.css" rel="stylesheet">
+    <link href="/bootstrap/csscustom/signup.css" rel="stylesheet">
 
     <!--    Bootstrap cor jquery link-->
     <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -161,6 +164,6 @@ There are four simple steps to set up Hostel's profile in order to let you start
         </div>
     </div>
 </div>
-<script src="/bootstrap/js/complete_signup.js"></script>
+<script src="/bootstrap/jscustom/complete_signup.js"></script>
 </body>
 </html>

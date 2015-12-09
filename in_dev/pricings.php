@@ -57,7 +57,7 @@ if ($_POST['csubmit'] == 'Calculate') {
     <!--link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"-->
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/bootstrap/css/pricings.css">
+    <link rel="stylesheet" href="/bootstrap/csscustom/signup.css">
     <script src="/in_dev/updatePrice.js"></script>
 </head>
 <body class="container">
@@ -90,7 +90,7 @@ if (!isset($_POST['csubmit']))
             <td>Country</td>
             <td>
                 <select name="country" id="" class="btn-success">
-                    <option disabled selected>What country hostel from?</option-->
+
                     <option value="1">Ukraine</option>
                     <option value="2">Russia</option>
                     <option value="3">Another country</option>

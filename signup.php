@@ -1,3 +1,6 @@
+<!-- Первый Шаг регистрации -->
+<!-- После получения письма пользователь направляяется на страничку complite_signup.php -->
+<!--Навесить правильные стили стили, переверстать в настоящий бутстрап -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +18,7 @@
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="bootstrap/css/signup.css" rel="stylesheet">
+    <link href="bootstrap/csscustom/signup.css" rel="stylesheet">
 
     <!--    Bootstrap cor jquery link-->
     <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -87,6 +90,6 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/bootstrap/js/signup.js"></script>
+<script src="/bootstrap/jscustom/signup.js"></script>
 </body>
 </html>

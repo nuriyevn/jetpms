@@ -67,7 +67,7 @@ $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir)
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- Bootstrap customizable -->
-    <link href="bootstrap/css/id.css" rel="stylesheet">
+    <link href="bootstrap/csscustom/index.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <script src="http://code.jquery.com/jquery.min.js"></script>
 
@@ -481,5 +481,5 @@ $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir)
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./bootstrap/js/bootstrap.min.js"></script>
-<script src="/bootstrap/js/updatePrice.js"></script>
+<script src="/bootstrap/jscustom/index.js"></script>
 </body>
