@@ -32,44 +32,37 @@
 <body onload="loadRegistrationData()">
 <div class="container">
     <div class="row">
-        <div class="col-md-7 col-md-offset-3">
-            <h1>Welcome to JetPMS!</h1>
+        <div class="col-md-4 col-md-offset-4">
+            <h1 class="text-center">Jet PMS</h1>
             <?php if (isset($_POST["submit"]) != "Finish registration"): ?>
 
-                <h2>You are one step away to finish registration</h2>
+                <div id="white">
+                    <h2 class="text-center">Finish registration</h2>
 
                 <!--form action="" method="POST"-->
-                    <table class="text-uppercase">
-                        <tr>
-                            <td>Your login is :</td>
-                            <td>
-                                <input id="email_input" type="email" name="email" value="">
-                                <input hidden id="token_input" name="token" value="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Create your password</td>
-                            <td>
-                                <input required type="password" name="password1">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Re type your password</td>
-                            <td>
-                                <input required type="password" name="password2">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <input type="submit" name="submit" value="Finish registration"
-                                       class="btn-primary btn-lg" onclick="completeSignup(document.getElementById('email_input').value, document.getElementById('token_input').value)">
-                            </td>
-                        </tr>
-                        <tr>
-                           <td><p id="signup_message" style="color: #0000FF"></p></td>
-                        </tr>
-                    </table>
+                    <form action="in_dev/set.php" role="form">
+                        <div class="form-group">
+<!--                            <label for="email">Email login:</label>-->
+                            <input type="email" disabled  name="mail" class="form-control" id="email" placeholder="Email Address">
+                        </div>
+
+                        <div class="form-group">
+<!--                            <label for="password1">Create password:</label>-->
+                            <input type="password" autofocus required name="password1" class="form-control" id="password1" placeholder="Create Password">
+                        </div>
+
+                        <div class="form-group">
+<!--                            <label for="password2">Retype password:</label>-->
+                            <input type="password" required name="password2" class="form-control" id="password2" placeholder="Retype Password">
+                            <input hidden id="token_input" name="token" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" name="submit" value="Finish registration"
+                                   class="btn-primary btn-lg btn-block" onclick="completeSignup(document.getElementById('email_input').value, document.getElementById('token_input').value)">
+                        </div>
+                        <p id="signup_message">some text</p>
+                    </form>
                 <!--/form-->
 
             <?php else: ?>

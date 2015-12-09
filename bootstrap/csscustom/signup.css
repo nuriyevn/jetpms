@@ -1,12 +1,15 @@
 body {
     position: relative;
-    background-color: #B8DEF3;
+    background-color: #298EEA;
 }
 
 h1 {
     color: #f1f1f1;
     font-weight: 700;
     font-size: 4em;
+}
+h2 {
+    color: #656565;
 }
 
 table, tr, td {
@@ -71,12 +74,15 @@ input[type="text"], input[type="number"], input[type="email"], input[type="tel"]
 
 #white {
     background-color: #f1f1f1;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 20px;
     margin: 20px;
 }
 
 textarea {
     width: 100%;
+}
 
+#signup_message {
+    color: #0000FF;
 }
