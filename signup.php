@@ -41,9 +41,12 @@
 
         <div id="white">
             <div class="form-signin" role="form">
-                <h2 class="form-signin-heading"><b id="please_signup">Sign Up</b></h2>
-                <input id="email_input" type="email" class="form-control" value="nuriyevn@gmail.com" placeholder="Email address" required="" autofocus=""><br>
-                <input id="submit_input" class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="Sign up" onclick="modifySubmitValue()" />
+                <h2 class="form-signin-heading"><b>Sign Up</b></h2>
+                <h3 id="email_label">Email:</h3>
+                <input id="email_location"  hidden type="text" value=""/>
+                <input id="email_input" type="email" class="form-control" value="jetpmscom@gmail.com" placeholder="Email address" required="" autofocus=""><br>
+                <input id="submit_input" class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="Sign up" onclick="registerUser(document.getElementById('email_input').value)" />
+                <p id="signup_message" style="color: #0000FF"></p>
 
             </div>
         </div>
@@ -84,6 +87,6 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/bootstrap/js/getDomain.js"></script>
+<script src="/bootstrap/js/signup.js"></script>
 </body>
 </html>
