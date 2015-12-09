@@ -28,41 +28,52 @@
 </head>
 
 <body>
-<div id="margin">
-
-</div>
 
 <!-- container 1 -->
 <div class="container">
 
-    <div class="header">
-        <h1>Jet PMS</h1>
-    </div>
-    <div id="headwrap">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1 class="text-center">Jet PMS</h1>
 
-        <form class="form-signin" role="form">
-            <h2 class="form-signin-heading">Log in</h2>
+            <div id="white">
 
-            <div id="formin">
-                <input type="email" class="form-control" placeholder="Email address" required="" autofocus=""><br>
-                <input type="password" class="form-control" placeholder="Password" required="">
-                <label class="checkbox">
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-                <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+                <form class="form-signin" role="form">
+                    <h2 class="text-center">Log in</h2>
+
+                    <div class="row">
+                        <input type="email" class="form-control" placeholder="Email address" required=""
+                               autofocus="">
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <input type="password" class="form-control" placeholder="Password" required="">
+                    </div>
+                    <div class="row">
+                        <label class="checkbox">
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+                    </div>
+                    <br>
+
+                    <div class="text-center">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </form>
             </div>
             <br>
-            <div class="link">
-                <a href="#">Forgot password?</a>
+
+            <div class="row">
+                <div class="text-center" id="comment">
+                    Don't have an account? <a href="in_dev/register.php">Sign Up</a>
+                </div>
             </div>
-        </form>
-    </div>
-    <div class="row">
-        <div class="qa">
-            Don't have an account? <a href="signup.php">Sign Up</a>
         </div>
     </div>
-
 </div>
 <!-- /container 1 -->
 

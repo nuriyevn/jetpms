@@ -1,88 +1,39 @@
 body {
-    position: relative;
+    padding-top: 20px;
     background-color: #298EEA;
 }
-
 h1 {
     color: #f1f1f1;
-    font-weight: 700;
     font-size: 4em;
 }
-h2 {
-    color: #656565;
+h2, label {
+    color: #626262;
 }
-
-table, tr, td {
-    margin: 50px auto;
-
-    border: none;
-}
-
-input[type="submit"] {
-    color: coral;
-    background: #719450;
-    border-radius: 5px;
-    padding: 10px;
-    border: double 1px transparent;
-}
-
-input[type="submit"]:hover {
-    color: #719450;
-    background: coral;
-    border: double 1px coral;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-input[type="text"], input[type="number"], input[type="email"], input[type="tel"], input[type="password"] {
+.white {
     background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 10px;
 }
 
-.topsiguppage {
-    background-color: #B8DEF3;
-    height: 200px;
-    margin: 0px;
-    padding: 0px;
-    clear: both;
+input[type="email"] {
+    height: 50px;
 }
-
-#middlesiguppage {
-    background-color: #FFDCB5;
-}
-
-#check {
-    width: 800px;
-    margin: 20px auto;
-    text-align: left;
-    margin-bottom: 25px;
-}
-
-#check ol {
-    margin-top: 25px;
-    font: 1.5em sansserif;
-}
-#maindiv {
-    width: 400px;
-    margin: 0 auto;
-    height:100px;
-    text-align: center;
-}
-
-#margin {
-    height: 30px;
-}
-
-#white {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    padding: 20px;
-    margin: 20px;
-}
-
 textarea {
     width: 100%;
+    border-radius: 3px;
 }
 
+a {
+    color: #66EA66;
+}
+
+a:hover {
+    color: #909090;
+}
 #signup_message {
-    color: #0000FF;
+    color: #298EEA;
+}
+
+li, footer {
+    color: #f1f1f1;
 }

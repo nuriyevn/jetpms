@@ -61,7 +61,7 @@
                             <input type="submit" name="submit" value="Finish registration"
                                    class="btn-primary btn-lg btn-block" onclick="completeSignup(document.getElementById('email_input').value, document.getElementById('token_input').value)">
                         </div>
-                        <p id="signup_message">some text</p>
+                        <p id="signup_message"></p>
                     </form>
                 <!--/form-->
 

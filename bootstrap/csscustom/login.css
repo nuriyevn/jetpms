@@ -1,63 +1,31 @@
 body {
-    background-color: #00BFFF ;
+    padding-top: 30px;
+    background-color: #298EEA;
 }
-#margin {
-    height: 50px;
+h1 {
+    color: #f1f1f1;
+    font-size: 4em;
 }
-#headwrap {
-    margin: 0 auto;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    width: 400px;
+h2, label {
+    color: #626262;
 }
-.header {
-    margin: 0 auto;
-    width: 400px;
-    text-align: center;
-    color: #FFFFFF;
-
-}
-.header h1 {
-    font-size: 3.5em ;
-    font-weight: 600;
-}
-form h2 {
-    text-align: center;
-    padding: 20px;
-    color: #909090;
-}
-
-#formin {
-    width: 300px;
-    margin: auto;
-}
-
-form {
-    margin-bottom: 25px;
-    padding-bottom: 35px;
-}
-.link, .qa {
-    text-align: center;
-}
-.link a  {
-    color: #ccc;
-}
-.qa, .qa a {
-    width: 400px;
-    margin: auto;
-    color: #FFFFFF;
-}
-.qa a {
-    font-weight: 700;
-    text-decoration: underline;
-}
-.qa a:hover{
-    color: #ccc;
-    text-decoration: none;
+#white {
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 10px;
 }
 
 input[type="email"], input[type="password"] {
-    margin-bottom: 5px;
     height: 50px;
 }
+#comment {
+    color: #f1f1f1;
+}
 
+#comment a {
+    color: #505050;
+}
+
+#comment a:hover {
+    color: #909090;
+}

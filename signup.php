@@ -35,26 +35,26 @@
 <!-- container 1 -->
 <div class="container">
 
-    <div id="maindiv">
-        <div id="margin">
+    <div id="row">
 
-        </div>
 
-        <h1>Jet PMS</h1>
+        <div class="col-md-4 col-md-offset-4">
+            <h1 class="text-center">Jet PMS</h1>
 
-        <div id="white">
-            <div class="form-signin" role="form">
-                <h2 class="form-signin-heading"><b>Sign Up</b></h2>
-                <h3 id="email_label">Email:</h3>
-                <input id="email_location"  hidden type="text" value=""/>
-                <input id="email_input" type="email" class="form-control" value="jetpmscom@gmail.com" placeholder="Email address" required="" autofocus=""><br>
-                <input id="submit_input" class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="Sign up" onclick="registerUser(document.getElementById('email_input').value)" />
-                <p id="signup_message" style="color: #0000FF"></p>
+            <div class="white">
+                <form role="form">
+                    <h2 class="text-center">Sign Up</h2>
 
+                    <input id="email_location" hidden type="text" value=""/>
+                    <input id="email_input" type="email" class="form-control" value="jetpmscom@gmail.com"
+                           placeholder="Email address" required autofocus=""><br>
+                    <input id="submit_input" class="btn btn-lg btn-success btn-block" type="submit" name="sign_up"
+                           value="Sign up" onclick="registerUser(document.getElementById('email_input').value)"/>
+
+                    <p id="signup_message"></p>
+
+                </form>
             </div>
-        </div>
-
-
 
 
             <p>
@@ -64,23 +64,23 @@
                 <li>Have a question? Send us a letter <a href="mailto:jetpmscom@gmail.com">jetpmscom@gmail.com</a></li>
             </ul>
             </p>
-            <form action="" method="post">
+            <div class="white">
+                <form action="" method="post">
+                <textarea name="signup" class="form-signin-heading" id="" cols="" rows="10"
+                          placeholder="I got a question. Could you be so kind to help me?">
 
-            <textarea name="signup" class="form-signin-heading" id="" cols="" rows="10"
-                      placeholder="I got a question. Could you be so kind to help me?"></textarea><br>
-                <input type="email" class="form-control" placeholder="Email address" required=""><br>
-                <input type="submit" class="btn btn-lg btn-primary btn-block" name="Sign up">
+                </textarea><br>
+                <input type="email" class="form-control" required  placeholder="Email address" required=""><br>
+                <input type="submit" class="btn btn-lg btn-success btn-block" name="Sign up" value="Send">
             </form>
-
-        <footer>
-            All rights are right
-        </footer>
+            </div>
+            <br>
+            <footer class="text-center">
+                All rights are right
+            </footer>
+        </div>
 
     </div>
-
-
-
-
 
 
 </div>
