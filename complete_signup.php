@@ -43,7 +43,7 @@
                     <form action="in_dev/set.php" role="form">
                         <div class="form-group">
 <!--                            <label for="email">Email login:</label>-->
-                            <input type="email" disabled  name="mail" class="form-control" id="email" placeholder="Email Address">
+                            <input type="email" disabled  name="mail" class="form-control" id="email_input" placeholder="Email Address">
                         </div>
 
                         <div class="form-group">

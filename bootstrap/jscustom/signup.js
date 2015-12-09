@@ -50,7 +50,6 @@ modifySubmitValue = function()
    document.getElementById("email_location").value = email_domain;
    document.getElementById("submit_input").onclick = setLocation; //("http://" + email_domain);
    document.getElementById("email_input").remove(); // Removing this node
-   document.getElementById("email_label").remove();
    document.getElementById("signup_message").innerHTML = "Activation email is sent. Please, check an email for activation letter";
 }
 

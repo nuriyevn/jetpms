@@ -42,18 +42,18 @@
             <h1 class="text-center">Jet PMS</h1>
 
             <div class="white">
-                <form role="form">
+                <!--form role="form"-->
                     <h2 class="text-center">Sign Up</h2>
 
                     <input id="email_location" hidden type="text" value=""/>
-                    <input id="email_input" type="email" class="form-control" value="jetpmscom@gmail.com"
+                    <input id="email_input" type="email" class="form-control" value="naum.oleks@gmail.com"
                            placeholder="Email address" required autofocus=""><br>
                     <input id="submit_input" class="btn btn-lg btn-success btn-block" type="submit" name="sign_up"
                            value="Sign up" onclick="registerUser(document.getElementById('email_input').value)"/>
 
                     <p id="signup_message"></p>
 
-                </form>
+                <!--/form-->
             </div>
 
 
