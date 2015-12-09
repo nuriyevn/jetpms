@@ -49,7 +49,7 @@ function loadRoomTypes()
     <!--    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
-    <link rel="stylesheet" href="../bootstrap/csscustom/index.css">
+    <link rel="stylesheet" href="../bootstrap/csscustom/set.css">
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

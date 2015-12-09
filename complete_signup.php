@@ -36,7 +36,7 @@
             <h1 class="text-center">Jet PMS</h1>
             <?php if (isset($_POST["submit"]) != "Finish registration"): ?>
 
-                <div id="white">
+                <div class="white">
                     <h2 class="text-center">Finish registration</h2>
 
                 <!--form action="" method="POST"-->
@@ -59,7 +59,7 @@
 
                         <div class="form-group">
                             <input type="submit" name="submit" value="Finish registration"
-                                   class="btn-primary btn-lg btn-block" onclick="completeSignup(document.getElementById('email_input').value, document.getElementById('token_input').value)">
+                                   class="btn-success btn-lg btn-block" onclick="completeSignup(document.getElementById('email_input').value, document.getElementById('token_input').value)">
                         </div>
                         <p id="signup_message"></p>
                     </form>

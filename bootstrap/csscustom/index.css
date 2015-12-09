@@ -1,14 +1,12 @@
 .blue_block {
-	background-color: #00BFFF;
+	background-color: #00A2E9;
 	text-align: center;
 	color: white;
 	padding-top: 40px;
 	padding-bottom: 20px;
 
 }
-#second_blue_block {
-	margin-top: 10px;
-}
+
 #button_hr {
 	position: absolute;
 	background-color: #FFF;
@@ -21,24 +19,14 @@
 
 }
 #button_hr:hover {
-	background-color: #00BFFF;
+	background-color: #00A2E9;
 	color: #FFF;
 }
 img {
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
-.margin {
-	margin-bottom: 50px;
-}
-.blue_block_list {
-	list-style-position: outside;
-	vertical-align: middle;
-	text-align: left;
-	font-size: 18px;
-	margin-top: 30px;
 
-}
 li {
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -52,15 +40,15 @@ li {
 
 }
 .client_block:hover {
-	border: 1px solid #00BFFF;
+	border: 1px solid #00A2E9;
 }
 .hotel_logo {
-	border: 1px solid #00BFFF;
+	border: 1px solid #00A2E9;
 	border-radius: 100%;
 	margin: 0 auto;
 }
 .hotel_name {
-	color: #00BFFF;
+	color: #00A2E9;
 	font-size: 1em;
 }
 .hotel_city {
@@ -80,32 +68,6 @@ li {
 	font-family: cursive;
 }
 
-/* style for file set.php*/
-#set {
-    text-align: left;
-}
-
-#table-set th, #table-set tr, #table-set td {
-	padding: 5px;
-	border: 1px solid #00BFFF;
-}
-#login_split {
-   position: relative;
-   right: 80px;
-}
-.center-table, .center-table td {
-	margin: 0 auto !important;
-	float: none !important;
-	text-align: left;
-	padding: 2px;
-	font-size: smaller;
-
-}
-#calc_button {
-	margin-top: 20px;
-	font-size: large;
-	width: 200px;
-}
 #price {
 
 	font-size: 2em;
@@ -115,10 +77,6 @@ li {
 #big-price {
 	font-size: 5em;
 	vertical-align: middle;
-}
-
-.img-cent {
-	margin: 0 auto;
 }
 
 h1 {
@@ -131,5 +89,9 @@ h2 {
 
 li, p {
 	font-size: 1.25em;
+}
+
+ul li a {
+    color: #F6F6F6;
 }
 

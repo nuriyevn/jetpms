@@ -62,7 +62,7 @@ $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir)
     <title>Jet PMS | Speed up your business</title>
 
     <!-- Bootstrap -->
-    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
 
@@ -94,7 +94,7 @@ $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir)
                 </ul>
             </div>
             <div class="col-md-2">
-                <a href="login.php" class="btn btn-primary btn-lg" role="button">LOGIN TO APP</a>
+                <a href="login.php" class="btn btn-success btn-lg" role="button">LOGIN TO APP</a>
             </div>
         </div>
         <!--            end of na bar-->
@@ -149,7 +149,7 @@ $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir)
 
         <div class="col-md-4">
             <div class="row text-center">
-                <img src="img/jet_logo.png" alt="jet_logo" class="img-cent">
+                <img src="img/jet_logo.png" alt="jet_logo">
             </div>
             <a href="#">
                 <h2>Jet PMS</h2>
@@ -324,7 +324,7 @@ $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir)
             <h2 class="line-height">Calculate the cost</h2>
 
             <h3 class="lead">this page contain base form which will calculate monthly price for using JetPMS</h3>
-            <h4 class="lead  text-muted">Price depends on: <b>amount of beds and country</b></h4>
+            <h4 class="lead  text-success">Price depends on: <b>amount of beds and country</b></h4>
         </div>
         <div class="row">
             <!--            <div class="col-md-6">-->
@@ -451,7 +451,7 @@ $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir)
 <div class="blue_block">
     <div class="container">
         <div class="row">
-            <img src="img/clock.png" alt="clock_logo" class="margin">
+            <img src="img/clock.png" alt="clock_logo">
 
             <p style="font-size: 40px">Мы вас поддерживаем 24/7</p>
 

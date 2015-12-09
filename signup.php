@@ -70,7 +70,7 @@
                           placeholder="I got a question. Could you be so kind to help me?">
 
                 </textarea><br>
-                <input type="email" class="form-control" required  placeholder="Email address" required=""><br>
+                <input type="email" class="form-control" aria-required="true"  placeholder="Email address" required=""><br>
                 <input type="submit" class="btn btn-lg btn-success btn-block" name="Sign up" value="Send">
             </form>
             </div>
