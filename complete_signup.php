@@ -40,7 +40,6 @@
                     <h2 class="text-center">Finish registration</h2>
 
                 <!--form action="" method="POST"-->
-                    <form action="in_dev/set.php" role="form">
                         <div class="form-group">
 <!--                            <label for="email">Email login:</label>-->
                             <input type="email" disabled  name="mail" class="form-control" id="email_input" placeholder="Email Address">
@@ -59,10 +58,9 @@
 
                         <div class="form-group">
                             <input type="submit" name="submit" value="Finish registration"
-                                   class="btn-success btn-lg btn-block" onclick="completeSignup(document.getElementById('email_input').value, document.getElementById('token_input').value)">
+                                   class="btn-success btn-lg btn-block" onclick="completeSignup(document.getElementById('email_input').value, document.getElementById('token_input').value, document.getElementById('password1').value, document.getElementById('password2').value)">
                         </div>
                         <p id="signup_message"></p>
-                    </form>
                 <!--/form-->
 
             <?php else: ?>
@@ -157,6 +155,8 @@ There are four simple steps to set up Hostel's profile in order to let you start
         </div>
     </div>
 </div>
+<script src="/bootstrap/jscustom/validateEmail.js"></script>
 <script src="/bootstrap/jscustom/complete_signup.js"></script>
+
 </body>
 </html>

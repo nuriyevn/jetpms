@@ -1,3 +1,5 @@
+
+
 getDomain = function()
 {
   if (!document.getElementById("email_input"))
@@ -55,9 +57,9 @@ modifySubmitValue = function()
 
 registerUser = function(email)
 {
-   if (email == "")
+   if (!validateEmail(email))
    {
-      document.getElementById("signup_message").innerHTML = "Email is empty";
+      document.getElementById("signup_message").innerHTML = "Email is invalid";
       return;
    }
    else

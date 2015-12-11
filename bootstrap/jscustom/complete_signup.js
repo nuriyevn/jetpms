@@ -28,11 +28,75 @@ loadRegistrationData = function()
    document.getElementById('token_input').value = QueryString.token;
 }
 
-completeSignup = function(email, token)
+completeSignup = function(email, token, password1, password2)
 {
-   console.log("completeSignup() email=" + email + "; token = " + token);
-   var invalidData = f
-   if (email == "")
+   //console.log("completeSignup() email=" + email + "; token = " + token);
+
+   var message = "";
+
+   if (!validateEmail(email))
+   {
+      message = "Email is invalid<br>";
+   }
+   
+   if (password1.length < 6)
+   {
+      message += "Password length must be at least 6 characters<br>";
+   } 
+   
+   if (password2 != password1)
+   {
+      message += "Passwords must matches<br>";
+   }
+
+
+   if (message.length > 0)
+   {
+      document.getElementById('signup_message').innerHTML = message;
+      return;
+   }
+
+   
+      
+   {
+      document.getElementById('signup_message').innerHTML = "Finishing...";
+      if (window.XMLHttpRequest)
+      {
+         xmlhttp = new XMLHttpRequest();
+      }
+      else
+      {
+         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function()
+      {
+         if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+         {
+            switch (xmlhttp.status)
+            {
+               case 200:
+                  document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
+                  window.location = window.location.origin + "/login.php";
+                  break;
+               case 422:
+                  document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
+                  break;
+            }
+
+         }
+      }
+      
+   }
+   xmlhttp.open("POST", "do_complete_signup.php", true);
+   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   xmlhttp.send("email=" + email 
+               +"&token=" + token 
+               + "&password1=" + password1
+               + "&password2=" + password2);
+
+
+
+   /*if (email == "")
    {
       document.getElementById("signup_message").innerHTML = "Email is empty";
       return;
@@ -43,6 +107,8 @@ completeSignup = function(email, token)
       return;
    }
 
-   document.getElementById("signup_message").innerHTML += "Email and token are specified";
+   document.getElementById("signup_message").innerHTML += "Email and token are specified";*/
+
 }
+
 
