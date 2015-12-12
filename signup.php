@@ -14,11 +14,11 @@
     <title>Signup | Jet PMS</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="bootstrap/csscustom/signup.css" rel="stylesheet">
+    <link href="css/csscustom/signup.css" rel="stylesheet">
 
     <!--    Bootstrap cor jquery link-->
     <script src="http://code.jquery.com/jquery.min.js"></script>
