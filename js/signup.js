@@ -92,7 +92,7 @@ registerUser = function(email)
             }
          }
       }
-      xmlhttp.open("GET", "do_signup.php?email=" + email, true);
+      xmlhttp.open("GET", "doSignup.php?email=" + encodeURIComponent(email), true);
       xmlhttp.send();
    }
 }

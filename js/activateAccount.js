@@ -1,31 +1,9 @@
-var QueryString = function () {
-  // This function is anonymous, is executed immediately and 
-  // the return value is assigned to QueryString!
-  var query_string = {};
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i=0;i<vars.length;i++) {
-    var pair = vars[i].split("=");
-        // If first entry with this name
-    if (typeof query_string[pair[0]] === "undefined") {
-      query_string[pair[0]] = decodeURIComponent(pair[1]);
-        // If second entry with this name
-    } else if (typeof query_string[pair[0]] === "string") {
-      var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
-      query_string[pair[0]] = arr;
-        // If third or later entry with this name
-    } else {
-      query_string[pair[0]].push(decodeURIComponent(pair[1]));
-    }
-  } 
-    return query_string;
-}();
-
 loadRegistrationData = function()
 {
    if (typeof QueryString.email == "string")
       document.getElementById('email_input').value = QueryString.email;
-   document.getElementById('token_input').value = QueryString.token;
+   if (typeof QueryString.token == "string")
+      document.getElementById('token_input').value = QueryString.token;
 }
 
 completeSignup = function(email, token, password1, password2)
@@ -70,13 +48,13 @@ completeSignup = function(email, token, password1, password2)
       }
       xmlhttp.onreadystatechange = function()
       {
-         if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+         if (xmlhttp.readyState == 4)
          {
             switch (xmlhttp.status)
             {
                case 200:
                   document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
-                  window.location = window.location.origin + "/login.php";
+                  window.location = window.location.origin + "/login.php?statusMessage=" + xmlhttp.responseText;
                   break;
                case 422:
                   document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
@@ -87,12 +65,12 @@ completeSignup = function(email, token, password1, password2)
       }
       
    }
-   xmlhttp.open("POST", "do_complete_signup.php", true);
+   xmlhttp.open("POST", "doActivateAccount.php", true);
    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-   xmlhttp.send("email=" + email 
-               +"&token=" + token 
-               + "&password1=" + password1
-               + "&password2=" + password2);
+   xmlhttp.send("email=" + encodeURIComponent(email) 
+               +"&token=" + encodeURIComponent(token) 
+               + "&password1=" + encodeURIComponent(password1)
+               + "&password2=" + encodeURIComponent(password2));
 
 
 

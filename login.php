@@ -27,7 +27,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body onload="loadLoginData()">
 
 <!-- container 1 -->
 <div class="container">
@@ -40,7 +40,7 @@
 
                 <form class="form-signin" role="form">
                     <h2 class="text-center">Log in</h2>
-
+                    <p id="login_message"></p>
                     <div class="row">
                         <input type="email" class="form-control" placeholder="Email address" required=""
                                autofocus="">
@@ -50,11 +50,12 @@
                     <div class="row">
                         <input type="password" class="form-control" placeholder="Password" required="">
                     </div>
-                    <div class="row">
+                    <br>
+                    <!--div class="row">
                         <label class="checkbox">
                             <input type="checkbox" value="remember-me"> Remember me
                         </label>
-                    </div>
+                    </div-->
                     <div class="row">
                         <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
                     </div>
@@ -69,7 +70,7 @@
 
             <div class="row">
                 <div class="text-center" id="comment">
-                    Don't have an account? <a href="in_dev/register.php">Sign Up</a>
+                    Don't have an account? <a href="signup.php">Sign Up</a>
                 </div>
             </div>
         </div>
@@ -81,6 +82,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-
+<script src="/js/queryString.js"></script>
+<script src="/js/login.js"></script>
 </body>
 </html>

@@ -55,7 +55,12 @@
 
                 <!--/form-->
             </div>
-
+            <br>
+            <div class="row">
+                <div class="text-center" id="comment">
+                    Already have an account? <a href="login.php">Log In</a>
+                </div>
+            </div>
 
             <p>
             <ul class="text-left">
@@ -90,7 +95,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/bootstrap/jscustom/validateEmail.js"></script>
-<script src="/bootstrap/jscustom/signup.js"></script>
+<script src="/js/validateEmail.js"></script>
+<script src="/js/signup.js"></script>
 </body>
 </html>

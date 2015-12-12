@@ -1,58 +1,3 @@
-<?php
-
-$script_parent_dir = __DIR__;
-$document_root = $_SERVER["DOCUMENT_ROOT"];
-$http_host = $_SERVER['HTTP_HOST'];
-$script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir);
-
-/*if ($_POST['csubmit'] == 'Calculate')
-{
-    $bedscount = $_POST['amountofbeds'];
-    $country = $_POST['country'];
-
-    //var_dump($bedscount);
-    //var_dump($country);
-
-    switch ($bedscount)
-    {
-        case 1:
-            $b_price = 2;
-            $bedscount = "from 1 to 10";
-            break;
-        case 2:
-            $b_price = 5;
-            $bedscount = "from 11 to 18";
-            break;
-        case 3:
-            $b_price = 10;
-            $bedscount = "from 19 to 26";
-            break;
-        case 4:
-            $b_price = 12;
-            $bedscount = "more than 26";
-            break;
-    }
-
-    switch ($country)
-    {
-        case 1:
-            $b_price *= 1;
-            $country = "Ukraine";
-            break;
-        case 2:
-            $b_price *= 1.25;
-            $country = "Russia";
-            break;
-        case 3:
-            $b_price *= 1.5;
-            $country = "Another country";
-            break;
-    }
-
-}
-*/
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -481,5 +426,5 @@ $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir)
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
-<script src="/bootstrap/jscustom/index.js"></script>
+<script src="/js/index.js"></script>
 </body>

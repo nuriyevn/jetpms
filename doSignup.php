@@ -42,7 +42,7 @@
       $message .= "Please, click to this activation link: ";
 
       $token= bin2hex(openssl_random_pseudo_bytes(16));
-      $activation_link = "http://".$script_parent_dir."/complete_signup.php?email=".$send_to."&token=".$token;
+      $activation_link = "http://".$script_parent_dir."/activateAccount.php?email=".$send_to."&token=".$token;
       $href_tag = "<a href=".$activation_link.">$activation_link</a>";
 
       $conn->run_insert("INSERT INTO inquiries (email, token, hostel_name, telephone, is_active) VALUES('$send_to', '$token','', '', FALSE)");

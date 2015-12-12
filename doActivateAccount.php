@@ -17,7 +17,7 @@ $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123");
 
 $conn->connect();
 
-$query = "SELECT token FROM inquiries WHERE email='$input_email'";
+$query = "SELECT token, is_active, password FROM inquiries WHERE email='$input_email'";
 
 if ($conn->run_query($query))
 {
@@ -34,9 +34,15 @@ if ($conn->run_query($query))
          {
             // echo "Tokens are equal!<br>";
             $activate_query = "UPDATE inquiries SET password='$input_password1', is_active=TRUE WHERE email='$input_email'";
-            if ($conn->run_insert($activate_query) != 0)
+            //echo $arr['is_active']."<br>".$arr['password']."<br>";
+            if ($arr["is_active"] == TRUE && $arr['password'] != NULL)
             {
-               echo "Congratulation, registration completed! Redirecting...<br>";
+               echo "Your email has been activated. You may log in to your account";
+               http_response_code(422);
+            }
+            else if ($conn->run_insert($activate_query) != 0)
+            {
+               echo "Congratulation, registration completed!";
                http_response_code(200);
                exit();
             }
