@@ -4,7 +4,7 @@ This library is a wrapper class that manages PGSQL connections.
 Designed and implemented by Nusrat Nuriyev. (c) JetPMS 2015 
 
 */
-$path_to_hostconfig = $_SERVER["DOCUMENT_ROOT"]."/scripts/php/hostconfig.php";
+$path_to_hostconfig = $_SERVER["DOCUMENT_ROOT"]."/php/hostconfig.php";
 include_once($path_to_hostconfig);
 
 //$jet_ip = '62.75.216.31';

@@ -17,9 +17,9 @@ if (isset($_POST['step3']))
 
 function loadRoomTypes()
 {
-    $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT'] . "/scripts/php/hostconfig.php";
+    $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT'] . "/php/hostconfig.php";
     include_once($path_to_hostconfig);
-    $path_to_cdbconn = $_SERVER["DOCUMENT_ROOT"] . "/scripts/php/CDBConn.php";
+    $path_to_cdbconn = $_SERVER["DOCUMENT_ROOT"] . "/php/CDBConn.php";
     include_once($path_to_cdbconn);
 
     $my_conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
@@ -161,9 +161,9 @@ function loadRoomTypes()
       
        function putRoomsToDatabase(&$arr, $rcount)
        {
-            $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/scripts/php/hostconfig.php";
+            $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/php/hostconfig.php";
             include_once($path_to_hostconfig);
-            $path_to_cdbconn = $_SERVER["DOCUMENT_ROOT"]."/scripts/php/CDBConn.php";
+            $path_to_cdbconn = $_SERVER["DOCUMENT_ROOT"]."/php/CDBConn.php";
             include_once($path_to_cdbconn);
 
             $my_conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
@@ -264,9 +264,9 @@ function loadRoomTypes()
         <?php  
             $arr = $_POST;
             $rcount = $_POST["roomscount"];
-            $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/scripts/php/hostconfig.php";
+            $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/php/hostconfig.php";
             include_once($path_to_hostconfig);
-            $path_to_cdbconn = $_SERVER["DOCUMENT_ROOT"]."/scripts/php/CDBConn.php";
+            $path_to_cdbconn = $_SERVER["DOCUMENT_ROOT"]."/php/CDBConn.php";
             include_once($path_to_cdbconn);
 
             $my_conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);

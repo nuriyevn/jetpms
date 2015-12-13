@@ -7,12 +7,12 @@
     <title>Jet PMS | Speed up your business</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-theme.css" rel="stylesheet">
 
     <!-- Bootstrap customizable -->
-    <link href="css/csscustom/index.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <script src="http://code.jquery.com/jquery.min.js"></script>
 

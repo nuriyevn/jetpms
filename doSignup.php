@@ -4,8 +4,8 @@
    $http_host = $_SERVER["HTTP_HOST"];
    $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir);
    
-   $path_to_cdbconn = $_SERVER['DOCUMENT_ROOT']."/scripts/php/CDBConn.php";
-   $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/scripts/php/hostconfig.php";
+   $path_to_cdbconn = $_SERVER['DOCUMENT_ROOT']."/php/CDBConn.php";
+   $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/php/hostconfig.php";
 
    include_once($path_to_cdbconn);
    include_once($path_to_hostconfig);
