@@ -50,10 +50,10 @@ function loadRoomTypes()
 
     <!-- Bootstrap -->
     <!--    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <link href="../css/bootstrap-theme.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/csscustom/set.css">
-    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+    <link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/set.css">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

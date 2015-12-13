@@ -13,7 +13,7 @@
 
     <!-- Bootstrap customizable -->
     <link href="/css/index.css" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <script src="http://code.jquery.com/jquery.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

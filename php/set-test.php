@@ -12,10 +12,10 @@
 
     <!-- Bootstrap -->
 
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <link href="../css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-theme.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +25,7 @@
     <![endif]-->
 
     <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/csscustom/set-test.css">
+    <link rel="stylesheet" href="/css/set-test.css">
 </head>
 <body>
 
@@ -150,11 +150,12 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <!-- jQuery easing plugin -->
-<script src="../js/jquery.easing.min.js" type="text/javascript"></script>
-<script src="../js/set-test.js" type="text/javascript"></script>
+<script src="/js/jquery.easing.min.js" type="text/javascript"></script>
+<script src="/js/set-test.js" type="text/javascript"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../js/bootstrap.js"></script>
+<script src="/js/bootstrap/bootstrap.js"></script>
+
 
 </body>
 </html>
