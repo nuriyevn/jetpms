@@ -50,8 +50,8 @@ function loadRoomTypes()
 
     <!-- Bootstrap -->
     <!--    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
-    <link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="/css/bootstrap/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/set.css">
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 

@@ -12,8 +12,8 @@
 
     <!-- Bootstrap -->
 
-    <link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="/css/bootstrap/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 
@@ -154,7 +154,7 @@
 <script src="/js/set-test.js" type="text/javascript"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/js/bootstrap/bootstrap.js"></script>
+<script src="/js/bootstrap/bootstrap.min.js"></script>
 
 
 </body>

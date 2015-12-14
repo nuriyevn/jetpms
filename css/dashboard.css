@@ -1,0 +1,38 @@
+body {
+    background-color: #00A2E9;
+    color: #f1f1f1;
+}
+.navbar-nav, .nav, li  {
+    height: 20px;
+    padding: 0;
+}
+
+input[type="text"] {
+    background-color: #dddddd;
+    border-radius: 5px;
+}
+
+.row1, .opts{
+    margin-left: 30px;
+}
+.row1 input,
+input[type="date"],
+select, option
+{
+    border-radius: 5px;
+    color: #333333;
+}
+.month {
+    border: 1px solid black;
+    margin-top: 10px;
+}
+.day {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-top: none;
+    border-right: none;
+}
+.numbers {
+    background-color: #f1f1f1;
+    color: #333333;
+}
