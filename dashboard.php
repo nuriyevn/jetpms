@@ -19,7 +19,6 @@
     <link href="/css/dashboard.css" rel="stylesheet">
 
 
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 
@@ -53,10 +52,11 @@
             <li><a href="#">Settings</a></li>
         </ul>
         <h4 class="navbar-text"> [ HOSTEL'S NAME (#9999) ] </h4>
-        <input type="text" class="navbar-text text-center" placeholder="FIND">
+
         <ul class="nav navbar-nav navbar-right">
-           <li> <a href="#toUserProfile">User Name</a></li>
-           <li><a href="#">Log out</a></li>
+            <input type="text" class="navbar-text" placeholder="type to find info. . . ">
+            <li><a href="#toUserProfile">User Name</a></li>
+            <li><a href="#">Log out</a></li>
         </ul>
     </div>
 </nav>
@@ -84,122 +84,417 @@
         </select>
     </span>
 </div>
-<div class="month text-center">
-    <?php echo date("M");?>
-</div>
-<div class="days text-center">
-    <div class="col-md-1 day numbers">Room numbers</div>
-    <div class="col-md-1 day"><?php echo (date("d"))-1;?></div>
-    <div class="col-md-1 day today"><?php echo (date("d"));?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+1;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+2;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+3;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+4;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+5;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+6;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+7;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+8;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+9;?></div>
+
+<div class="mainTable table-striped">
+    <?php
+    $d = date("d");
+    ?>
+    <table class="table-bordered text-center">
+        <tr>
+            <td class="y" colspan="15"><?php echo date("Y"); ?></td>
+        </tr>
+        <tr>
+            <td class="m" colspan="15"><?php echo date("M") ?></td>
+        </tr>
+        <tr>
+            <td class="roomName">Room #</td>
+            <td><?php echo $d - 1; ?></td>
+            <td><?php echo($d); ?></td>
+            <td><?php echo($d + 1); ?></td>
+            <td><?php echo($d + 2); ?></td>
+            <td><?php echo($d + 3); ?></td>
+            <td><?php echo($d + 4); ?></td>
+            <td><?php echo($d + 5); ?></td>
+            <td><?php echo($d + 6); ?></td>
+            <td><?php echo($d + 7); ?></td>
+            <td><?php echo($d + 8); ?></td>
+            <td><?php echo($d + 9); ?></td>
+            <td><?php echo($d + 10); ?></td>
+            <td><?php echo($d + 11); ?></td>
+            <td><?php echo($d + 12); ?></td>
+
+        </tr>
+
+        <!--        for each room created internal table -->
+
+        <!--        FIRST room goes here -->
+        <table class="table-bordered text-center">
+            <tr>
+                <td colspan="15"><h4>Double Private Room</h4></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">1 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">2 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+        </table>
+        <!--        end of FIRST room  -->
+
+        <!--        SECOND room goes here -->
+        <table class="table-bordered text-center">
+            <tr>
+                <td colspan="15"><h4>Mixed dorm for four</h4></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">1 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">2 upper</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">3 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">4 upper</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+        </table>
+        <!--        end of SECOND room  -->
+
+        <!--        THIRD room goes here -->
+        <table class="table-bordered text-center">
+            <tr>
+                <td colspan="15"><h4>Female dorm for six</h4></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">1 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">2 upper</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">3 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">4 upper</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">5 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">6 upper</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+        </table>
+        <!--        end of THIRD room  -->
+
+        <!--        FOURTH room goes here -->
+        <table class="table-bordered text-center">
+            <tr>
+                <td colspan="15"><h4>Mixed dorm for eight</h4></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">1 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">2 upper</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">3 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">4 upper</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">5 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">6 upper</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">7 lower</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+            <tr>
+                <td class="roomName text-center">8 upper</td>
+                <td><?php echo($d - 1); ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+            </tr>
+        </table>
+        <!--        end of FOURTH room  -->
+        <!--        nd of all rooms-->
+    </table>
+
 
 </div>
-<div class="roomtype1 text-center">
-    De Luxe
-</div>
-<div class="days text-center">
-    <div class="col-md-1 day numbers">De Lux1</div>
-    <div class="col-md-1 day"><?php echo (date("d"))-1;?></div>
-    <div class="col-md-1 day today"><?php echo (date("d"));?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+1;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+2;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+3;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+4;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+5;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+6;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+7;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+8;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+9;?></div>
-
-</div>
-<div class="days text-center">
-    <div class="col-md-1 day numbers">De Lux2</div>
-    <div class="col-md-1 day"><?php echo (date("d"))-1;?></div>
-    <div class="col-md-1 day today"><?php echo (date("d"));?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+1;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+2;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+3;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+4;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+5;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+6;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+7;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+8;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+9;?></div>
-
-</div>
-<div class="roomtype1 text-center">
-    Room for four Mixed Dorm
-</div>
-<div class="days text-center">
-    <div class="col-md-1 day numbers">De Lux1</div>
-    <div class="col-md-1 day"><?php echo (date("d"))-1;?></div>
-    <div class="col-md-1 day today"><?php echo (date("d"));?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+1;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+2;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+3;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+4;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+5;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+6;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+7;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+8;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+9;?></div>
-
-</div>
-<div class="days text-center">
-    <div class="col-md-1 day numbers">De Lux2</div>
-    <div class="col-md-1 day"><?php echo (date("d"))-1;?></div>
-    <div class="col-md-1 day today"><?php echo (date("d"));?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+1;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+2;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+3;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+4;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+5;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+6;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+7;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+8;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+9;?></div>
-
-</div>
-<div class="days text-center">
-    <div class="col-md-1 day numbers">De Lux1</div>
-    <div class="col-md-1 day"><?php echo (date("d"))-1;?></div>
-    <div class="col-md-1 day today"><?php echo (date("d"));?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+1;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+2;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+3;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+4;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+5;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+6;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+7;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+8;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+9;?></div>
-
-</div>
-<div class="days text-center">
-    <div class="col-md-1 day numbers">De Lux2</div>
-    <div class="col-md-1 day"><?php echo (date("d"))-1;?></div>
-    <div class="col-md-1 day today"><?php echo (date("d"));?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+1;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+2;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+3;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+4;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+5;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+6;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+7;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+8;?></div>
-    <div class="col-md-1 day"><?php echo (date("d"))+9;?></div>
-
-</div>
-
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/bootstrap/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/bootstrap/bootstrap.min.js"></script>
