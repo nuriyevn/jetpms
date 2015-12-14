@@ -49,10 +49,11 @@
             <h2 class="fs-title">About Hostel</h2>
 
             <h3 class="fs-subtitle">This is step 1</h3>
-            <input type="text" name="name" placeholder="Hostel's name"/>
-            <input type="number" min="1" max="24" placeholder="How many rooms in hostel?">
+            <input type="text" name="hostel_name" placeholder="Hostel's name" value="G"/>
+            <input type="number" name="room_count" min="1" max="24" placeholder="How many rooms in hostel?" value="5">
 
-            <input type="button" name="next" class="next action-button" value="Next"/>
+            <input type="button" id="step1_next" name="next" class="next action-button" value="Next"/>
+            <p id="step1_message"></p>
         </fieldset>
 
         <fieldset>
@@ -60,11 +61,12 @@
 
             <h3 class="fs-subtitle">Name the room, define type and capacity</h3>
 
-            <input hidden name="roomscount" value="">
+            <div id="rooms_container" >
+            </div>
 
 
             Room #1
-            <input type="text" name="room-name" placeholder="Give a name for this room"/>
+            <!--input type="text" name="room-name" placeholder="Give a name for this room"/>
             <select name="" id="">
                 <option value="0">Lux</option>
                 <option value="1">Private</option>
@@ -79,10 +81,10 @@
                 <option value="1">Private</option>
                 <option value="2">Female dorm</option>
                 <option value="3">Mixed dorm</option>
-            </select>
+            </select-->
 
-            <input type="button" name="previous" class="previous action-button" value="Previous"/>
-            <input type="button" name="next" class="next action-button" value="Next"/>
+            <input type="button" id="step2_prev" name="previous" class="previous action-button" value="Previousi"/>
+            <input type="button" id="step2_next" name="next" class="next action-button" value="Next"/>
         </fieldset>
 
         <fieldset>
@@ -140,8 +142,8 @@
                 </div><!-- @end .span12 -->
             </div><!-- @end .row -->
 
-            <input type="button" name="previous" class="previous action-button" value="Previous"/>
-            <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+            <input type="button" id="step3_prev" name="previous" class="previous action-button" value="Previous"/>
+            <input type="submit" id="step3_submit" name="submit" class="submit action-button" value="Submit"/>
         </fieldset>
     </form>
 </div>
