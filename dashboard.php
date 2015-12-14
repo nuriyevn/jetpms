@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/bootstrap/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
     <!-- Fav Icon here -->
@@ -54,6 +55,7 @@
         <h4 class="navbar-text"> [ HOSTEL'S NAME (#9999) ] </h4>
 
         <ul class="nav navbar-nav navbar-right">
+            <li><i class="fa fa-search fa-2x navbar-text" id="search"></i></li>
             <input type="text" class="navbar-text" placeholder="type to find info. . . ">
             <li><a href="#toUserProfile">User Name</a></li>
             <li><a href="#">Log out</a></li>
@@ -85,11 +87,11 @@
     </span>
 </div>
 
-<div class="mainTable table-striped">
+<div class="mainTable">
     <?php
     $d = date("d");
     ?>
-    <table class="table-bordered text-center">
+    <table class="table table-bordered text-center">
         <tr>
             <td class="y" colspan="15"><?php echo date("Y"); ?></td>
         </tr>
@@ -118,7 +120,7 @@
         <!--        for each room created internal table -->
 
         <!--        FIRST room goes here -->
-        <table class="table-bordered text-center">
+        <table class="table-bordered table-hover table-striped text-center">
             <tr>
                 <td colspan="15"><h4>Double Private Room</h4></td>
             </tr>
@@ -160,7 +162,7 @@
         <!--        end of FIRST room  -->
 
         <!--        SECOND room goes here -->
-        <table class="table-bordered text-center">
+        <table class="table-bordered table-hover table-striped text-center">
             <tr>
                 <td colspan="15"><h4>Mixed dorm for four</h4></td>
             </tr>
@@ -236,7 +238,7 @@
         <!--        end of SECOND room  -->
 
         <!--        THIRD room goes here -->
-        <table class="table-bordered text-center">
+        <table class="table-bordered table-hover table-striped text-center">
             <tr>
                 <td colspan="15"><h4>Female dorm for six</h4></td>
             </tr>
@@ -346,7 +348,7 @@
         <!--        end of THIRD room  -->
 
         <!--        FOURTH room goes here -->
-        <table class="table-bordered text-center">
+        <table class="table-bordered table-hover table-striped text-center">
             <tr>
                 <td colspan="15"><h4>Mixed dorm for eight</h4></td>
             </tr>
