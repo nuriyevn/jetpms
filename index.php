@@ -8,16 +8,14 @@
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-
     <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- Bootstrap customizable -->
     <link href="/css/index.css" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-    <script src="http://code.jquery.com/jquery.min.js"></script>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -32,10 +30,10 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-4">
                 <ul class="nav nav-tabs">
-                    <li><a href="index.php"><span class="glyphicon glyphicon-home">  Main</span></a></li>
-                    <li><a href="#product"><span class="glyphicon glyphicon-list-alt"></span> How it works</a></li>
-                    <li><a href="#price"><span class="glyphicon glyphicon-usd"></span> Pricing</a></li>
-                    <li><a href="#contacts"><span class="glyphicon glyphicon-map-marker"></span> Contact us</a></li>
+                    <li><a href="index.php"><i class="fa fa-home"></i>  Main</span></a></li>
+                    <li><a href="#product"><i class="fa fa-cog fa-spin"></i> How it works</a></li>
+                    <li><a href="#price"><i class="fa fa-usd"></i> Pricing</a></li>
+                    <li><a href="#contacts"><i class="fa fa-map-marker"></i> Contact us</a></li>
                 </ul>
             </div>
             <div class="col-md-2">

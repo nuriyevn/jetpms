@@ -41,6 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
+            <i class="fa fa-bars"></i>
         </button>
     </div>
 
@@ -87,35 +88,38 @@
     </span>
 </div>
 
-<div class="mainTable">
+<div class="mainTable table-responsive">
     <?php
     $d = date("d");
     ?>
     <table class="table table-bordered text-center">
-        <tr>
-            <td class="y" colspan="15"><?php echo date("Y"); ?></td>
-        </tr>
-        <tr>
-            <td class="m" colspan="15"><?php echo date("M") ?></td>
-        </tr>
-        <tr>
-            <td class="roomName">Room #</td>
-            <td><?php echo $d - 1; ?></td>
-            <td><?php echo($d); ?></td>
-            <td><?php echo($d + 1); ?></td>
-            <td><?php echo($d + 2); ?></td>
-            <td><?php echo($d + 3); ?></td>
-            <td><?php echo($d + 4); ?></td>
-            <td><?php echo($d + 5); ?></td>
-            <td><?php echo($d + 6); ?></td>
-            <td><?php echo($d + 7); ?></td>
-            <td><?php echo($d + 8); ?></td>
-            <td><?php echo($d + 9); ?></td>
-            <td><?php echo($d + 10); ?></td>
-            <td><?php echo($d + 11); ?></td>
-            <td><?php echo($d + 12); ?></td>
 
-        </tr>
+        <table class="table-bordered table-hover table-striped text-center">
+            <tr>
+                <td class="y" colspan="15"><?php echo date("Y"); ?></td>
+            </tr>
+            <tr>
+                <td class="m" colspan="15"><?php echo date("M") ?></td>
+            </tr>
+            <tr>
+                <td class="roomName">Room #</td>
+                <td><?php echo $d - 1; ?></td>
+                <td><?php echo($d); ?></td>
+                <td><?php echo($d + 1); ?></td>
+                <td><?php echo($d + 2); ?></td>
+                <td><?php echo($d + 3); ?></td>
+                <td><?php echo($d + 4); ?></td>
+                <td><?php echo($d + 5); ?></td>
+                <td><?php echo($d + 6); ?></td>
+                <td><?php echo($d + 7); ?></td>
+                <td><?php echo($d + 8); ?></td>
+                <td><?php echo($d + 9); ?></td>
+                <td><?php echo($d + 10); ?></td>
+                <td><?php echo($d + 11); ?></td>
+                <td><?php echo($d + 12); ?></td>
+
+            </tr>
+        </table>
 
         <!--        for each room created internal table -->
 
