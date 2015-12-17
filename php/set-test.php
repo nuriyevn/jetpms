@@ -75,8 +75,8 @@
             <div id="row_id" class="row">
                 <div id="prices_container" class="span12">
 
-                                   </div><!-- @end .span12 -->
-            </div><!-- @end .row -->
+                                   </div>
+            </div>
 
             <input type="button" id="step3_prev" name="previous" class="previous action-button" value="Previous"/>
             <input type="submit" id="step3_submit" name="submit" class="submit action-button" value="Submit"/>

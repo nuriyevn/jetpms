@@ -113,8 +113,8 @@ $(document).ready(function() {
    
          // Creating first room
          $("<h3>Room#1</h3>").appendTo("#rooms_container");
-         $("#rooms_container").append("<input type='text' id = 'room_name_0' placeholder='Give a name for this room'/>");
-         $("#rooms_container").append("<select id='room_type_0'></select>");
+         $("#rooms_container").append("<input type='text' id = 'room_name_1' placeholder='Give a name for this room'/>");
+         $("#rooms_container").append("<select id='room_type_1'></select>");
          
          // Getting all room types from database
          var posting = $.post("/php/getRoomTypes.php", function(data) {
@@ -122,7 +122,7 @@ $(document).ready(function() {
                $.each(room_type, function(key, value)
                {
                   console.log(value[0] + value[1]);
-                  $("#room_type_0").append($("<option></option>")
+                  $("#room_type_1").append($("<option></option>")
                   .attr("value", value[0])
                   .text(value[1])
                   );
@@ -134,12 +134,12 @@ $(document).ready(function() {
          // wating for readiness of post
          posting.done(function()
          {
-            for (i = 1; i < room_count; i++)
+            for (i = 2; i <= room_count; i++)
             {
                
-               $("<h3>Room#" + (i + 1) +"</h3>").appendTo("#rooms_container");
-               $("#room_name_0").clone().attr('id', 'room_name_'+ i).appendTo("#rooms_container");
-               $("#room_type_0").clone().attr('id', 'room_types_' + i).appendTo("#rooms_container");
+               $("<h3>Room#" + i + "</h3>").appendTo("#rooms_container");
+               $("#room_name_1").clone().attr('id', 'room_name_'+  i).appendTo("#rooms_container");
+               $("#room_type_1").clone().attr('id', 'room_types_' + i).appendTo("#rooms_container");
             }
                
          });
@@ -151,9 +151,11 @@ $(document).ready(function() {
 
    $("#step2_next").click(function(){
       console.log("Step 2 next");   
-      //$("#row_id").empty();
+      for (i = 1; i <= room_count; i++)
+      {
+      }
+      
       $("#prices_container").empty();
-      //$("#row_id").append("<div id='prices_container' class='span12'></div>");
       
       // UL ROOM TAB LIST
       $("<ul id='price_tabs' class='nav nav-tabs'></ul>").appendTo("#prices_container")  ;
@@ -171,19 +173,24 @@ $(document).ready(function() {
       
       $("#prices_container").append("<div id='tabs_content' class='tab-content'></div>");
       
-      for (i = 0; i < room_count; i++)
+      for (i = 1; i <= room_count; i++)
       {
          var $div;
-         if (i === 0)
-            $div = $("<div class='tab-pane active' id='room"+(i+1)+"'></div>").appendTo("#tabs_content");
+         if (i === 1)
+            $div = $("<div class='tab-pane active' id='room"+i+"'></div>").appendTo("#tabs_content");
          else
-            $div = $("<div class='tab-pane' id='room"+(i+1)+"'></div>").appendTo("#tabs_content");
+            $div = $("<div class='tab-pane' id='room"+i+"'></div>").appendTo("#tabs_content");
          
-         $div.append("<h3>Check the data below: Room "+(i+1)+"</h3>");
+         $div.append("<h3>Check the data below: Room "+i+"</h3>");
+         alert($("#room_name_"+i).val()); 
+         $div.append("<p>Room's name is:" + $("#room_name_"+ i)'.val()  +"</p>");
+        // $div.append("<p>Room's type is:" + $("#room_type_" + i)) 
          $div.append("<input type='number'></input>");
          
          
       }
+      
+      
       next_animate($(this));
 
    });

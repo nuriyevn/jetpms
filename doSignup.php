@@ -45,7 +45,7 @@
       $activation_link = "http://".$script_parent_dir."/activateAccount.php?email=".$send_to."&token=".$token;
       $href_tag = "<a href=".$activation_link.">$activation_link</a>";
 
-      $conn->run_insert("INSERT INTO inquiries (email, token, hostel_name, telephone, is_active) VALUES('$send_to', '$token','', '', FALSE)");
+      $conn->run_insert("INSERT INTO inquiries (email, token, is_active) VALUES('$send_to', '$token', FALSE)");
 
       $message .= $href_tag."<br>";
 
