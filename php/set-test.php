@@ -72,55 +72,10 @@
             <h2 class="fs-title">Configuring the prices</h2>
             <h3 class="fs-subtitle">Define it for each room</h3>
 
-            <div class="row">
+            <div id="row_id" class="row">
                 <div id="prices_container" class="span12">
 
-                    <!--ul class="nav nav-tabs">
-                        <li class="active"><a href="#room1" data-toggle="tab">Room #1</a></li>
-                        <li><a href="#room2" data-toggle="tab">Room #2</a></li>
-                        <li><a href="#room3" data-toggle="tab">Room #3</a></li>
-                        <li><a href="#room4" data-toggle="tab">Room #4</a></li>
-                    </ul>
-
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="room1">
-                            <h3>Check the data below:</h3>
-                            Room's name is: @room1 <br>
-                            Room's type is: @type1 <br>
-                            Room's capacity is: @capacity1 <br>
-                            Please define price per bed in this room <br>
-                            <input type="number" min="1" name="roomprice1" placeholder="Price in local currency">
-                        </div><!-- @end #room1 -->
-
-                        <div class="tab-pane" id="room2">
-                            <h3>Check the data below:</h3>
-                            Room's name is: @room2 <br>
-                            Room's type is: @type2 <br>
-                            Room's capacity is: @capacity2 <br>
-                            Please define price per bed in this room <br>
-                            <input type="number" min="1" name="roomprice2" placeholder="Price in local currency">
-                        </div><!-- @end #room2 -->
-
-                        <div class="tab-pane" id="room3">
-                            <h3>Check the data below:</h3>
-                            Room's name is: @room3 <br>
-                            Room's type is: @type3 <br>
-                            Room's capacity is: @capacity4 <br>
-                            Please define price per bed in this room <br>
-                            <input type="number" min="1" name="roomprice3" placeholder="Price in local currency">
-                        </div><!-- @end #room3 -->
-
-                        <div class="tab-pane" id="room4">
-                            <h3>Check the data below:</h3>
-                            Room's name is: @room4 <br>
-                            Room's type is: @type4 <br>
-                            Room's capacity is: @capacity4 <br>
-                            Please define price per bed in this room <br>
-                            <input type="number" min="1" name="roomprice4" placeholder="Price in local currency">
-                        </div><!-- @end #room 4 -->
-                    </div--><!-- @end .tab-content -->
-
-                </div><!-- @end .span12 -->
+                                   </div><!-- @end .span12 -->
             </div><!-- @end .row -->
 
             <input type="button" id="step3_prev" name="previous" class="previous action-button" value="Previous"/>
@@ -142,3 +97,52 @@
 
 </body>
 </html>
+
+
+
+ <!--ul class="nav nav-tabs">
+<li class="active"><a href="#room1" data-toggle="tab">Room #1</a></li>
+<li><a href="#room2" data-toggle="tab">Room #2</a></li>
+<li><a href="#room3" data-toggle="tab">Room #3</a></li>
+<li><a href="#room4" data-toggle="tab">Room #4</a></li>
+</ul>
+
+<div class="tab-content">
+<div class="tab-pane active" id="room1">
+    <h3>Check the data below:</h3>
+    Room's name is: @room1 <br>
+    Room's type is: @type1 <br>
+    Room's capacity is: @capacity1 <br>
+    Please define price per bed in this room <br>
+    <input type="number" min="1" name="roomprice1" placeholder="Price in local currency">
+</div>
+
+<div class="tab-pane" id="room2">
+    <h3>Check the data below:</h3>
+    Room's name is: @room2 <br>
+    Room's type is: @type2 <br>
+    Room's capacity is: @capacity2 <br>
+    Please define price per bed in this room <br>
+    <input type="number" min="1" name="roomprice2" placeholder="Price in local currency">
+</div>
+
+<div class="tab-pane" id="room3">
+    <h3>Check the data below:</h3>
+    Room's name is: @room3 <br>
+    Room's type is: @type3 <br>
+    Room's capacity is: @capacity4 <br>
+    Please define price per bed in this room <br>
+    <input type="number" min="1" name="roomprice3" placeholder="Price in local currency">
+</div>
+
+<div class="tab-pane" id="room4">
+    <h3>Check the data below:</h3>
+    Room's name is: @room4 <br>
+    Room's type is: @type4 <br>
+    Room's capacity is: @capacity4 <br>
+    Please define price per bed in this room <br>
+    <input type="number" min="1" name="roomprice4" placeholder="Price in local currency">
+</div>
+</div-->
+
+

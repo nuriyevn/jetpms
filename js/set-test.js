@@ -151,7 +151,9 @@ $(document).ready(function() {
 
    $("#step2_next").click(function(){
       console.log("Step 2 next");   
+      //$("#row_id").empty();
       $("#prices_container").empty();
+      //$("#row_id").append("<div id='prices_container' class='span12'></div>");
       
       // UL ROOM TAB LIST
       $("<ul id='price_tabs' class='nav nav-tabs'></ul>").appendTo("#prices_container")  ;
@@ -167,7 +169,7 @@ $(document).ready(function() {
       
       // DIV TAB-CONTENT
       
-      $("#prices_container").after("<div id='tabs_content' class='tab-content'></div>");
+      $("#prices_container").append("<div id='tabs_content' class='tab-content'></div>");
       
       for (i = 0; i < room_count; i++)
       {
