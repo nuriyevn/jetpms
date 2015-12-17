@@ -87,8 +87,8 @@ h2 {
 	font-size: 3em;
 }
 
-li, p {
-	font-size: 1.25em;
+#product li, .blue_block li {
+	font-size: 1.5em;
 }
 
 ul li a {

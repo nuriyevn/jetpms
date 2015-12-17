@@ -45,24 +45,24 @@
         <div class="row">
             <h1><strong>Jet PMS</strong></h1>
 
-            <h2 class="line-height">Облачная система автоматизации хостелов<br>Один продукт и идеальный!</h2>
+            <h2 class="line-height">WEB - система автоматизации хостелов</h2>
 
             <div class="col-md-5 col-md-offset-1">
                 <ul class="lead">
-                    <li class="glyphicon glyphicon-ok"> Полная автоматизация работы хостела.Автоматическое
+                    <li class="fa fa-hand-o-right"> Полная автоматизация работы хостела. Автоматическое
                         выставление счетов и платежей. Отчеты
                     </li>
-                    <li class="glyphicon glyphicon-ok"> 2 way синхронизация со всеми популярными OTA booking.com,
-                        hostelworld.com, ostrovok.ru и другие
+                    <li class="fa fa-hand-o-right"> 2 way синхронизация  booking.com,
+                        hostelworld.com, ostrovok.ru
                     </li>
-                    <li class="glyphicon glyphicon-ok"> Документооборот адаптирован для Украины</li>
+                    <li class="fa fa-hand-o-right"> Документооборот адаптирован для Украины</li>
                 </ul>
             </div>
             <div class="col-md-5">
                 <ul class="lead">
-                    <li class="glyphicon glyphicon-ok"> Работа с ПК и мобильными устройствами</li>
-                    <li class="glyphicon glyphicon-ok"> Не требует покупки дополнительного оборудования</li>
-                    <li class="glyphicon glyphicon-ok"> 120 дней БЕСПЛАТНОГО пользования</li>
+                    <li class="fa fa-hand-o-right"> Работа с ПК и мобильными устройствами</li>
+                    <li class="fa fa-hand-o-right"> Не требует покупки дополнительного оборудования</li>
+                    <li class="fa fa-hand-o-right"> 120 дней БЕСПЛАТНОГО пользования</li>
                 </ul>
             </div>
         </div>
@@ -86,9 +86,7 @@
 <!--SECOND BLOCK-->
 <div class="container" id="product">
     <div class="row">
-        <h2 class="line-height">Уникальность и доступность системы позволит легко продавать номера и автоматизировать
-            управление
-            хостелом</h2>
+        <h2 class="line-height">Cистема позволяет легко продавать номера и автоматизировать управление хостелом</h2>
 
         <div class="col-md-4">
             <div class="row text-center">
@@ -98,16 +96,16 @@
                 <h2>Jet PMS</h2>
             </a><br>система для автоматизации хостела
             <ul>
-                <li class="glyphicon glyphicon-check">Выставляйте на продажу весь номерной фонд в системах
+                <li  class="fa fa-arrow-right">Выставляйте на продажу весь номерной фонд в системах
                     online-бронирования и на рецепции в одной программе
                 </li>
-                <li class="glyphicon glyphicon-check">Управляйте всеми операциями в хостеле, используя одно
+                <li  class="fa fa-arrow-right">Управляйте всеми операциями в хостеле, используя одно
                     приложение
                 </li>
-                <li class="glyphicon glyphicon-check">Выставляйте счета, платежи, отправляйте подтверждения о
+                <li  class="fa fa-arrow-right">Выставляйте счета, платежи, отправляйте подтверждения о
                     бронировании
                 </li>
-                <li class="glyphicon glyphicon-check">Формируйте отчеты, планируйте продажи номеров</li>
+                <li  class="fa fa-arrow-right">Формируйте отчеты, планируйте продажи номеров</li>
             </ul>
         </div>
 
@@ -119,14 +117,14 @@
                 <h2>Channel Manager</h2>
             </a><br>инструмент управления online продажами
             <ul>
-                <li class="glyphicon glyphicon-check">Обновляйте информацию об хостеле во всех системах бронирования
+                <li class="fa fa-arrow-right"> Обновляйте информацию об хостеле во всех системах бронирования
                     одновременно
                 </li>
-                <li class="glyphicon glyphicon-check">Редактируйте стоимость и наличие номерного фонда из одного
+                <li  class="fa fa-arrow-right"> Редактируйте стоимость и наличие номерного фонда из одного
                     интерфейса
                 </li>
-                <li class="glyphicon glyphicon-check">Экономьте свое время на работу с ОТА-системами</li>
-                <li class="glyphicon glyphicon-check">При отмене бронирования, номер автоматически выставляется на
+                <li class="fa fa-arrow-right"> Экономьте свое время на работу с ОТА-системами</li>
+                <li class="fa fa-arrow-right"> При отмене бронирования, номер автоматически выставляется на
                     продажу
                 </li>
             </ul>
@@ -139,14 +137,14 @@
             <a href="#">
                 <h2>Booking Button</h2></a><br>модуль online бронирования на сайте отеля
             <ul>
-                <li class="glyphicon glyphicon-check">Продавайте номера напрямую через сайт – удобно и без
+                <li  class="fa fa-arrow-right"> Продавайте номера напрямую через сайт – удобно и без
                     посредников
                 </li>
-                <li class="glyphicon glyphicon-check">Позволяйте вашим гостям осуществлять бронь всего в пару
+                <li  class="fa fa-arrow-right"> Позволяйте вашим гостям осуществлять бронь всего в пару
                     кликов
                 </li>
-                <li class="glyphicon glyphicon-check">Отслеживайте посетителей сайта и улучшайте конверсию</li>
-                <li class="glyphicon glyphicon-check">При бронировании номер автоматически снимается с продажи на
+                <li  class="fa fa-arrow-right"> Отслеживайте посетителей сайта и улучшайте конверсию</li>
+                <li class="fa fa-arrow-right"> При бронировании номер автоматически снимается с продажи на
                     всех порталах
                 </li>
             </ul>
@@ -196,7 +194,7 @@
         <img src="img/baner.png" alt="baner" width="100%">
     </div>
 
-    <h2 class="line-height">Преимущества работы с PMS Сloud</h2>
+    <h2 class="line-height">Преимущества работы с Jet PMS</h2>
 
     <div class="row">
         <div class="col-md-4">
@@ -305,7 +303,7 @@
 
         <div class="row">
             <p><a href="signup.php">
-                    <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно</button>
+                    <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно 120 дней</button>
                 </a>
                 <!--                <a href="#">-->
                 <!--                    <button type="button" class="btn btn-success btn-lg">Демо версия</button>-->
