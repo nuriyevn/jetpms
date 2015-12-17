@@ -50,7 +50,7 @@
 
             <h3 class="fs-subtitle">This is step 1</h3>
             <input type="text" name="hostel_name" placeholder="Hostel's name" value="G"/>
-            <input type="number" name="room_count" min="1" max="24" placeholder="How many rooms in hostel?" value="5">
+            <input type="number" name="room_count" min="1" max="24" placeholder="How many rooms in hostel?" value="2">
 
             <input type="button" id="step1_next" name="next" class="next action-button" value="Next"/>
             <p id="step1_message"></p>
@@ -61,29 +61,10 @@
 
             <h3 class="fs-subtitle">Name the room, define type and capacity</h3>
 
-            <div id="rooms_container" >
+            <div id="rooms_container">
             </div>
 
-
-            Room #1
-            <!--input type="text" name="room-name" placeholder="Give a name for this room"/>
-            <select name="" id="">
-                <option value="0">Lux</option>
-                <option value="1">Private</option>
-                <option value="2">Female dorm</option>
-                <option value="3">Mixed dorm</option>
-            </select>
-            <hr>
-            Room #2
-            <input type="text" name="room-name" placeholder="Give a name for this room"/>
-            <select name="" id="">
-                <option value="0">Lux</option>
-                <option value="1">Private</option>
-                <option value="2">Female dorm</option>
-                <option value="3">Mixed dorm</option>
-            </select-->
-
-            <input type="button" id="step2_prev" name="previous" class="previous action-button" value="Previousi"/>
+            <input type="button" id="step2_prev" name="previous" class="previous action-button" value="Previous"/>
             <input type="button" id="step2_next" name="next" class="next action-button" value="Next"/>
         </fieldset>
 
@@ -92,9 +73,9 @@
             <h3 class="fs-subtitle">Define it for each room</h3>
 
             <div class="row">
-                <div class="span12">
+                <div id="prices_container" class="span12">
 
-                    <ul class="nav nav-tabs">
+                    <!--ul class="nav nav-tabs">
                         <li class="active"><a href="#room1" data-toggle="tab">Room #1</a></li>
                         <li><a href="#room2" data-toggle="tab">Room #2</a></li>
                         <li><a href="#room3" data-toggle="tab">Room #3</a></li>
@@ -137,7 +118,7 @@
                             Please define price per bed in this room <br>
                             <input type="number" min="1" name="roomprice4" placeholder="Price in local currency">
                         </div><!-- @end #room 4 -->
-                    </div><!-- @end .tab-content -->
+                    </div--><!-- @end .tab-content -->
 
                 </div><!-- @end .span12 -->
             </div><!-- @end .row -->

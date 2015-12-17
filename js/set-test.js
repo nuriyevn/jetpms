@@ -1,4 +1,6 @@
-$(function() {
+$(document).ready(function() {
+
+
 
 //jQuery time
    var current_fs, next_fs, previous_fs; //fieldsets
@@ -6,77 +8,14 @@ $(function() {
    var animating; //flag to prevent quick multi-click glitches
    var room_count = 0;
    var hostel_name = "";
-   
-   $(".next").click(function(){
 
-     if ($(this).attr("id") === "step1_next")
-     {
-         
-         room_count = $('[name="room_count"]').val();
-         hostel_name = $('[name="hostel_name"]').val();
-         
-         var message = "";
-         var invalid = false;
-
-         if (!hostel_name.length)
-         {
-            message += "Hostel name is empty. ";
-            invalid = true;
-         }
-         if (!room_count.length)
-         {
-            message += "Room count is empty. "
-            invalid = true;
-         }
-         else if (parseInt(room_count, 10) < 1 || parseInt(room_count, 10) > 24)
-         {
-            message += "Room count must be between 1 and 42. ";
-            invalid = true;
-         }
-         
-         if (invalid)
-            return false;
-         else
-         {
-            var rooms_container = $("#rooms_container");          
-            var i = 5;
-            var s = $("<select/>").attr("id", i);
-            $.post("/php/getRoomTypes.php", function(data) {
-                  var room_types = jQuery.parseJSON(data);
-                  $.each(room_types, function(key, value)
-                  {
-                     console.log(value[0] + value[1]);
-                     s.append($("<option></option>")
-                     .attr("value", value[0])
-                     .text(value[1])
-                     );
-                  });
-                  rooms_container.html(s);
-                     
-            });
-            
-            for (i = 0; i < room_count; i++)
-            {
-               var input = $("<input type=\"\" name=\"room-name\" placeholder=\"Give a name for this room\" />");
-               s.attr("id", i);
-               //rooms_container.html(input);
-               rooms_container.append(s);
-            }
-            
-            
-         }
-     }
-     else if ($(this).attr("id") === "step2_next")
-     {
-       console.log("step2 next");
-         
-     }      
-
+   next_animate = function(obj)
+   {
       if (animating) return false;
       animating = true;
-      current_fs = $(this).parent();
+      current_fs = obj.parent();
 
-     next_fs = $(this).parent().next();
+     next_fs = obj.parent().next();
 
      //activate next step on progressbar using the index of next_fs
      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
@@ -104,22 +43,15 @@ $(function() {
          //this comes from the custom easing plugin
          easing: 'easeInOutBack'
      });
-   });
 
-   $(".previous").click(function(){
-    if ($(this).attr("id") === "step2_prev")
-     {
-         console.log("Step 2 prev");
-     }
-     else if ($(this).attr("id") === "step3_prev")
-     {
-         console.log("Step3 prev");
-     }
+   };
+
+   prev_animate = function(obj){
      if(animating) return false;
      animating = true;
 
-     current_fs = $(this).parent();
-      previous_fs = $(this).parent().prev();
+     current_fs = obj.parent();
+      previous_fs = obj.parent().prev();
 
      //de-activate current step on progressbar
      $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
@@ -147,13 +79,127 @@ $(function() {
          //this comes from the custom easing plugin
          easing: 'easeInOutBack'
      });
+   };
+   
+   
+   $("#step1_next").click(function(){
+      room_count = $('[name="room_count"]').val();
+      hostel_name = $('[name="hostel_name"]').val();
+      
+      var message = "";
+      var invalid = false;
+
+      if (!hostel_name.length)
+      {
+         message += "Hostel name is empty. ";
+         invalid = true;
+      }
+      if (!room_count.length)
+      {
+         message += "Room count is empty. "
+         invalid = true;
+      }
+      else if (parseInt(room_count, 10) < 1 || parseInt(room_count, 10) > 24)
+      {
+         message += "Room count must be between 1 and 42. ";
+         invalid = true;
+      }
+      
+      if (invalid)
+         return false;
+      else
+      {
+         $("#rooms_container").empty();
+   
+         // Creating first room
+         $("<h3>Room#1</h3>").appendTo("#rooms_container");
+         $("#rooms_container").append("<input type='text' id = 'room_name_0' placeholder='Give a name for this room'/>");
+         $("#rooms_container").append("<select id='room_type_0'></select>");
+         
+         // Getting all room types from database
+         var posting = $.post("/php/getRoomTypes.php", function(data) {
+               var room_type = jQuery.parseJSON(data);
+               $.each(room_type, function(key, value)
+               {
+                  console.log(value[0] + value[1]);
+                  $("#room_type_0").append($("<option></option>")
+                  .attr("value", value[0])
+                  .text(value[1])
+                  );
+               });
+               
+                                   
+         });
+
+         // wating for readiness of post
+         posting.done(function()
+         {
+            for (i = 1; i < room_count; i++)
+            {
+               
+               $("<h3>Room#" + (i + 1) +"</h3>").appendTo("#rooms_container");
+               $("#room_name_0").clone().attr('id', 'room_name_'+ i).appendTo("#rooms_container");
+               $("#room_type_0").clone().attr('id', 'room_types_' + i).appendTo("#rooms_container");
+            }
+               
+         });
+           
+      }
+      
+      next_animate($(this));
    });
 
-   $(".submit").click(function(){
-      if ($(this).attr("id") === "step3_submit")
+   $("#step2_next").click(function(){
+      console.log("Step 2 next");   
+      $("#prices_container").empty();
+      
+      // UL ROOM TAB LIST
+      $("<ul id='price_tabs' class='nav nav-tabs'></ul>").appendTo("#prices_container")  ;
+
+      console.log("room_count step2next =" + room_count);
+      for (i = 0; i < room_count; i++)
       {
-         console.log("step3 submit");
+         if (i === 0)
+            $("#price_tabs").append($("<li class='active'><a href='"+"#room"+(i+1)+"' data-toggle='tab'>Room#"+(i+1)+"</li>"));
+         else
+            $("#price_tabs").append($("<li><a href='"+"#room"+(i+1)+"' data-toggle='tab'>Room#"+(i+1)+"</li>"));
       }
+      
+      // DIV TAB-CONTENT
+      
+      $("#prices_container").after("<div id='tabs_content' class='tab-content'></div>");
+      
+      for (i = 0; i < room_count; i++)
+      {
+         var $div;
+         if (i === 0)
+            $div = $("<div class='tab-pane active' id='room"+(i+1)+"'></div>").appendTo("#tabs_content");
+         else
+            $div = $("<div class='tab-pane' id='room"+(i+1)+"'></div>").appendTo("#tabs_content");
+         
+         $div.append("<h3>Check the data below: Room "+(i+1)+"</h3>");
+         $div.append("<input type='number'></input>");
+         
+         
+      }
+      next_animate($(this));
+
+   });
+   
+   $("#step2_prev").click(function(){
+      console.log("Step 2 prev");
+      prev_animate($(this));
+   });
+   
+   $("#step3_prev").click(function(){
+      console.log("Step3 prev");
+   
+      prev_animate($(this));
+   });
+
+   
+   $("#step3_submit").click(function(){
+      console.log("step3 submit");
       return false;
    })
 
