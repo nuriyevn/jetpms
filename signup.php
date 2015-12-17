@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/signup.css" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css'/>
 
     <!--    Bootstrap cor jquery link-->
     <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -69,7 +70,9 @@
                 <li>Have a question? Send us a letter <a href="mailto:jetpmscom@gmail.com">jetpmscom@gmail.com</a></li>
             </ul>
             </p>
-            <div class="white">
+            <div id="send_email" class="white">
+                <h3>Send us a letter</h3>
+                <div>
                 <form action="" method="post">
                 <textarea name="signup" class="form-signin-heading" id="" cols="" rows="10"
                           placeholder="I got a question. Could you be so kind to help me?">
@@ -78,6 +81,7 @@
                 <input type="email" class="form-control" aria-required="true"  placeholder="Email address" required=""><br>
                 <input type="submit" class="btn btn-lg btn-success btn-block" name="Sign up" value="Send">
             </form>
+            </div>
             </div>
             <br>
             <footer class="text-center">
@@ -96,6 +100,9 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/js/validateEmail.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <script src="/js/signup.js"></script>
+
 </body>
 </html>

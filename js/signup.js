@@ -1,4 +1,7 @@
+$(document).ready(function(){
+   $("#send_email").accordion({collapsible: true, active: false});
 
+});
 
 getDomain = function()
 {
