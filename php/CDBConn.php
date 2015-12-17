@@ -42,6 +42,14 @@ public function __construct($host, $dbname, $user, $password, $debug=null)
       $this->_debug = FALSE;
    else
       $this->_debug = $debug;
+
+
+
+   if ($this->_debug)
+   {
+      error_reporting(E_ALL);
+      ini_set("display_errors", 1);
+   }
 }
 
 public function turn_on_debug($b)
@@ -73,6 +81,9 @@ public function reconnect($new_database, $username=null, $password=null)
    $this->connect($new_database);
 }
 
+
+// setsebool httpd_can_network_connect_db 1
+// In case of lack of permission to connect
 public function connect()
 {
    if ($this->__connect_to_localhost() == FALSE)
