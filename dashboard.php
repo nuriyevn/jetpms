@@ -32,37 +32,11 @@
 <body>
 
 <!--nav bar-->
+<?php
+include("navbar.php");
+?>
+<!-- nav bar end here -->
 
-<nav role="navigation" class="navbar navbar-default">
-
-    <div class="navbar-header">
-        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <i class="fa fa-bars"></i>
-        </button>
-    </div>
-
-    <div id="navbarCollapse" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Dashboard</a></li>
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">Tasks</a></li>
-            <li><a href="#">Accounting</a></li>
-            <li><a href="#">Settings</a></li>
-        </ul>
-        <h4 class="navbar-text"> [ HOSTEL'S NAME (#9999) ] </h4>
-
-        <ul class="nav navbar-nav navbar-right">
-            <li><i class="fa fa-search fa-2x navbar-text" id="search"></i></li>
-            <input type="text" class="navbar-text" placeholder="type to find info. . . ">
-            <li><a href="#toUserProfile">User Name</a></li>
-            <li><a href="#">Log out</a></li>
-        </ul>
-    </div>
-</nav>
 <div class="row1">
     <input type="button" class="btn-default" value="- 30">
     <input type="button" class="btn-default" value="- 7">
@@ -504,5 +478,4 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/bootstrap/bootstrap.min.js"></script>
-<script src="/js/index.js"></script>
 </body>
