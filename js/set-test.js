@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
-
-
 //jQuery time
    var current_fs, next_fs, previous_fs; //fieldsets
    var left, opacity, scale; //fieldset properties which we will animate
    var animating; //flag to prevent quick multi-click glitches
    var room_count = 0;
+   var room_count_old = 0;
+   var refresh_prices = 0;
    var hostel_name = "";
 
    next_animate = function(obj)
@@ -109,107 +109,101 @@ $(document).ready(function() {
          return false;
       else
       {
-         $("#rooms_container").empty();
-   
-         // Creating first room
-         $("<h3>Room#1</h3>").appendTo("#rooms_container");
-         $("#rooms_container").append("<input type='text' id = 'room_name_1' placeholder='Give a name for this room'/>");
-         $("#rooms_container").append("<select id='room_type_1'></select>");
-         
+         // Room count has been changed, delete old room's info
+         if (room_count != room_count_old)
+         {
+            $("#rooms_container").empty();
+            refresh_prices = 1;
+            room_count_old = room_count;
+             
+         // Templated controls which is cloned during rooms generation
+         var $select_type = $("<select id='room_type'></select>");
+         var $input_name = $("<input type='text' id='room_name' placeholder = 'Give a name for this room'/>");
+         var $input_bedcount = $("<input type='number' id='room_capacity' placeholder='How many beds in this room?'/>");
+
          // Getting all room types from database
          var posting = $.post("/php/getRoomTypes.php", function(data) {
                var room_type = jQuery.parseJSON(data);
                $.each(room_type, function(key, value)
                {
-                  console.log(value[0] + value[1]);
-                  $("#room_type_1").append($("<option></option>")
-                  .attr("value", value[0])
-                  .text(value[1])
-                  );
+                  $("<option></option>").attr('value', value[0]).text(value[1]).clone().appendTo($select_type);
                });
-               
-                                   
          });
 
          // wating for readiness of post
          posting.done(function()
          {
-            for (i = 2; i <= room_count; i++)
+            for (i = 1; i <= room_count; i++)
             {
-               
                $("<h3>Room#" + i + "</h3>").appendTo("#rooms_container");
-               $("#room_name_1").clone().attr('id', 'room_name_'+  i).appendTo("#rooms_container");
-               $("#room_type_1").clone().attr('id', 'room_types_' + i).appendTo("#rooms_container");
+               $input_name.clone().attr('id', 'room_name_'+  i).appendTo("#rooms_container");
+               $select_type.clone().attr('id', 'room_type_' + i).appendTo("#rooms_container");
+               $input_bedcount.clone().attr('id', 'room_capacity_'+i).appendTo("#rooms_container");
             }
-               
          });
-           
+         }    
       }
       
       next_animate($(this));
    });
 
    $("#step2_next").click(function(){
-      console.log("Step 2 next");   
-      for (i = 1; i <= room_count; i++)
+      if (refresh_prices === 1)
       {
-      }
-      
-      $("#prices_container").empty();
-      
-      // UL ROOM TAB LIST
-      $("<ul id='price_tabs' class='nav nav-tabs'></ul>").appendTo("#prices_container")  ;
+         $("#prices_container").empty();
+         refresh_prices = 0;
+            
+         // UL ROOM TAB LIST
+         $("<ul id='price_tabs' class='nav nav-tabs'></ul>").appendTo("#prices_container")  ;
 
-      console.log("room_count step2next =" + room_count);
-      for (i = 0; i < room_count; i++)
-      {
-         if (i === 0)
-            $("#price_tabs").append($("<li class='active'><a href='"+"#room"+(i+1)+"' data-toggle='tab'>Room#"+(i+1)+"</li>"));
-         else
-            $("#price_tabs").append($("<li><a href='"+"#room"+(i+1)+"' data-toggle='tab'>Room#"+(i+1)+"</li>"));
-      }
-      
-      // DIV TAB-CONTENT
-      
-      $("#prices_container").append("<div id='tabs_content' class='tab-content'></div>");
-      
-      for (i = 1; i <= room_count; i++)
-      {
-         var $div;
-         if (i === 1)
-            $div = $("<div class='tab-pane active' id='room"+i+"'></div>").appendTo("#tabs_content");
-         else
-            $div = $("<div class='tab-pane' id='room"+i+"'></div>").appendTo("#tabs_content");
+         console.log("room_count step2next =" + room_count);
+         for (i = 1; i <= room_count; i++)
+         {
+            $("#price_tabs").append($("<li><a href='"+"#room"+i+"' data-toggle='tab'>Room#"+i+"</li>"));
+         }
+         $("#price_tabs li:first").addClass("active");
          
-         $div.append("<h3>Check the data below: Room "+i+"</h3>");
-         alert($("#room_name_"+i).val()); 
-         $div.append("<p>Room's name is:" + $("#room_name_"+ i)'.val()  +"</p>");
-        // $div.append("<p>Room's type is:" + $("#room_type_" + i)) 
-         $div.append("<input type='number'></input>");
-         
-         
-      }
+         // DIV TAB-CONTENT
+         $("#prices_container").append("<div id='tabs_content' class='tab-content'></div>");
+         for (i = 1; i <= room_count; i++)
+         {
+            var $div = $("<div class='tab-pane' id='room"+i+"'></div>").appendTo("#tabs_content");
+            
+            $div.append("<h3>Check the data below: Room "+i+"</h3>");
+            $div.append("<p>Room's name is: <b>" + $("#room_name_"+ i).val()  +"</b></p>");
+            
+            var index = $("#room_type_"+i).val();
+            var room_type = $("#room_type_"+ i +" option[value='" + index + "']").text();
+            var capacity = $("#room_capacity_" + i).val();
+            $div.append("<p>Room's type is: <b>" + room_type + "</b></p>");
+            $div.append("<p>Room's capacity is: <b>" + capacity + "</b></p>");
+            $div.append("<p>Please, define price per bed in this room</p>")
+            $div.append("<input type='number' placeholder='Price in local currency'></input>");
+         }
+         $("#tabs_content div:first").addClass("active");
       
-      
+      } // refresh price if clause
       next_animate($(this));
 
    });
    
    $("#step2_prev").click(function(){
-      console.log("Step 2 prev");
       prev_animate($(this));
    });
    
    $("#step3_prev").click(function(){
-      console.log("Step3 prev");
-   
       prev_animate($(this));
    });
 
-   
+   // Submitting basic settings for hostel 
    $("#step3_submit").click(function(){
-      console.log("step3 submit");
+      $.post("/php/doConfigure.php", {hostel_name: hostel_name, room_count: room_count})
+      .done(function(data){
+         console.log("Data sent: " + data);
+         window.location = window.location.origin + "/dashboard.php";
+
+      }); 
       return false;
-   })
+   }) 
 
 });
