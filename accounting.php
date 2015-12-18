@@ -30,31 +30,19 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-3">
-            From: <input type="date">
-        </div>
-        <div class="col-md-3">
-            To: <input type="date">
-        </div>
-        <div class="col-md-2">
-            <button class="btn-success">Add payment</button>
-        </div>
-        <div class="col-md-2">
-            <button class="btn-success">Transfer money</button>
-        </div>
-        <div class="col-md-2">
-            <button class="btn-success">Full report</button>
-        </div>
+            From: <input type="date" class="sel">
+            To: <input type="date" class="sel">
+            <button class="btn-success sel"><i class="fa fa-refresh"></i> Transfer money</button>
+            <button class="btn-success sel"><i class="fa fa-wrench"></i> Report Settings</button>
     </div>
 
     <div class="mainTable">
 
-
         <table class="table table-bordered table-hover table-striped text-center">
             <h3 class="text-center">General report</h3>
             <thead>
-            <th>Accounts</th>
-            <th>Start balance</th>
+            <th>Accounts  <i class="fa fa-cogs"></i></th>
+            <th>Start balance </th>
             <th>Income payment</th>
             <th>Expences</th>
             <th>Final balance</th>
@@ -88,8 +76,15 @@
                 <td>15 075</td>
             </tr>
         </table>
+
+        <!--        Income report -->
         <table class="table table-bordered table-hover table-striped text-center">
-            <h3 class="text-center">Income Report</h3>
+            <h3 class="text-center">The Earnings Report</h3>
+            <h5 class="text-center">
+                <i class=" fa fa-plus-circle sel"> Add payment</i>
+                <i class="fa fa-minus-circle sel"> Delete payment </i>
+                <i class="fa fa-pencil-square-o sel"> Edit</i>
+            </h5>
 
             <div class="text-center">
                 <span class="sel"> Cashier: <input type="checkbox"> </span>
@@ -97,13 +92,15 @@
                 <span class="sel"> Incasated: <input type="checkbox"> </span>
             </div>
             <thead>
-            <td>Order#</td>
-            <td>Date && Time</td>
-            <td>Guest Name</td>
-            <td>To account</td>
-            <td>Amount</td>
+                <td id="select">Select</td>
+                <td>Order#</td>
+                <td>Date && Time</td>
+                <td>Guest Name</td>
+                <td>To account</td>
+                <td>Amount</td>
             </thead>
             <tr>
+                <td><input type="checkbox" class="checkbox"></td>
                 <td>546</td>
                 <td>jun 2, 9:45</td>
                 <td>Ivan Ivanov</td>
@@ -111,6 +108,7 @@
                 <td>200</td>
             </tr>
             <tr>
+                <td><input type="checkbox" class="checkbox"></td>
                 <td>416</td>
                 <td>jun 2, 11:03</td>
                 <td>Olga Petrova</td>
@@ -118,6 +116,7 @@
                 <td>400</td>
             </tr>
             <tr>
+                <td><input type="checkbox" class="checkbox"></td>
                 <td>236</td>
                 <td>jun 2, 13:48</td>
                 <td>Julia Bibik</td>
@@ -125,6 +124,7 @@
                 <td>150</td>
             </tr>
             <tr>
+                <td><input type="checkbox" class="checkbox"></td>
                 <td>532</td>
                 <td>jun 2, 22:08</td>
                 <td>Oxana Hug</td>
@@ -132,9 +132,16 @@
                 <td>150</td>
             </tr>
         </table>
+        <!--       END of Income report -->
 
+        <!--        Expenses report -->
         <table class="table table-bordered table-hover table-striped text-center">
-            <h3 class="text-center">Expenses Report</h3>
+            <h3 class="text-center">The expense report</h3>
+            <h5 class="text-center">
+                <i class=" fa fa-plus-circle sel"> Add expense</i>
+                <i class="fa fa-minus-circle sel"> Delete expense </i>
+                <i class="fa fa-pencil-square-o sel"> Edit</i>
+            </h5>
 
             <div class="text-center">
                 <span class="sel"> Cashier: <input type="checkbox"> </span>
@@ -142,13 +149,15 @@
                 <span class="sel"> Incasated: <input type="checkbox"> </span>
             </div>
             <thead>
-            <td>Date && Time</td>
-            <td>From account</td>
-            <td>Category</td>
-            <td>Subcategory</td>
-            <td>Amount</td>
+                <td id="select">Select</td>
+                <td>Date && Time</td>
+                <td>From account</td>
+                <td>Category</td>
+                <td>Subcategory</td>
+                <td>Amount</td>
             </thead>
             <tr>
+                <td><input type="checkbox" class="checkbox"></td>
                 <td>jun 2, 10:15</td>
                 <td>Incasated</td>
                 <td>House keeping</td>
@@ -156,6 +165,7 @@
                 <td>100</td>
             </tr>
             <tr>
+                <td><input type="checkbox" class="checkbox"></td>
                 <td>jun 2, 12:15</td>
                 <td>Incasated</td>
                 <td>Services</td>
@@ -163,6 +173,7 @@
                 <td>2 950</td>
             </tr>
             <tr>
+                <td><input type="checkbox" class="checkbox"></td>
                 <td>jun 2, 15:05</td>
                 <td>Cashier</td>
                 <td>Refund</td>
@@ -170,6 +181,7 @@
                 <td>200</td>
             </tr>
             <tr>
+                <td><input type="checkbox" class="checkbox"></td>
                 <td>jun 2, 18:55</td>
                 <td>Credit Card</td>
                 <td>Bookers</td>
@@ -177,6 +189,7 @@
                 <td>200</td>
             </tr>
         </table>
+        <!--      END of  Expenses report -->
 
     </div>
 </div>

@@ -1,3 +1,18 @@
 .sel {
     margin-right: 20px;
 }
+/*h5 i {*/
+    /*margin-right: 20px;*/
+/*}*/
+#select {
+    width: 50px;
+}
+button i {
+    color: whitesmoke;
+}
+button .fa-bars, button .fa {
+    color: whitesmoke;
+}
+button {
+    border-radius: 5px;
+}

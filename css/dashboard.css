@@ -28,7 +28,7 @@ select, option
     padding: 5px 5px 5px 5px ;
     margin: auto;
     margin-top: 10px;
-    width: 98%;
+    width: 100%;
     color: #333333;
 }
 table {
@@ -41,7 +41,8 @@ table table tr {
     border: 1px solid black ;
 }
 .roomName {
-    width: 200px;
+    width: 150px;
+    font-weight: 700;
 }
 #search {
     color: #00A2E9;
