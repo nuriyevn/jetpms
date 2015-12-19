@@ -29,18 +29,17 @@ if ($conn->run_query($query))
          http_response_code(422);
          break;
       case 1:
-         $arr = pg_fetch_array($conn->getResult());
+         $arr = $conn->fetch_array());
          if ($arr["token"] == $input_token)
          {
-            // echo "Tokens are equal!<br>";
-            $activate_query = "UPDATE inquiries SET password='$input_password1', is_active=TRUE WHERE email='$input_email'";
-            //echo $arr['is_active']."<br>".$arr['password']."<br>";
+            $activate_query = "UPDATE inquiries SET is_active=TRUE WHERE email='$input_email'";
+            $adduser_query = "INSERT INTO users(login, password) VALUES('$input_email', '$input_password1')";
             if ($arr["is_active"] == TRUE && $arr['password'] != NULL)
             {
                echo "Your email has been activated. You may log in to your account";
                http_response_code(422);
             }
-            else if ($conn->run_insert($activate_query) != 0)
+            else if ($conn->run_insert($activate_query) != 0 && $conn->run_insert($adduser_query) != 0)
             {
                echo "Congratulation, registration completed!";
                http_response_code(200);
