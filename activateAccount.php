@@ -54,7 +54,7 @@
 
                         <div class="form-group">
                             <input type="submit" name="submit" value="Finish registration"
-                                   class="btn-success btn-lg btn-block" onclick="completeSignup(document.getElementById('email_input').value, document.getElementById('token_input').value, document.getElementById('password1').value, document.getElementById('password2').value)">
+                                   class="btn-success btn-lg btn-block" onclick="activateAccount(document.getElementById('email_input').value, document.getElementById('token_input').value, document.getElementById('password1').value, document.getElementById('password2').value)">
                         </div>
                         <p id="signup_message"></p>
                 </div>
