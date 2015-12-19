@@ -13,11 +13,11 @@ $input_password2 = $_POST['password2'];
 
 //printf("input_email=%s<br>input_token=%s<br>input_password1=%s<br>input_password2=%s<br>", $input_email, $input_token, $input_password1, $input_password2);
 
-$conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123");
+$conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
 
 $conn->connect();
 
-$query = "SELECT token, is_active, password FROM inquiries WHERE email='$input_email'";
+$query = "SELECT token, is_active FROM inquiries WHERE email='$input_email'";
 
 if ($conn->run_query($query))
 {
@@ -29,21 +29,32 @@ if ($conn->run_query($query))
          http_response_code(422);
          break;
       case 1:
-         $arr = $conn->fetch_array());
+         $arr = $conn->fetch_array();
          if ($arr["token"] == $input_token)
          {
             $activate_query = "UPDATE inquiries SET is_active=TRUE WHERE email='$input_email'";
             $adduser_query = "INSERT INTO users(login, password) VALUES('$input_email', '$input_password1')";
-            if ($arr["is_active"] == TRUE && $arr['password'] != NULL)
+            if ($arr["is_active"] === 't')
             {
                echo "Your email has been activated. You may log in to your account";
                http_response_code(422);
-            }
-            else if ($conn->run_insert($activate_query) != 0 && $conn->run_insert($adduser_query) != 0)
-            {
-               echo "Congratulation, registration completed!";
-               http_response_code(200);
                exit();
+            }
+            
+            if ($conn->run_insert($adduser_query) != 0)
+            {
+               if ($conn->run_insert($activate_query) != 0)
+               {
+                  echo "Congratulation, registration completed!";
+                  http_response_code(200);
+                  exit();
+               }
+               http_response_code(422);
+            }
+            else
+            {
+               echo "Error: Can't add user to users table.";
+               http_response_code(422);
             }
          } 
          else

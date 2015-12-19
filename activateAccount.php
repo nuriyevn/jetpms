@@ -74,6 +74,7 @@
         </div>
     </div>
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="/js/validateEmail.js"></script>
 <script src="/js/queryString.js"></script>
 <script src="/js/activateAccount.js"></script>

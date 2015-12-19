@@ -38,17 +38,17 @@
 
             <div id="white">
 
-                <form class="form-signin" role="form">
+                <!--form class="form-signin" role="form"-->
                     <h2 class="text-center">Log in</h2>
                     <p id="login_message"></p>
                     <div class="row">
-                        <input type="email" class="form-control" placeholder="Email address" required=""
+                        <input value="jetpmscom@gmail.com" type="email" id="login_id" class="form-control" placeholder="Email address" required=""
                                autofocus="">
                     </div>
                     <br>
 
                     <div class="row">
-                        <input type="password" class="form-control" placeholder="Password" required="">
+                        <input type="password" id="password_id" class="form-control" placeholder="Password" required="">
                     </div>
                     <br>
                     <!--div class="row">
@@ -57,14 +57,14 @@
                         </label>
                     </div-->
                     <div class="row">
-                        <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+                        <button id="button_id" class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
                     </div>
                     <br>
 
                     <div class="text-center">
                         <a href="#">Forgot password?</a>
                     </div>
-                </form>
+                <!--/form-->
             </div>
             <br>
 
@@ -82,6 +82,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="/js/queryString.js"></script>
 <script src="/js/login.js"></script>
 </body>

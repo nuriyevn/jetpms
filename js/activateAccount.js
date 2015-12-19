@@ -37,7 +37,7 @@ completeSignup = function(email, token, password1, password2)
    
       
    {
-      document.getElementById('signup_message').innerHTML = "Finishing...";
+      document.getElementById('signup_message').innerHTML = "Registering...";
       if (window.XMLHttpRequest)
       {
          xmlhttp = new XMLHttpRequest();
@@ -54,18 +54,33 @@ completeSignup = function(email, token, password1, password2)
             {
                case 200:
                   document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
-                  window.location = window.location.origin + "/login.php?statusMessage=" + xmlhttp.responseText;
+                  $.ajax({
+                     type: 'POST',
+                     url: '/doLogin.php',
+                     data: 'login=' + encodeURIComponent(JSON.stringify(email)) + '&password=' + encodeURIComponent(JSON.stringify(password1)) + '&from=' + encodeURIComponent(JSON.stringify('accountActivation')),
+                     success: function(msg)
+                     {
+                        alert(msg);
+                     }
+                  }); 
+                  //window.location = window.location.origin + "/login.php?statusMessage=" + xmlhttp.responseText;
                   break;
                case 422:
                   document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
                   break;
+               case 500:
+               default:
+                  //document.getElementById('signup_message').innerHTML = "Internal server error (500)";
+                  document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
+                  break;
+
             }
 
          }
       }
       
    }
-   xmlhttp.open("POST", "doActivateAccount.php", true);
+   xmlhttp.open("POST", "/doActivateAccount.php", true);
    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
    xmlhttp.send("email=" + encodeURIComponent(email) 
                +"&token=" + encodeURIComponent(token) 
