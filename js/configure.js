@@ -178,7 +178,7 @@ $(document).ready(function() {
             $div.append("<p>Room's type is: <b>" + room_type + "</b></p>");
             $div.append("<p>Room's capacity is: <b>" + capacity + "</b></p>");
             $div.append("<p>Please, define price per bed in this room</p>")
-            $div.append("<input type='number' placeholder='Price in local currency'></input>");
+            $div.append("<input id='room_rate_" + i  + "' type='number' placeholder='Price in local currency'></input>");
          }
          $("#tabs_content div:first").addClass("active");
       
@@ -197,12 +197,44 @@ $(document).ready(function() {
 
    // Submitting basic settings for hostel 
    $("#step3_submit").click(function(){
+      
+      var rooms = [];
+      var hostel_info = {
+         "hostel_name": hostel_name,
+         "room_count": room_count
+      };
+      for (i = 1; i <= room_count; i++)
+      {
+         
+         room = {
+            "name": $("#room_name_" + i).val(),    
+            "type": $("#room_type_" + i).val(),
+            "capacity": $("#room_capacity_" + i).val(),
+            "rate": $("#room_rate_" + i).val() 
+         };
+         rooms.push(room);
+      }
+/*
       $.post("/php/doConfigure.php", {hostel_name: hostel_name, room_count: room_count})
       .done(function(data){
          console.log("Data sent: " + data);
          window.location = window.location.origin + "/dashboard.php";
 
       }); 
+      */
+   
+      console.log(JSON.stringify(rooms) + JSON.stringify(hostel_info));
+      $.ajax({
+         type: 'POST',
+         url: '/doConfigure.php',
+         data: 'hostel_info=' +  encodeURIComponent(JSON.stringify(hostel_info)) + '&rooms=' + encodeURIComponent(JSON.stringify(rooms)),
+         success: function(msg) {
+            $("#prices_container").prepend("<p>Configured successfully!</p>");
+            alert("Success! Please, click ok to proceed.");
+            window.location = window.location.origin = "/dashboard.php";
+         }
+      });
+      
       return false;
    }) 
 

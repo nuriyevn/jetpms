@@ -25,7 +25,7 @@
     <![endif]-->
 
     <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/css/set-test.css">
+    <link rel="stylesheet" href="/css/configure.css">
 </head>
 <body>
 
@@ -49,7 +49,7 @@
             <h2 class="fs-title">About Hostel</h2>
 
             <h3 class="fs-subtitle">This is step 1</h3>
-            <input type="text" name="hostel_name" placeholder="Hostel's name" value="G"/>
+            <input type="text" name="hostel_name" placeholder="Hostel's name" value="Dummy Hostel"/>
             <input type="number" name="room_count" min="1" max="24" placeholder="How many rooms in hostel?" value="2">
 
             <input type="button" id="step1_next" name="next" class="next action-button" value="Next"/>
@@ -71,7 +71,6 @@
         <fieldset>
             <h2 class="fs-title">Configuring the prices</h2>
             <h3 class="fs-subtitle">Define it for each room</h3>
-
             <div class="row">
                <div id="prices_container" class="span12">
                </div>
@@ -88,7 +87,7 @@
 
 <!-- jQuery easing plugin -->
 <script src="/js/jquery.easing.min.js" type="text/javascript"></script>
-<script src="/js/set-test.js" type="text/javascript"></script>
+<script src="/js/configure.js" type="text/javascript"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/bootstrap/bootstrap.min.js"></script>

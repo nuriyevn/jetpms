@@ -164,6 +164,11 @@ public function run_insert($query)
    return 0; // TODO Assuming that insert returns 0, when no row has been inserted or updated.
 }
 
+public function fetch_array()
+{
+   return pg_fetch_array($this->_result);
+}
+
 public function put_result_to_html()
 {
    if ($this->_result != FALSE)
