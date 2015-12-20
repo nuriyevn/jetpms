@@ -53,9 +53,13 @@
       $headers = "MIME-Version: 1.0" . "\r\n";
       $headers = "Content-type:text/html;charset=UTF-8"."\r\n";
 
+
+      // setsebool -P httpd_can_sendmail on
+
       mail($send_to, $subject, $message, $headers);
-      echo "Registration info is sent. Please check email (also, check spam if you will have not found the email)<br/>";
+      echo "Registration info is sent to $send_to. Please check email (also, check spam if you will have not found the email)<br/>";
       http_response_code(200);
+
    }
 
 ?>

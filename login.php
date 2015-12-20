@@ -1,3 +1,13 @@
+<?php
+
+    session_start();
+    if (isset($_SESSION['g_username']))
+    {
+        header("Location: /dashboard.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +51,7 @@
                 <!--form class="form-signin" role="form"-->
                     <h2 class="text-center">Log in</h2>
                     <p id="login_message"></p>
+                    <button hidden id="submit1"></button>
                     <div class="row">
                         <input value="jetpmscom@gmail.com" type="email" id="login_id" class="form-control" placeholder="Email address" required=""
                                autofocus="">

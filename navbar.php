@@ -1,3 +1,8 @@
+<?php
+    session_start();
+
+?>
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,13 +35,13 @@
 
             <ul class="nav navbar-nav navbar-right">
 
-                <li><a href="#">Current USER</a></li>
+                <li><a href="#"><?php echo $_SESSION['g_username']; ?></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Actions <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Change User</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Log out</a></li>
+                        <li><a href="/doLogout.php">Log out</a></li>
                     </ul>
                 </li>
             </ul>

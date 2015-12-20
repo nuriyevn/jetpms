@@ -15,15 +15,28 @@ $(document).ready(function(){
          url: '/doLogin.php',
          data: 'login=' + encodeURIComponent(JSON.stringify($("#login_id").val())) + "&password=" + encodeURIComponent(JSON.stringify($("#password_id").val())),
          complete: function(e, xhr, settings){
+             // Regular login from login.php
              if(e.status === 200){
-         window.location = window.location.origin + "/dashboard.php";
-             }else if(e.status === 401){
-                  $("#login_message").html("Unauthorized");
-             }else{
-
+                  console.log("from login.php");
+                  window.location = window.location.origin + "/dashboard.php";
              }
-         }
-      });
-   });   
+             else if(e.status === 401)
+             {
+                var login_message = $('#login_message');
+                login_message.text("Wrong login or password.");
+                login_message.css('color', '#0000FF');
+                login_message.fadeTo(0, 0.5);
+                login_message.fadeTo(200, 1);
+             }
+             else if (e.status === 302)
+             {
+                // We came from activateAccount.php
+                console.log("from activateAccount.php");
+                window.location = window.location.origin + "/dashboard.php";
+             }
 
+         }
+
+      });
+   });
 });

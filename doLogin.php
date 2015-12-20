@@ -1,6 +1,15 @@
 <?php
 session_start();
 
+// If already signed in (when we came from, for example, actavateAccount)
+if (isset($_SESSION['g_username']))
+{
+   http_response_code(302);
+   exit();
+}
+
+// else
+
 $script_parent_dir = __DIR__;
 $document_root = $_SERVER["DOCUMENT_ROOT"];
 $http_host = $_SERVER["HTTP_HOST"];
@@ -16,13 +25,14 @@ $password = json_decode($_POST['password']);
 
 //printf("Login: %s; password: %s", $login, $password);
 
-$conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123");
+$conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", TRUE);
 
 $conn->connect();
 
 $check_user_sql = "SELECT * FROM users WHERE login='$login' AND password='$password'";
 
-$conn->run_select($check_user_sql);
+
+echo $conn->run_select($check_user_sql);
 
 if ($conn->affected_rows() != 1)
 {
@@ -32,11 +42,10 @@ if ($conn->affected_rows() != 1)
 }
 else
 {
-
+   $_SESSION['g_username'] = $login;
    http_response_code(200); 
-   header("location:dashboard.php");
+   //header("location:dashboard.php");
    exit();
-  
 }
 
 $conn->close();

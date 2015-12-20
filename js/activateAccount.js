@@ -47,10 +47,11 @@ activateAccount = function (email, token, password1, password2) {
                             url: '/doLogin.php',
                             data: 'login=' + encodeURIComponent(JSON.stringify(email)) + '&password=' + encodeURIComponent(JSON.stringify(password1)) + '&from=' + encodeURIComponent(JSON.stringify('accountActivation')),
                             success: function (msg) {
+                                console.log("activateAccount->DoActivateAccount->doLogin="+msg);
                                 alert(msg);
                             }
                         });
-                        //window.location = window.location.origin + "/login.php?statusMessage=" + xmlhttp.responseText;
+                        window.location = window.location.origin + "/login.php?statusMessage=" + xmlhttp.responseText;
                         break;
                     case 422:
                         document.getElementById('signup_message').innerHTML = xmlhttp.responseText;

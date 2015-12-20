@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/php/hostconfig.php";
 $path_to_cdbconn = $_SERVER['DOCUMENT_ROOT']."/php/CDBConn.php";
@@ -45,6 +46,7 @@ if ($conn->run_query($query))
             {
                if ($conn->run_insert($activate_query) != 0)
                {
+                  $_SESSION['g_username'] = $input_email;
                   echo "Congratulation, registration completed!";
                   http_response_code(200);
                   exit();

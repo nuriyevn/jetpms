@@ -82,7 +82,7 @@ registerUser = function(email)
          {
             switch (xmlhttp.status)
             {
-               case 200:
+                case 200:
                   document.getElementById("signup_message").innerHTML = xmlhttp.responseText;
                   modifySubmitValue();
                   break;
@@ -95,7 +95,9 @@ registerUser = function(email)
             }
          }
       }
-      xmlhttp.open("GET", "doSignup.php?email=" + encodeURIComponent(email), true);
+
+       console.log("Activation letter will be sent to " + email);
+      xmlhttp.open("GET", "/doSignup.php?email=" + encodeURIComponent(email), true);
       xmlhttp.send();
    }
 }
