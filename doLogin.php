@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+
+
 // If already signed in (when we came from, for example, actavateAccount)
 if (isset($_SESSION['g_username']))
 {
@@ -43,8 +45,13 @@ if ($conn->affected_rows() != 1)
 else
 {
    $_SESSION['g_username'] = $login;
-   http_response_code(200); 
-   //header("location:dashboard.php");
+
+   $get_hostel_id_sql ="SELECT hostel_id FROM users WHERE login='$login'";
+   $conn->run_query($get_hostel_id_sql);
+   $row = $conn->fetch_array();
+   $hostel_id = $row['hostel_id'];
+   $_SESSION['g_hostel_id'] = $hostel_id;
+   http_response_code(200);
    exit();
 }
 

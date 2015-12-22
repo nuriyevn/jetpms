@@ -214,14 +214,6 @@ $(document).ready(function() {
          };
          rooms.push(room);
       }
-/*
-      $.post("/php/doConfigure.php", {hostel_name: hostel_name, room_count: room_count})
-      .done(function(data){
-         console.log("Data sent: " + data);
-         window.location = window.location.origin + "/dashboard.php";
-
-      }); 
-      */
    
       console.log(JSON.stringify(rooms) + JSON.stringify(hostel_info));
       $.ajax({
@@ -231,7 +223,7 @@ $(document).ready(function() {
          success: function(msg) {
             $("#prices_container").prepend("<p>Configured successfully!</p>");
             alert("Success! Please, click ok to proceed.");
-            window.location = window.location.origin = "/dashboard.php";
+            window.location = window.location.origin = "/dashboard/index.php";
          }
       });
       

@@ -84,6 +84,15 @@ public function reconnect($new_database, $username=null, $password=null)
 
 // setsebool httpd_can_network_connect_db 1
 // In case of lack of permission to connect
+public function connect_no_localhost()
+{
+   $this->_dbconn = pg_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password") or die("Cannot connect.".pg_last_error());
+   if ($this->_debug)
+      echo "DB connected to remote host [$this->_host]<br>";
+   else
+      echo "Can't connect to remote host<br>";
+}
+
 public function connect()
 {
    if ($this->__connect_to_localhost() == FALSE)
@@ -94,7 +103,7 @@ public function connect()
    }
    else
    {
-      if ($this->_debug)  
+      if ($this->_debug)
          echo "DB connected to localhost<br/>";
    }
 }

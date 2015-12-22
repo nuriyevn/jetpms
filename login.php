@@ -1,11 +1,17 @@
 <?php
 
     session_start();
+    //error_reporting(E_ALL);
+    //ini_set("display_errors", 0);
+
+
     if (isset($_SESSION['g_username']))
     {
-        header("Location: /dashboard.php");
+        header("Location: /dashboard/index.php");
         exit();
     }
+
+
 ?>
 
 <!DOCTYPE html>

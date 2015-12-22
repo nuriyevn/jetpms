@@ -18,7 +18,8 @@ $(document).ready(function(){
              // Regular login from login.php
              if(e.status === 200){
                   console.log("from login.php");
-                  window.location = window.location.origin + "/dashboard.php";
+                  console.log(e.responseText);
+                  window.location = window.location.origin + "/dashboard/index.php";
              }
              else if(e.status === 401)
              {
@@ -32,7 +33,7 @@ $(document).ready(function(){
              {
                 // We came from activateAccount.php
                 console.log("from activateAccount.php");
-                window.location = window.location.origin + "/dashboard.php";
+                window.location = window.location.origin + "/dashboard/index.php";
              }
 
          }

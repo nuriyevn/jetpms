@@ -1,3 +1,12 @@
+<?php
+
+if (!isset($_SESSION['g_username']))
+{
+    header("Location: /login.php");
+    exit();
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
