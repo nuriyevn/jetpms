@@ -44,7 +44,7 @@ activateAccount = function (email, token, password1, password2) {
                         document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
                         $.ajax({
                             type: 'POST',
-                            url: '/doLogin.php',
+                            url: '/login.php',
                             data: 'login=' + encodeURIComponent(JSON.stringify(email)) + '&password=' + encodeURIComponent(JSON.stringify(password1)) + '&from=' + encodeURIComponent(JSON.stringify('accountActivation')),
                             success: function (msg) {
                                 console.log("activateAccount->DoActivateAccount->doLogin="+msg);

@@ -1,6 +1,7 @@
 <?php
     session_start();
     require_once '../app-config.php';
+    include_once(ABSPATH."/dashboard/initDashboard.php");
 ?>
 
 
