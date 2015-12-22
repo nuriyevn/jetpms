@@ -1,0 +1,13 @@
+body {
+    #font-family:Arial,Geneva,Verdana,sans-serif;
+    #font-size: 0.8em;
+    overflow-x: hidden;
+}
+#loadingScreen {
+    background: url('/img/loading.gif') no-repeat 5px 8px;
+    padding-left: 32px;
+}
+/* hide the close x on the loading screen */
+.loadingScreenWindow .ui-dialog-titlebar-close {
+    display: none;
+}
