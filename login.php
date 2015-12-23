@@ -7,9 +7,12 @@
 
     if (isset($_SESSION['g_username']))
     {
+        // opened and configured, opened misconfigured
         header("Location: /dashboard/index.php");
         exit();
     }
+
+    // if closed , no matter configured or not, continue load the page
 
 
 ?>

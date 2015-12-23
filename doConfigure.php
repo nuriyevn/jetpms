@@ -3,6 +3,7 @@
    if (!isset($_SESSION['g_username']))
    {
       header("Location: /login.php");
+      exit();
    }
 
    $path_to_cdbconn = $_SERVER["DOCUMENT_ROOT"]."/php/CDBConn.php";
@@ -33,7 +34,7 @@
    $update_query = "UPDATE users SET hostel_id = $new_hostel_id WHERE login = '$login_from_session'";
 
    $conn->run_query($update_query);
-
+   $_SESSION['g_hostel_id'] = $new_hostel_id;
 
    // Associating rooms with hostel
    for ($i = 0; $i < count($rooms); $i++)

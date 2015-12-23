@@ -44,15 +44,19 @@ activateAccount = function (email, token, password1, password2) {
                         document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
                         $.ajax({
                             type: 'POST',
-                            url: '/login.php',
+                            url: '/doLogin.php',
                             data: 'login=' + encodeURIComponent(JSON.stringify(email)) + '&password=' + encodeURIComponent(JSON.stringify(password1)) + '&from=' + encodeURIComponent(JSON.stringify('accountActivation')),
-                            success: function (msg) {
-                                console.log("activateAccount->DoActivateAccount->doLogin="+msg);
-                                alert(msg);
+                            complete: function(e, xhr, setting)
+                            {
+                                if (e.status === 302)
+                                {
+                                    console.log("activateAccount->DoActivateAccount->doLogin="+ e.responseText);
+                                    alert(e.responseText);
+                                    window.location = window.location.origin + "/login.php";//?statusMessage=" + xmlhttp.responseText;
+                                }
                             }
                         });
-                        window.location = window.location.origin + "/login.php?statusMessage=" + xmlhttp.responseText;
-                        break;
+                         break;
                     case 422:
                         document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
                         break;

@@ -1,16 +1,13 @@
 <?php
 session_start();
 
-
-
 // If already signed in (when we came from, for example, actavateAccount)
 if (isset($_SESSION['g_username']))
 {
+   echo "Session is on<br>";
    http_response_code(302);
    exit();
 }
-
-// else
 
 $script_parent_dir = __DIR__;
 $document_root = $_SERVER["DOCUMENT_ROOT"];
@@ -25,14 +22,15 @@ include_once($path_to_hostconfig);
 $login = json_decode($_POST['login']);
 $password = json_decode($_POST['password']);
 
-//printf("Login: %s; password: %s", $login, $password);
+$conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123");
 
-$conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", TRUE);
-
-$conn->connect();
+if (!$conn->connect())
+{
+   http_response_code(503);
+   exit();
+}
 
 $check_user_sql = "SELECT * FROM users WHERE login='$login' AND password='$password'";
-
 
 echo $conn->run_select($check_user_sql);
 
@@ -50,6 +48,8 @@ else
    $conn->run_query($get_hostel_id_sql);
    $row = $conn->fetch_array();
    $hostel_id = $row['hostel_id'];
+   // Even in case if hostel_id is null,
+   // doConfigure.php script will create it
    $_SESSION['g_hostel_id'] = $hostel_id;
    http_response_code(200);
    exit();

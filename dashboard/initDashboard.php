@@ -6,11 +6,11 @@
 function initDashboard()
 {
     // If you didn't come from login.php (200), or accountActivate (302), then please login
-    if (!isset($_SESSION['g_username'])) {
+   /* if (!isset($_SESSION['g_username'])) {
        //header("Location: /login.php");
         http_response_code(401);
         exit();
-    }
+    }*/
 
 
    // $path_to_cdbconn = $_SERVER['DOCUMENT_ROOT'] . "/php/CDBConn.php";

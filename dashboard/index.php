@@ -1,5 +1,12 @@
 <?php
     session_start();
+
+    if (!isset($_SESSION['g_username']))
+    {
+        //header("Location: /login.php");
+        http_response_code(401);
+        exit();
+    }
     require_once '../app-config.php';
     include_once(ABSPATH."/dashboard/initDashboard.php");
 ?>

@@ -47,6 +47,7 @@ if ($conn->run_query($query))
                if ($conn->run_insert($activate_query) != 0)
                {
                   $_SESSION['g_username'] = $input_email;
+                  $_SESSION['g_hostel_id'] = NULL;
                   echo "Congratulation, registration completed!";
                   http_response_code(200);
                   exit();

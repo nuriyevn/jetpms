@@ -86,18 +86,32 @@ public function reconnect($new_database, $username=null, $password=null)
 // In case of lack of permission to connect
 public function connect_no_localhost()
 {
-   $this->_dbconn = pg_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password") or die("Cannot connect.".pg_last_error());
+   $success = TRUE;
+   if ($this->_dbconn = pg_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password"))
+   {
+      echo ("Cannot connect.".pg_last_error());
+      $success = FALSE;
+   }
+
    if ($this->_debug)
       echo "DB connected to remote host [$this->_host]<br>";
    else
       echo "Can't connect to remote host<br>";
+
+   return $success;
 }
 
 public function connect()
 {
+   $success = TRUE;
    if ($this->__connect_to_localhost() == FALSE)
    {
-      $this->_dbconn = pg_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password") or die("Cannot connect.".pg_last_error());
+      if (!$this->_dbconn = pg_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password"))
+      {
+         echo ("Cannot connect.".pg_last_error());
+         $success = FALSE;
+      }
+
       if ($this->_debug)
          echo "DB connected to remote host [$this->_host]<br>";
    }
@@ -106,6 +120,8 @@ public function connect()
       if ($this->_debug)
          echo "DB connected to localhost<br/>";
    }
+
+   return $success;
 }
 
 public function getResult()

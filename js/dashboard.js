@@ -110,6 +110,7 @@ jQuery(document).ready(function ($) {
         {
             if(request.status === 200) {
                 g_hostel_id = request.responseText;
+                console.log(g_hostel_id);
 
                 $.ajax({
                     type: 'POST',
