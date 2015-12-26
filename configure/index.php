@@ -1,10 +1,32 @@
 <?php
 session_start();
+include_once("../app-config.php");
+include_once(ABSPATH."/php/CDBConn.php");
+include_once(ABSPATH."/php/hostconfig.php");
+
 if (!isset($_SESSION['g_username']))
 {
     header("Location: /login/index.php");
     exit();
 }
+else // if session is  on but configuration is not done.
+{
+    //
+    $conn = new CDBConn($jet_ip, $db_name. $db_user, "qwerty123", TRUE);
+    $conn->connect();
+    $cur_login = $_SESSION['g_username'];
+    $get_hostel_id_query = "SELECT hostel_id FROM users WHERE login='$cur_login'";
+    $res = $conn->run_query($get_hostel_id_query);
+    $line = $conn->fetch_array();
+    $hostel_id = $line['hostel_id'];
+    if ($hostel_id != NULL) // We may assume that hostel is configured  get out of here , maybe to dashboard
+    {
+        header("Location: /configure/");
+        exit();
+    }
+}
+
+// insert is_configured flag checking
 
 ?>
 <!DOCTYPE html>

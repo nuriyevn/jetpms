@@ -6,13 +6,13 @@ h1 {
     color: #f1f1f1;
     font-size: 4em;
 }
-h2, label {
+h2, h3, label {
     color: #626262;
 }
 #white {
     background-color: #f1f1f1;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 input[type="email"], input[type="password"] {
@@ -28,4 +28,12 @@ input[type="email"], input[type="password"] {
 
 #comment a:hover {
     color: #909090;
+}
+.btn-hover:hover {
+    background-color: #cccccc;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 3px;
+    text-decoration: none;
+
 }

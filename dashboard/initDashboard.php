@@ -3,14 +3,17 @@
     //ini_set('display_error', 1);
 function initDashboard()
 {
-    $path_to_cdbconn = ABSPATH."/php/CDBConn.php";
-    $path_to_hostconfig = ABSPATH."/php/hostconfig.php";
-    include_once($path_to_cdbconn);
-    include_once($path_to_hostconfig);
+    include_once(ABSPATH."/php/CDBConn.php");
+    include_once(ABSPATH."/php/hostconfig.php");
 
     $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
 
-    $conn->connect();
+    if ($conn->connect_no_localhost())
+    {
+        http_response_code(503);
+        exit();
+    }
+
     $cur_login = $_SESSION['g_username'];
     $get_hostel_id_sql = "SELECT hostel_id FROM users WHERE login = '$cur_login'";
 

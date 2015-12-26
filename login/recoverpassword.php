@@ -1,22 +1,3 @@
-<?php
-
-    session_start();
-    //error_reporting(E_ALL);
-    //ini_set("display_errors", 0);
-
-
-    if (isset($_SESSION['g_username']))
-    {
-        // opened and configured, opened misconfigured
-        header("Location: /dashboard/index.php");
-        exit();
-    }
-
-    // if closed , no matter configured or not, continue load the page
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,32 +31,27 @@
             <div id="white">
 
                 <!--form class="form-signin" role="form"-->
-                    <h2 class="text-center">Log in</h2>
-                    <p id="login_message"></p>
-                    <button hidden id="submit1"></button>
-                    <div class="row">
-                        <input value="jetpmscom@gmail.com" type="email" id="login_id" class="form-control" placeholder="Email address" required=""
-                               autofocus="">
-                    </div>
-                    <br>
+                <h2 class="text-center">Forgot your password?</h2>
+                <h3 class="text-center">Provide your e-mail.</h3>
+                <p id=""></p>
+                <div class="row">
+                    <input value="" type="email" id="login_id" class="form-control" placeholder="Email address" required=""
+                           autofocus="">
+                </div>
+                <br>
+                <!--div class="row">
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div-->
+                <div class="row">
+                    <button id="button_id" class="btn btn-lg btn-success btn-block" type="submit">Recover now</button>
+                </div>
+                <br>
 
-                    <div class="row">
-                        <input type="password" id="password_id" class="form-control" placeholder="Password" required="">
-                    </div>
-                    <br>
-                    <!--div class="row">
-                        <label class="checkbox">
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-                    </div-->
-                    <div class="row">
-                        <button id="button_id" class="btn btn-lg btn-success btn-block" type="submit">Log in</button>
-                    </div>
-                    <br>
-
-                    <div class="text-center">
-                        <a href="#">Forgot password?</a>
-                    </div>
+                <div class="text-center btn-hover">
+                    <a href="index.php">Back to login page</a>
+                </div>
                 <!--/form-->
             </div>
             <br>

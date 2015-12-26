@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if (!isset($_SESSION['g_username']))
 {
     http_response_code(401);
@@ -14,9 +15,10 @@ include_once(ABSPATH."/php/CDBConn.php");
 include_once(ABSPATH."/php/hostconfig.php");
 
 $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123");
-$conn->connect();
+$conn->connect_no_localhost();
 
-$room_count_query = "SELECT room_count FROM hostels WHERE id = $hostel_id";
+$room_count_query =
+    "SELECT room_count FROM hostels WHERE id = '$hostel_id'";
 
 $conn->run_query($room_count_query);
 $row = $conn->fetch_array();
