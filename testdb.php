@@ -14,10 +14,12 @@ echo "<div style=\"background-color:#00FF00\">".$conn->run_select($sql)."</div>"
 
 $conn->close();
 
+$conn2 = new CDBConn("127.0.0.1", $db_name, $db_user, "qwerty123", TRUE);
+
 echo "<br>--------------<br>";
 echo "CDBConn::connect()<br>";
-$conn->connect();
-$conn->printinfo();
+$conn2->connect_no_localhost();
+$conn2->printinfo();
 $sql = "SELECT * FROM rooms";
-echo "<div style=\"background-color:#00FF00\">".$conn->run_select($sql)."</div>";
-$conn->close();
+echo "<div style=\"background-color:#00FF00\">".$conn2->run_select($sql)."</div>";
+$conn2->close();
