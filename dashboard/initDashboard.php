@@ -6,9 +6,9 @@ function initDashboard()
     include_once(ABSPATH."/php/CDBConn.php");
     include_once(ABSPATH."/php/hostconfig.php");
 
-    $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
+    $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123");
 
-    if ($conn->connect_no_localhost())
+    if (! $conn->connect_no_localhost())
     {
         http_response_code(503);
         exit();
