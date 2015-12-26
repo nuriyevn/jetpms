@@ -59,7 +59,7 @@
             <br>
             <div class="row">
                 <div class="text-center" id="comment">
-                    Already have an account? <a href="login.php">Log In</a>
+                    Already have an account? <a href="/login/index.php">Log In</a>
                 </div>
             </div>
 

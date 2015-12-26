@@ -218,7 +218,7 @@ $(document).ready(function() {
       console.log(JSON.stringify(rooms) + JSON.stringify(hostel_info));
       $.ajax({
          type: 'POST',
-         url: '/doConfigure.php',
+         url: '/configure/doConfigure.php',
          data: 'hostel_info=' +  encodeURIComponent(JSON.stringify(hostel_info)) + '&rooms=' + encodeURIComponent(JSON.stringify(rooms)),
          success: function(msg) {
             $("#prices_container").prepend("<p>Configured successfully!</p>");

@@ -12,7 +12,7 @@ $(document).ready(function(){
       
       $.ajax({
          type: 'POST',
-         url: '/doLogin.php',
+         url: '/login/doLogin.php',
          data: 'login=' + encodeURIComponent(JSON.stringify($("#login_id").val())) + "&password=" + encodeURIComponent(JSON.stringify($("#password_id").val())),
          complete: function(e, xhr, settings){
              // Regular login from login.php

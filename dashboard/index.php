@@ -3,7 +3,7 @@
 
     if (!isset($_SESSION['g_username']))
     {
-        //header("Location: /login.php");
+        //header("Location: /login/index.php");
         http_response_code(401);
         exit();
     }
@@ -58,7 +58,7 @@
 
 
 </head>
-<body>
+<body >
 <script>
     if (window.XMLHttpRequest)
     {
@@ -75,7 +75,7 @@
     if (xmlhttp.status === 401)
     {
        //console.log(xmlhttp.responseText);
-        window.location = window.location.origin + "/login.php";
+        window.location = window.location.origin + "/login/index.php";
     }
 
 </script>

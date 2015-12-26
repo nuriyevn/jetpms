@@ -21,7 +21,7 @@
    $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
    $conn->connect();
    
-   $conn->run_select("SELECT * FROM inquiries WHERE email='$send_to'");
+   $conn->run_select("SELECT * FROM users WHERE login='$send_to'");
    if ($conn->affected_rows() > 0)
    {
       echo "Following email '$send_to' is already used or activation requested. Please, select another email, if appropriate.<br>";
@@ -41,11 +41,11 @@
 
       $message .= "Please, click to this activation link: ";
 
-      $token= bin2hex(openssl_random_pseudo_bytes(16));
-      $activation_link = "http://".$script_parent_dir."/activateAccount.php?email=".$send_to."&token=".$token;
+      $reg_token= bin2hex(openssl_random_pseudo_bytes(16));
+      $activation_link = "http://".$script_parent_dir."/signup/activateAccount.php?email=".$send_to."&reg_token=".$reg_token;
       $href_tag = "<a href=".$activation_link.">$activation_link</a>";
 
-      $conn->run_insert("INSERT INTO inquiries (email, token, is_active) VALUES('$send_to', '$token', FALSE)");
+      $conn->run_insert("INSERT INTO users (login, reg_token, is_activated) VALUES('$send_to', '$reg_token', FALSE)");
 
       $message .= $href_tag."<br>";
 

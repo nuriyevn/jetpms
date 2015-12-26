@@ -1,8 +1,8 @@
 loadRegistrationData = function () {
     if (typeof QueryString.email == "string")
         document.getElementById('email_input').value = QueryString.email;
-    if (typeof QueryString.token == "string")
-        document.getElementById('token_input').value = QueryString.token;
+    if (typeof QueryString.reg_token == "string")
+        document.getElementById('token_input').value = QueryString.reg_token;
 }
 
 activateAccount = function (email, token, password1, password2) {
@@ -44,7 +44,7 @@ activateAccount = function (email, token, password1, password2) {
                         document.getElementById('signup_message').innerHTML = xmlhttp.responseText;
                         $.ajax({
                             type: 'POST',
-                            url: '/doLogin.php',
+                            url: '/login/doLogin.php',
                             data: 'login=' + encodeURIComponent(JSON.stringify(email)) + '&password=' + encodeURIComponent(JSON.stringify(password1)) + '&from=' + encodeURIComponent(JSON.stringify('accountActivation')),
                             complete: function(e, xhr, setting)
                             {
@@ -52,7 +52,7 @@ activateAccount = function (email, token, password1, password2) {
                                 {
                                     console.log("activateAccount->DoActivateAccount->doLogin="+ e.responseText);
                                     alert(e.responseText);
-                                    window.location = window.location.origin + "/login.php";//?statusMessage=" + xmlhttp.responseText;
+                                    window.location = window.location.origin + "/login/index.php";//?statusMessage=" + xmlhttp.responseText;
                                 }
                             }
                         });
@@ -72,10 +72,10 @@ activateAccount = function (email, token, password1, password2) {
         }
 
     }
-    xmlhttp.open("POST", "/doActivateAccount.php", true);
+    xmlhttp.open("POST", "/signup/doActivateAccount.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("email=" + encodeURIComponent(email)
-        + "&token=" + encodeURIComponent(token)
+        + "&reg_token=" + encodeURIComponent(token)
         + "&password1=" + encodeURIComponent(password1)
         + "&password2=" + encodeURIComponent(password2));
 

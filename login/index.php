@@ -90,7 +90,7 @@
 
             <div class="row">
                 <div class="text-center" id="comment">
-                    Don't have an account? <a href="signup.php">Sign Up</a>
+                    Don't have an account? <a href="/signup/index.php">Sign Up</a>
                 </div>
             </div>
         </div>

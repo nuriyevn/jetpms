@@ -49,7 +49,7 @@
                         <div class="form-group">
 <!--                            <label for="password2">Retype password:</label>-->
                             <input type="password" required name="password2" class="form-control" id="password2" placeholder="Retype Password">
-                            <input hidden id="token_input" name="token" value="">
+                            <input hidden id="token_input" name="reg_token" value="">
                         </div>
 
                         <div class="form-group">
@@ -61,12 +61,12 @@
                <br/>
                <div class="row">
                    <div class="text-center" id="comment">
-                       Already have an account? <a href="login.php">Log In</a>
+                       Already have an account? <a href="/login/index.php">Log In</a>
                    </div>
                </div>
                <div class="row">
                    <div class="text-center" id="comment2">
-                       Don't have an account? <a href="signup.php">Sign Up</a>
+                       Don't have an account? <a href="/signup/index.php">Sign Up</a>
                    </div>
                </div>
 

@@ -4,25 +4,24 @@ session_start();
 $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/php/hostconfig.php";
 $path_to_cdbconn = $_SERVER['DOCUMENT_ROOT']."/php/CDBConn.php";
 
-include_once($path_to_hostconfig);
-include_once($path_to_cdbconn);
+   include_once($path_to_hostconfig);
+   include_once($path_to_cdbconn);
 
-$input_email = $_POST['email'];
-$input_token = $_POST['token'];
-$input_password1 = $_POST['password1'];
-$input_password2 = $_POST['password2'];
+   $input_email = $_POST['email'];
+   $input_reg_token = $_POST['reg_token'];
+   $input_password1 = $_POST['password1'];
+   $input_password2 = $_POST['password2'];
 
-//printf("input_email=%s<br>input_token=%s<br>input_password1=%s<br>input_password2=%s<br>", $input_email, $input_token, $input_password1, $input_password2);
+   //printf("input_email=%s<br>input_reg_token=%s<br>input_password1=%s<br>input_password2=%s<br>", $input_email, $input_reg_token, $input_password1, $input_password2);
 
-$conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
+   $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", TRUE);
 
-$conn->connect();
+   $conn->connect();
 
-$query = "SELECT token, is_active FROM inquiries WHERE email='$input_email'";
+   $query = "SELECT reg_token, is_activated FROM users WHERE login='$input_email'";
 
 if ($conn->run_query($query))
 {
-
    switch ($conn->affected_rows())
    {
       case 0:
@@ -31,11 +30,12 @@ if ($conn->run_query($query))
          break;
       case 1:
          $arr = $conn->fetch_array();
-         if ($arr["token"] == $input_token)
+         var_dump($arr['reg_token']);
+         var_dump($_POST['reg_token']);
+         if ($arr["reg_token"] == $input_reg_token)
          {
-            $activate_query = "UPDATE inquiries SET is_active=TRUE WHERE email='$input_email'";
-            $adduser_query = "INSERT INTO users(login, password) VALUES('$input_email', '$input_password1')";
-            if ($arr["is_active"] === 't')
+            $adduser_query = "UPDATE users SET is_activated = TRUE, password='$input_password1' WHERE login='$input_email'";
+            if ($arr["is_activated"] === 't')
             {
                echo "Your email has been activated. You may log in to your account";
                http_response_code(422);
@@ -44,15 +44,11 @@ if ($conn->run_query($query))
             
             if ($conn->run_insert($adduser_query) != 0)
             {
-               if ($conn->run_insert($activate_query) != 0)
-               {
-                  $_SESSION['g_username'] = $input_email;
-                  $_SESSION['g_hostel_id'] = NULL;
-                  echo "Congratulation, registration completed!";
-                  http_response_code(200);
-                  exit();
-               }
-               http_response_code(422);
+               $_SESSION['g_username'] = $input_email;
+               $_SESSION['g_hostel_id'] = NULL;
+               echo "Congratulation, registration completed!";
+               http_response_code(200);
+               exit();
             }
             else
             {
@@ -62,7 +58,7 @@ if ($conn->run_query($query))
          } 
          else
          {
-            echo "Wrong token. Please, be sure, that you have copied activation link correctly or contact support or try to make new registration inquiry for another email.<br>";
+            echo "Wrong registration token. Please, be sure, that you have copied activation link correctly or contact support or try to make new registration inquiry for another email.<br>";
             http_response_code(422);
             
          }

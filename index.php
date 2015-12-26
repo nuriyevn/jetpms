@@ -37,7 +37,7 @@
                 </ul>
             </div>
             <div class="col-md-2">
-                <a href="login.php" class="btn btn-success btn-lg" role="button">LOGIN TO APP</a>
+                <a href="login/index.php" class="btn btn-success btn-lg" role="button">LOGIN TO APP</a>
             </div>
         </div>
         <!--            end of na bar-->
@@ -68,7 +68,7 @@
         </div>
         <div class="row">
             <p>
-                <a href="signup.php">
+                <a href="/signup/index.php">
                     <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно</button>
                 </a>
                 <!--                <a href="#">-->
@@ -302,7 +302,7 @@
         <br>
 
         <div class="row">
-            <p><a href="signup.php">
+            <p><a href="/signup/index.php">
                     <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно 120 дней</button>
                 </a>
                 <!--                <a href="#">-->
@@ -402,7 +402,7 @@
                 <br>Мы оперативно решаем все вопросы, связанные с работой системы
                 <br>Вы находитесь в надежных руках опытных специалистов</p>
 
-            <p><a href="signup.php">
+            <p><a href="/signup/index.php">
                     <button type="button" class="btn btn-danger btn-lg">Попробуйте бесплатно</button>
                 </a>
                 <!--                <a href="#">-->

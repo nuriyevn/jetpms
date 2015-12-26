@@ -22,7 +22,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/dashboard/">Dashboard <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Mail</a></li>
-                <li><a href="accounting.php">Accounting</a></li>
+                <li><a href="/accounting/index.php">Accounting</a></li>
                 <li><a href="#">Todos</a></li>
                 <li><a href="#">Settings</a></li>
 
@@ -42,7 +42,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">Change User</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="/doLogout.php">Log out</a></li>
+                        <li><a href="/login/doLogout.php">Log out</a></li>
                     </ul>
                 </li>
             </ul>

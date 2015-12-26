@@ -80,6 +80,7 @@ registerUser = function(email)
       {  
          if (xmlhttp.readyState == 4)
          {
+             console.log("xmlhttp.status=" + xmlhttp.status);
             switch (xmlhttp.status)
             {
                 case 200:
@@ -97,7 +98,7 @@ registerUser = function(email)
       }
 
        console.log("Activation letter will be sent to " + email);
-      xmlhttp.open("GET", "/doSignup.php?email=" + encodeURIComponent(email), true);
+      xmlhttp.open("GET", "/signup/doSignup.php?email=" + encodeURIComponent(email), true);
       xmlhttp.send();
    }
 }
