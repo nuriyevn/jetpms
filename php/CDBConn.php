@@ -87,7 +87,9 @@ public function reconnect($new_database, $username=null, $password=null)
 public function connect_no_localhost()
 {
    $success = TRUE;
-   if ($this->_dbconn = pg_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password"))
+   $res = $this->_dbconn = pg_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password");
+
+   if ($res == FALSE)
    {
       echo ("Cannot connect.".pg_last_error());
       $success = FALSE;
@@ -95,8 +97,6 @@ public function connect_no_localhost()
 
    if ($this->_debug)
       echo "DB connected to remote host [$this->_host]<br>";
-   else
-      echo "Can't connect to remote host<br>";
 
    return $success;
 }
