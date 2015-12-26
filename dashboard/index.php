@@ -3,8 +3,10 @@
 
     if (!isset($_SESSION['g_username']))
     {
-        //header("Location: /login/index.php");
-        http_response_code(401);
+
+        header("Location: /login/index.php");
+       // header("Location: http://google.com");
+       // http_response_code(401);
         exit();
     }
     require_once '../app-config.php';

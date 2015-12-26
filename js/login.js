@@ -1,4 +1,4 @@
-loadLoginData = function()
+loadLoginData = function() // объявление функции ЛоадингДата
 {
    if (typeof QueryString.statusMessage == "string")
    {

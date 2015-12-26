@@ -3,7 +3,8 @@
 session_start();
 if (isset($_SESSION['g_username']))
 {
-    echo "Session is on";
+    echo "Session is on"."<br>";
+    echo $_SESSION['g_username'];
 
 }
 else
