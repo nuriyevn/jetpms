@@ -12,16 +12,27 @@ if (!isset($_SESSION['g_username']))
 else // if session is  on but configuration is not done.
 {
     //
-    $conn = new CDBConn($jet_ip, $db_name. $db_user, "qwerty123", TRUE);
-    $conn->connect();
+    $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123");
+    if (!$conn->connect_no_localhost())
+    {
+        echo "Database error<br>";
+        exit();
+    }
+
     $cur_login = $_SESSION['g_username'];
-    $get_hostel_id_query = "SELECT hostel_id FROM users WHERE login='$cur_login'";
+    $get_hostel_id_query = "SELECT hostel_id,login FROM users WHERE login='$cur_login'";
     $res = $conn->run_query($get_hostel_id_query);
+    if ($conn->affected_rows() == 0)
+    {
+        echo "There is no such login in database. <br>";
+        exit();
+    }
+
     $line = $conn->fetch_array();
     $hostel_id = $line['hostel_id'];
     if ($hostel_id != NULL) // We may assume that hostel is configured  get out of here , maybe to dashboard
     {
-        header("Location: /configure/");
+        header("Location: /dashboard/");
         exit();
     }
 }
