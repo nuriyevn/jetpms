@@ -22,10 +22,13 @@ input[type="email"], input[type="password"] {
     color: #f1f1f1;
 }
 
-#comment a {
-    color: #505050;
-}
+/*#comment a {*/
+    /*color: #505050;*/
+/*}*/
 
+a, footer {
+    color: #f1f1f1;
+}
 #comment a:hover {
     color: #909090;
 }
@@ -35,5 +38,24 @@ input[type="email"], input[type="password"] {
     margin: 0 auto;
     border-radius: 3px;
     text-decoration: none;
+
+}
+
+textarea {
+    width: 100%;
+}
+#border {
+    border: white 1px solid;
+    padding: 6px;
+    border-radius: 2px;
+    color: #f1f1f1;
+    text-decoration: none;
+}
+#border:hover {
+    border: white 1px solid;
+    background-color: #f1f1f1;
+    padding: 6px;
+    border-radius: 2px;
+    color: #909090;
 
 }

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-   $("#send_email").accordion({collapsible: true, active: false});
+   $("#accordion").accordion({collapsible: true, active: false});
 
 });
 

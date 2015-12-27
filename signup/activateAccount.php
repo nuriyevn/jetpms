@@ -1,6 +1,3 @@
-<!-- навесить стили-->
-<!-- переверстать по бутстраповски-->
-<!--подключить нужные стили-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,60 +12,61 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/css/signup.css" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
 
-    <!--    Bootstrap cor jquery link-->
-    <script src="http://code.jquery.com/jquery.min.js"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
+
 <body onload="loadRegistrationData()">
+
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <h1 class="text-center">Jet PMS</h1>
-                <div class="white">
-                    <h2 class="text-center">Finish registration</h2>
-                        <div class="form-group">
-<!--                            <label for="email">Email login:</label>-->
-                            <input type="email" disabled  name="mail" class="form-control" id="email_input" placeholder="Email Address">
-                        </div>
 
-                        <div class="form-group">
-<!--                            <label for="password1">Create password:</label>-->
-                            <input type="password" autofocus required name="password1" class="form-control" id="password1" placeholder="Create Password">
-                        </div>
+            <div id="white">
+                <h2 class="text-center">Finish registration</h2>
 
-                        <div class="form-group">
-<!--                            <label for="password2">Retype password:</label>-->
-                            <input type="password" required name="password2" class="form-control" id="password2" placeholder="Retype Password">
-                            <input hidden id="token_input" name="reg_token" value="">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="submit" name="submit" value="Finish registration"
-                                   class="btn-success btn-lg btn-block" onclick="activateAccount(document.getElementById('email_input').value, document.getElementById('token_input').value, document.getElementById('password1').value, document.getElementById('password2').value)">
-                        </div>
-                        <p id="signup_message"></p>
+                <div class="form-group">
+                    <!--                            <label for="email">Email login:</label>-->
+                    <input type="email" disabled name="mail" class="form-control" id="email_input"
+                           placeholder="Email Address">
                 </div>
-               <br/>
-               <div class="row">
-                   <div class="text-center" id="comment">
-                       Already have an account? <a href="/login/index.php">Log In</a>
-                   </div>
-               </div>
-               <div class="row">
-                   <div class="text-center" id="comment2">
-                       Don't have an account? <a href="/signup/index.php">Sign Up</a>
-                   </div>
-               </div>
+
+                <div class="form-group">
+                    <!--                            <label for="password1">Create password:</label>-->
+                    <input type="password" autofocus required name="password1" class="form-control" id="password1"
+                           placeholder="Create Password">
+                </div>
+
+                <div class="form-group">
+                    <!--                            <label for="password2">Retype password:</label>-->
+                    <input type="password" required name="password2" class="form-control" id="password2"
+                           placeholder="Retype Password">
+                    <input hidden id="token_input" name="reg_token" value="">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" name="submit" value="Finish registration"
+                           class="btn-success btn-lg btn-block"
+                           onclick="activateAccount(document.getElementById('email_input').value, document.getElementById('token_input').value, document.getElementById('password1').value, document.getElementById('password2').value)">
+                </div>
+                <p id="signup_message"></p>
+            </div>
+            <br/>
+
+            <div class="row">
+                <div class="text-center" id="comment">
+                    Already have an account? <a href="/login/index.php"><span id="border">Log In</span></a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="text-center" id="comment">
+                    Don't have an account? <a href="/signup/index.php"><span id="border">Sign Up</span></a>
+                </div>
+            </div>
 
 
         </div>
