@@ -8,8 +8,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -18,15 +17,16 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/dashboard/">Dashboard <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/dashboard/">Dashboard</a></li>
                 <li><a href="#">Mail</a></li>
                 <li><a href="/accounting/index.php">Accounting</a></li>
                 <li><a href="#">Todos</a></li>
                 <li><a href="#">Settings</a></li>
-
             </ul>
+
+
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">

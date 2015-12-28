@@ -50,7 +50,7 @@
                 <br>
 
                 <div class="text-center btn-hover">
-                    <a href="index.php">Back to login page</a>
+                    <a href="index.php" id="backto">Back to login page</a>
                 </div>
                 <!--/form-->
             </div>
@@ -58,7 +58,7 @@
 
             <div class="row">
                 <div class="text-center" id="comment">
-                    Don't have an account? <a href="/signup/index.php">Sign Up</a>
+                    Don't have an account? <a href="/signup/index.php" id="border">Sign Up</a>
                 </div>
             </div>
         </div>

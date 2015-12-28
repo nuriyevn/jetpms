@@ -45,7 +45,7 @@ if (isset($_SESSION['g_username']))
 
             <div id="white">
 
-
+                <!--form-->
                 <h2 class="text-center">Log in</h2>
 
                 <p id="login_message"></p>
@@ -63,18 +63,14 @@ if (isset($_SESSION['g_username']))
                     <input type="password" id="password_id" class="form-control" placeholder="Password" required="">
                 </div>
                 <br>
-                <!--div class="row">
-                    <label class="checkbox">
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div-->
+
                 <div class="row">
                     <button id="button_id" class="btn btn-lg btn-success btn-block" type="submit">Log in</button>
                 </div>
                 <br>
 
                 <div class="text-center">
-                    <a href="#">Forgot password?</a>
+                    <a href="recoverpassword.php">Forgot password?</a>
                 </div>
                 <!--/form-->
             </div>

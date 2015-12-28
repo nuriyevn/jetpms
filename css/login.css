@@ -4,52 +4,38 @@ body {
 }
 h1 {
     color: #f1f1f1;
-    font-size: 4em;
+    font-size: 3em;
 }
 h2, h3, label {
     color: #626262;
-}
-#white {
-    background-color: #f1f1f1;
-    padding: 30px;
-    border-radius: 5px;
 }
 
 input[type="email"], input[type="password"] {
     height: 50px;
 }
-#comment {
+
+textarea {
+    width: 100%;
+}
+footer {
     color: #f1f1f1;
 }
 
-/*#comment a {*/
-    /*color: #505050;*/
-/*}*/
-
-a, footer {
-    color: #f1f1f1;
-}
-#comment a:hover {
-    color: #909090;
-}
 .btn-hover:hover {
     background-color: #cccccc;
     width: 70%;
     margin: 0 auto;
     border-radius: 3px;
-    text-decoration: none;
-
 }
 
-textarea {
-    width: 100%;
-}
+
 #border {
     border: white 1px solid;
     padding: 6px;
     border-radius: 2px;
     color: #f1f1f1;
     text-decoration: none;
+    margin: 10px;
 }
 #border:hover {
     border: white 1px solid;
@@ -57,5 +43,22 @@ textarea {
     padding: 6px;
     border-radius: 2px;
     color: #909090;
+    margin: 10px;
+}
 
+#backto:hover {
+    color: black;
+}
+
+#comment, #comment a, li a {
+    color: #f1f1f1;
+}
+#comment a:hover {
+    color: #909090;
+}
+
+#white {
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 5px;
 }

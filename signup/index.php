@@ -31,8 +31,9 @@
                 <h2 class="text-center">Sign Up</h2>
 
                 <input id="email_location" hidden type="text" value=""/>
+                <label for="login_id">Email:</label>
                 <input id="email_input" type="email" class="form-control" value="jetpmscom@gmail.com"
-                       placeholder="Email address" required autofocus=""><br>
+                       placeholder="Email address" required autofocus="" id="login_id"><br>
                 <input id="submit_input" class="btn btn-lg btn-success btn-block" type="submit" name="sign_up"
                        value="Sign up" onclick="registerUser(document.getElementById('email_input').value)"/>
 
