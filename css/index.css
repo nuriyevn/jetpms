@@ -94,4 +94,8 @@ h2 {
 ul li a {
     color: #F6F6F6;
 }
+.features-btn {
+	position: relative;
+	bottom: 0;
+}
 
