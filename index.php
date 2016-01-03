@@ -92,8 +92,8 @@
             <div class="row">
                 <img src="img/jet_blue.png" alt="jet_logo">
             </div>
-            <a href="#">
-                <h2 class="">Calendar PMS</h2>
+            <a href="/features/calendar.php">
+                <h2 class="text-center" id="calendar">Calendar PMS</h2>
             </a>визуализация всех заказов по датам и номерам
             <ul>
                 <li class="fa fa-arrow-right"> Красочный наглядный интерфейс сразу расскажет о положении в хостеле
@@ -164,7 +164,7 @@
                 <img src="img/jet_blue.png" alt="jet_logo">
             </div>
             <a href="#">
-                <h2 class="">Accounting PMS</h2>
+                <h2 class="">Accounting</h2>
             </a>
             учет ресурсов и статистика
             <ul>
@@ -191,14 +191,11 @@
             </a>
             Вся рабочая переписака в одном месте
             <ul>
-                <li class="fa fa-arrow-right"> Выставляйте на продажу весь номерной фонд в системах
-                    online-бронирования и на рецепции в одной программе
+                <li class="fa fa-arrow-right"> Переписка с гостями прямо из Системы
                 </li>
-                <li class="fa fa-arrow-right"> Обновляйте информацию об хостеле во всех системах бронирования
-                    одновременно
+                <li class="fa fa-arrow-right"> Встроенные функции e-mail marketinga
                 </li>
-                <li class="fa fa-arrow-right"> Редактируйте стоимость и наличие номерного фонда из одного
-                    интерфейса
+                <li class="fa fa-arrow-right"> Автоматическое отправление подтверждений о бронировании
                 </li>
             </ul>
             <a href="#">
@@ -229,34 +226,9 @@
 
     <br><br>
 
-<!--    <div class="row">-->
-<!--        <div class="col-md-2 col-md-offset-1">-->
-<!--            <img src="img/online-manager.png" alt="online-manager_logo">-->
-<!---->
-<!--            <p>Online управление отелем</p>-->
-<!--        </div>-->
-<!--        <div class="col-md-2">-->
-<!--            <img src="img/bron.png" alt="bron_logo">-->
-<!---->
-<!--            <p>Бронирование номера с вашего сайта</p>-->
-<!--        </div>-->
-<!--        <div class="col-md-2"><img src="img/2way.png" alt="2way_logo">-->
-<!---->
-<!--            <p>2way синхронизация с системами онлайн бронирования</p>-->
-<!--        </div>-->
-<!--        <div class="col-md-2">-->
-<!--            <img src="img/save.png" alt="save_logo">-->
-<!---->
-<!--            <p>Надежность хранения данных</p>-->
-<!--        </div>-->
-<!--        <div class="col-md-2">-->
-<!--            <img src="img/help.png" alt="help_logo">-->
-<!---->
-<!--            <p>Техническая поддержка 24/7</p>-->
-<!--        </div>-->
-<!--        <div class="col-md-1"></div>-->
-<!--    </div>-->
+
     <div class="row">
+        <h2 class="text-center">Наши партнеры</h2>
         <img src="img/baner.png" alt="baner" width="100%">
     </div>
     <br><br>
