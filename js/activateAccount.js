@@ -1,8 +1,5 @@
 loadRegistrationData = function () {
-    if (typeof QueryString.email == "string")
-        document.getElementById('email_input').value = QueryString.email;
-    if (typeof QueryString.reg_token == "string")
-        document.getElementById('token_input').value = QueryString.reg_token;
+
 }
 
 activateAccount = function (email, token, password1, password2) {
@@ -51,7 +48,7 @@ activateAccount = function (email, token, password1, password2) {
                                 if (e.status === 302)
                                 {
                                     console.log("activateAccount->DoActivateAccount->doLogin="+ e.responseText);
-                                    alert(e.responseText);
+                                    //alert(e.responseText);
                                     window.location = window.location.origin + "/login/index.php";//?statusMessage=" + xmlhttp.responseText;
                                 }
                             }
@@ -82,4 +79,48 @@ activateAccount = function (email, token, password1, password2) {
 
 }
 
+$(document).ready(function(){
+    if (typeof QueryString.email == "string")
+        document.getElementById('email_input').value = QueryString.email;
+    if (typeof QueryString.reg_token == "string")
+        document.getElementById('token_input').value = QueryString.reg_token;
 
+    if ($('#email_input').val() == '')
+    {
+        console.log('if case');
+        alert('Email is empty. Please, follow activation link by checking you email for activation details. You will be redirected to main page');
+        window.location = window.location.origin;
+    }
+
+
+    $("#password1").keypress(function(event){
+        if (event.which == 13)
+        {
+            if ($(this).val() != '') {
+                if ($('#password2').val() == '') {
+                    $("#password2").focus();
+                }
+                else
+                {
+                    $("#finish_id").trigger("click");
+                }
+            }
+        }
+    });
+    $("#password2").keypress(function(event){
+        if (event.which == 13)
+        {
+            if ($(this).val() != '')
+            {
+                if ($('#password1').val() == '')
+                {
+                    $("#password1").focus();
+                }
+                else
+                {
+                    $('#finish_id').trigger("click");
+                }
+            }
+        }
+    });
+});

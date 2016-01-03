@@ -8,6 +8,36 @@ loadLoginData = function() // объявление функции Лоадинг
 
 
 $(document).ready(function(){
+    $("#login_id").keypress(function(event){
+        if (event.which == 13)
+        {
+            if ($(this).val() != '') {
+                if ($('#password_id').val() == '') {
+                    $("#password_id").focus();
+                }
+                else
+                {
+                    $("#button_id").trigger("click");
+                }
+            }
+        }
+    });
+    $("#password_id").keypress(function(event){
+        if (event.which == 13)
+        {
+            if ($(this).val() != '')
+            {
+                if ($('#login_id').val() == '')
+                {
+                    $("#login_id").focus();
+                }
+                else
+                {
+                    $('#button_id').trigger("click");
+                }
+            }
+        }
+    });
    $("#button_id").click(function(){
       
       $.ajax({
