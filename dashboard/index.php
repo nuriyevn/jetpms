@@ -49,12 +49,15 @@
     <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script-->
 
 <!-- Added by Nusrat -->
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    <!--script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
+    <!--script-- type="text/javascript" src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script-->
+    <script src="/js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+    <script src="/js/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
     <script type="text/javascript" src="/js/loading.js"></script>
 
     <!-- include smoothness jQueryUI theme -->
-    <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <!--link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css"-->
+    <link rel="stylesheet" href="/js/jquery-ui-1.11.4.custom/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="/css/loading.css">
 <!-- Added by Nusrat -->
 
@@ -119,6 +122,9 @@ include(ABSPATH."/dashboard/navbar.php");
         </table>
     </table>
 </div>
+
+
+<div id="orderScreen"></div>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/bootstrap/bootstrap.min.js"></script>

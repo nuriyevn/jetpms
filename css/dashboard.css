@@ -50,3 +50,23 @@ table table tr {
 .fa-bars, .fa {
     color: #00A2E9;
 }
+
+
+#orderScreen {
+    background: url('/img/loading.gif') no-repeat 5px 8px
+padding-left: 32px;
+}
+
+
+.orderScreenWindows .ui-dialog-titlebar-close {
+    display: none;
+}
+
+.orderTable , .orderTable tr, .orderTable td, #ui-datepicker-div tr, #ui-datepicker-div table, #ui-datepicker-div td
+{
+    border: none;
+}
+
+.ui-widget-content {
+    background: #FFFFFF; !important;
+}
