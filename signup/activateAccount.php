@@ -31,7 +31,7 @@
                 <div class="form-group">
                     <!--                            <label for="email">Email login:</label>-->
                     <input type="email" disabled name="mail" class="form-control" id="email_input"
-                           placeholder="Email Address">
+                           placeholder="Email Address" value="">
                 </div>
 
                 <div class="form-group">
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" name="submit" value="Finish registration"
+                    <input id="finish_id" type="submit" name="submit" value="Finish registration"
                            class="btn-success btn-lg btn-block"
                            onclick="activateAccount(document.getElementById('email_input').value, document.getElementById('token_input').value, document.getElementById('password1').value, document.getElementById('password2').value)">
                 </div>

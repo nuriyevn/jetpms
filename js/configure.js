@@ -222,7 +222,7 @@ $(document).ready(function() {
          data: 'hostel_info=' +  encodeURIComponent(JSON.stringify(hostel_info)) + '&rooms=' + encodeURIComponent(JSON.stringify(rooms)),
          success: function(msg) {
             $("#prices_container").prepend("<p>Configured successfully!</p>");
-            alert("Success! Please, click ok to proceed.");
+            //alert("Success! Please, click ok to proceed.");
             window.location = window.location.origin = "/dashboard/index.php";
          }
       });

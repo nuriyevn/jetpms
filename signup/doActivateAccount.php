@@ -14,7 +14,7 @@ $path_to_cdbconn = $_SERVER['DOCUMENT_ROOT']."/php/CDBConn.php";
 
    //printf("input_email=%s<br>input_reg_token=%s<br>input_password1=%s<br>input_password2=%s<br>", $input_email, $input_reg_token, $input_password1, $input_password2);
 
-   $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", TRUE);
+   $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
 
    $conn->connect();
 
@@ -30,8 +30,8 @@ if ($conn->run_query($query))
          break;
       case 1:
          $arr = $conn->fetch_array();
-         var_dump($arr['reg_token']);
-         var_dump($_POST['reg_token']);
+         //var_dump($arr['reg_token']);
+         //var_dump($_POST['reg_token']);
          if ($arr["reg_token"] == $input_reg_token)
          {
             $adduser_query = "UPDATE users SET is_activated = TRUE, password='$input_password1' WHERE login='$input_email'";
