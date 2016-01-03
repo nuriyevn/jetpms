@@ -1,0 +1,32 @@
+table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+
+}
+
+body {
+    #font: 2em Arial, Helvetica, sans-serif;
+    #color: #00FF00;
+    overflow-x: hidden;
+}
+
+#orderScreen {
+    background: url('/img/loading.gif') no-repeat 5px 8px
+    padding-left: 32px;
+}
+
+
+.orderScreenWindows .ui-dialog-titlebar-close {
+    display: none;
+}
+
+.orderTable , .orderTable tr, .orderTable td, #ui-datepicker-div tr, #ui-datepicker-div table, #ui-datepicker-div td
+{
+    border: none;
+}
+
+.ui-widget-content {
+    background: #FFFFFF; !important;
+}
+
