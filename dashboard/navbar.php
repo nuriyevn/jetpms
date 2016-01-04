@@ -13,7 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">[HOSTEL #9999]</a>
+            <a class="navbar-brand" id='hostel_name_id' href="#">[HOSTEL #9999]</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

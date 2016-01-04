@@ -73,4 +73,5 @@ padding-left: 32px;
     background: #FFFFFF; !important;
 }
 
-table td.selected { background-color:#111; }
+table td.selected { background-color:#003eff; }
+table td.booked { background-color: #009933; }

@@ -1,6 +1,7 @@
 
 
-$(document).ready(function(){
+//$(document).ready(function(){
+function loadRangeSlider(){
 
     $( "#slider" ).slider({
         animate: "slow",
@@ -11,10 +12,17 @@ $(document).ready(function(){
         create: function( event, ui ) {
             val = $( "#slider" ).slider("value");//При создании слайдера, получаем его значение в перемен. val
             $( "#contentSlider" ).html("Range Calendar: " + val ).css("margin-left", "25px");//Заполняем этим значением элемент с id contentSlider
+            days_to_show = val;
+            //initLoad();
         },
-        slide: function( event, ui ) {
-            $( "#contentSlider").html("Range Calendar: " +  ui.value).css("margin-left", "25px");//При изменении значения ползунка заполняем элемент с id contentSlider
+        slide: function(event, ui) {
+            $("#contentSlider").html("Range Calendar: " + ui.value).css("margin-left", "25px");//При изменении значения ползунка заполняем элемент с id contentSlider
 
+            location.reload();
+        },
+        stop: function( event, ui ) {
+            days_to_show = ui.value;
+            initLoad();
 
         }
     });
@@ -25,4 +33,4 @@ $(document).ready(function(){
 
     });
     $.datepicker.formatDate( "dd-mm-yy");
-});
+};

@@ -91,12 +91,23 @@ include(ABSPATH."/dashboard/navbar.php");
 <!-- nav bar end here -->
 
 <div class="row1">
-    <input type="button" class="btn-default" value="- 30">
+    <div class="col-md-2">
+        <div class="row">
+            <p id="date">Start calendar: <input type="text" id="datepicker"></p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="row">
+            <div id="contentSlider"></div>
+            <div id="slider"></div>
+        </div>
+    </div>
+    <!--input type="button" class="btn-default" value="- 30">
     <input type="button" class="btn-default" value="- 7">
     <input type="button" class="btn-default" value="Today">
     <input type="button" class="btn-default" value="+ 7">
     <input type="button" class="btn-default" value="+ 30">
-    <span class="opts">Date: <input type="date"></span>
+    <span class="opts">Date: <input type="date"></span-->
     <span class="opts">Room Types:
         <select name="roomTypes" id="">
             <option>De Luxe</option>
@@ -128,7 +139,9 @@ include(ABSPATH."/dashboard/navbar.php");
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/bootstrap/bootstrap.min.js"></script>
+<script src="/js/selectDatesByDrag.js"></script>
 <script src="/js/dashboard.js"></script>
 <script src="/js/navbar.js"></script>
+<script src="/js/dashboardSlider.js"></script>
 </body>
 </html>
