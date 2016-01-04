@@ -139,6 +139,8 @@ include(ABSPATH."/dashboard/navbar.php");
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/bootstrap/bootstrap.min.js"></script>
+<script src="/js/queryString.js"></script>
+<script src="/js/redirectPost.js"></script>
 <script src="/js/selectDatesByDrag.js"></script>
 <script src="/js/dashboard.js"></script>
 <script src="/js/navbar.js"></script>

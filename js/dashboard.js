@@ -296,8 +296,9 @@ function invokeOrderDialog(start_day, end_day, interval, room_id, bed_index)
                 }
                 else if (info.avail == 0)
                 {
+                    $('#datepicker_in').datepicker('option', 'maxDate', new Date(info.date_in));
+                    $('#datepicker_out').datepicker('option', 'minDate', new Date(info.date_out));
 
-                    console.log("Can't use these dates, unavailable");
                     $('#datepicker_in').datepicker('setDate', new Date(info.date_in)).attr('disabled', true);
                     $('#datepicker_out').datepicker('setDate', new Date(info.date_out)).attr('disabled', true);
                     $('input[name="guest_name"]').val(info.first_name + ' ' + info.last_name).attr('disabled', true);
@@ -310,9 +311,6 @@ function invokeOrderDialog(start_day, end_day, interval, room_id, bed_index)
             }
         }
     });
-
-
-
 };
 
 function book_button_click(event)
@@ -386,20 +384,20 @@ function loadOrderDialogDependencies()
       .mouseup(rangeMouseUp)
       .mousemove(rangeMouseMove);
 }
+
 var days_to_show = 0;
 
 jQuery(document).ready(function ($) {
-
+    if (typeof QueryString.slider_position == "string") {
+        days_to_show = QueryString.slider_position;
+        console.log('Before. days_to_show = ' + days_to_show);
+    }
     loadRangeSlider();
     initLoad();
 });
 
 function initLoad() {
-
-
     waitingDialog({});
-
-    //days_to_show = console.log($('#contentSlider').html().split(' ')[2]);
 
     var g_username = "";
     var g_hostel_id = -1;
