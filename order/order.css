@@ -1,0 +1,55 @@
+body {
+    background-color: #00A2E9;
+}
+.container {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+}
+h1, h3, h4, h5 {
+    font-weight: 700;
+    color: #333333;
+}
+table {
+    width: 100%;
+    border-radius: 5px;
+}
+table.details_all {
+    margin-bottom: 25px;
+}
+td {
+    padding:10px;
+}
+#details_bed {
+    background-color: #009FE3;
+}
+.status {
+    border: dashed 1px white;
+    border-radius: 3px;
+    padding: 5px 0px 5px 20px;
+}
+.booked {
+    background-color: #3e8f3e;
+}
+.canceled {
+    background-color: #ce8483;
+}
+.change_status {
+    margin-right: 55px;
+}
+.guest_emails {
+    background-color: #FEBA02;
+}
+.mail1 span {
+    margin-right: 20px;
+}
+.from {
+    font-weight: 700;
+}
+.subject {
+    color: #333333;
+    font-family: "Rage Italic";
+}
+.mailing_date {
+    color: #777;
+    font-weight: 600;
+}
