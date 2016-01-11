@@ -55,7 +55,7 @@ table table tr {
 
 
 #orderScreen {
-    background: url('/img/loading.gif') no-repeat 5px 8px
+    background: url('/img/loading.gif') no-repeat 5px 8px;
 padding-left: 32px;
 }
 
