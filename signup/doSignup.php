@@ -3,6 +3,7 @@
    $document_root = $_SERVER["DOCUMENT_ROOT"];
    $http_host = $_SERVER["HTTP_HOST"];
    $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir);
+
    
    $path_to_cdbconn = $_SERVER['DOCUMENT_ROOT']."/php/CDBConn.php";
    $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/php/hostconfig.php";
@@ -42,7 +43,8 @@
       $message .= "Please, click to this activation link: ";
 
       $reg_token= bin2hex(openssl_random_pseudo_bytes(16));
-      $activation_link = "http://".$script_parent_dir."/activateAccount.php?email=".$send_to."&reg_token=".$reg_token;
+
+      $activation_link = "http://".$_SERVER["HTTP_HOST"]."/signup/activateAccount.php?email=".$send_to."&reg_token=".$reg_token;
       $href_tag = "<a href=".$activation_link.">$activation_link</a>";
 
       $conn->run_insert("INSERT INTO users (login, reg_token, is_activated) VALUES('$send_to', '$reg_token', FALSE)");
