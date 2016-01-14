@@ -1,11 +1,9 @@
 <?php
 session_start();
 
-$path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/php/hostconfig.php";
-$path_to_cdbconn = $_SERVER['DOCUMENT_ROOT']."/php/CDBConn.php";
-
-   include_once($path_to_hostconfig);
-   include_once($path_to_cdbconn);
+   require_once "../app-config.php";
+   include_once(ABSPATH."/php/hostconfig.php");
+   include_once(ABSPATH."/php/CDBConn.php");
 
    $input_email = $_POST['email'];
    $input_reg_token = $_POST['reg_token'];

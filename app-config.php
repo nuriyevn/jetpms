@@ -6,3 +6,16 @@
 
 if ( !defined('ABSPATH') )
     define('ABSPATH', dirname(__FILE__) . '/');
+
+
+$handle = fopen(ABSPATH."/pgsql_password", "r");
+
+if ($handle)
+{
+   $db_user = fgets($handle);
+   $db_pass = fgets($handle);
+}
+else
+{
+
+}

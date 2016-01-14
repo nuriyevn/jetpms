@@ -102,12 +102,6 @@ include(ABSPATH."/dashboard/navbar.php");
             <div id="slider"></div>
         </div>
     </div>
-    <!--input type="button" class="btn-default" value="- 30">
-    <input type="button" class="btn-default" value="- 7">
-    <input type="button" class="btn-default" value="Today">
-    <input type="button" class="btn-default" value="+ 7">
-    <input type="button" class="btn-default" value="+ 30">
-    <span class="opts">Date: <input type="date"></span-->
     <span class="opts">Room Types:
         <select name="roomTypes" id="">
             <option>De Luxe</option>
@@ -128,9 +122,9 @@ include(ABSPATH."/dashboard/navbar.php");
 
 <div class="mainTable table-responsive">
     <div id="loadingScreen"></div>
-    <table class="table table-bordered text-center">
-        <table id="header_table" class="table-bordered table-hover table-striped text-center">
-        </table>
+    <!--table class="table table-bordered text-center"-->
+    <table id="calendar_table" class="table-bordered table-hover table-striped text-center">
+    </table>
     </table>
 </div>
 
@@ -141,6 +135,7 @@ include(ABSPATH."/dashboard/navbar.php");
 <script src="/js/bootstrap/bootstrap.min.js"></script>
 <script src="/js/queryString.js"></script>
 <script src="/js/redirectPost.js"></script>
+<script src="/js/orderDialog.js"></script>
 <script src="/js/selectDatesByDrag.js"></script>
 <script src="/js/dashboard.js"></script>
 <script src="/js/navbar.js"></script>

@@ -1,15 +1,8 @@
 <?php
-   $script_parent_dir = __DIR__;
-   $document_root = $_SERVER["DOCUMENT_ROOT"];
-   $http_host = $_SERVER["HTTP_HOST"];
-   $script_parent_dir = str_replace($document_root, $http_host, $script_parent_dir);
 
-   
-   $path_to_cdbconn = $_SERVER['DOCUMENT_ROOT']."/php/CDBConn.php";
-   $path_to_hostconfig = $_SERVER['DOCUMENT_ROOT']."/php/hostconfig.php";
-
-   include_once($path_to_cdbconn);
-   include_once($path_to_hostconfig);
+   require_once "../app-config.php";
+   include_once(ABSPATH."/php/CDBConn.php");
+   include_once(ABSPATH."/php/hostconfig.php");
 
    $send_to = $_GET["email"];
    if ($send_to == "")

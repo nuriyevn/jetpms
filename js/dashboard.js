@@ -1,46 +1,56 @@
+// Prototype of the calendar 0.0.0.0.1 Version
+// Need to be extended to calendar.
+// is called in response to getUsername.php server request
 function loadDatesInCaption(days_to_show)
 {
-    $('#header_table').empty();
-    var $header_table = $('#header_table');
+    // Calendar table
+    $('#calendar_table').empty();
+    var $calendar_table = $('#calendar_table');
     var d = new Date();
-    var monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
 
-    var $year_row = $('<tr></tr>').appendTo($header_table);
+    var $year_row = $('<tr></tr>').appendTo($calendar_table);
     var year = d.getFullYear();
     $('<td class="y" colspan="' + days_to_show + 1 + '"></td>').html(year).appendTo($year_row);
 
-    var $month_row = $('<tr></tr>').appendTo($header_table);
-    var month = d.getMonth();
-    $('<td class="m" colspan="' + days_to_show + 1 + '"></td>').html(monthNames[month]).appendTo($month_row);
+    var $month_row = $('<tr></tr>').appendTo($calendar_table);
 
-    var $days_row = $('<tr></tr>').appendTo($header_table);
+    var monthName = $.datepicker.formatDate('MM', new Date(d));
+
+    $('<td class="m" colspan="' + days_to_show + 1 + '"></td>').html(monthName).appendTo($month_row);
+
+    var $days_row = $('<tr></tr>').appendTo($calendar_table);
     var day = d.getDate();
     $('<td class="roomName"></td>').html("Room #").appendTo($days_row);
-
 
     for (var i = 0; i < days_to_show ; i++)
     {
         $('<td></td>').html(day + i).appendTo($days_row);
     }
+    // End of calendar header table
 }
 
+// Should be loaded during initial page loading
+// Currently loaded from onReady->initLoad->loadRooms
+// getRooms.php - gets rooms {name, bed_count, id}
+// getRoomCount.php - gets room_count from hostel table
 
 function loadRooms(rooms, room_count, days_to_show)
 {
+    // room_count - all room count
+    // rooms.length - configured room count
+
     if (rooms.length > room_count)
     {
-        console.log('Database inconsistency, please update room name');
+        console.log('Database inconsistency');
     }
     else if (rooms.length < room_count)
     {
         // some rooms are not full empty;
     }
-    $("[id^=room_id_]").remove();
-    console.log('loadRooms()');
 
-    for (r = 0; r < room_count; r++)
+    $("[id^=room_id_]").remove();
+
+    for (var r = 0; r < room_count; r++)
     {
         var room = rooms[r];
 
@@ -62,6 +72,8 @@ function loadRooms(rooms, room_count, days_to_show)
 
             $tr_bed_row.append($td_bed_name);
 
+            // cur_date = today - 1
+            // cur_date = day from start calendar
             for (d = 0; d < days_to_show; d++)
             {
                 var date = new Date();
@@ -75,9 +87,12 @@ function loadRooms(rooms, room_count, days_to_show)
 
             $room_table.append($tr_bed_row);
         }
-        $('#header_table').after($room_table);
+        $('#calendar_table').after($room_table);
     }
 }
+
+// Draws rectangular selection for given single order
+//
 
 function drawOrder(order)
 {
@@ -118,6 +133,7 @@ function drawAllOrders()
         {
             if (e.status === 200)
             {
+                //
                 console.log('getRooms from draw');
                 var rooms = jQuery.parseJSON(e.responseText);
                 for (var r = 0; r < rooms.length; r++)
@@ -144,16 +160,6 @@ function drawAllOrders()
 
 }
 
-function orderDialog(string) {
-    //$('#orderScreen').html(string.message && '' != string.message ? string.message : 'Empty content' );
-    $('#orderScreen').dialog('option', 'title', string.title && '' != string.title ? string.title : 'Empty title' );
-    $('#orderScreen').dialog('open');
-}
-
-function closeOrderDialog()
-{
-    $('#orderScreen').dialog('close');
-}
 
 
 function invokeOrderDialog(start_day, end_day, interval, room_id, bed_index)
@@ -249,7 +255,6 @@ function invokeOrderDialog(start_day, end_day, interval, room_id, bed_index)
     var checkin_button = $('<input type="button" id="checkin_button"/>').attr('value', 'Check in').addClass('btn-primary');
     var checkout_button = $('<input type="button" id="checkout_button"/>').attr('value', 'Check out').addClass('btn-primary');
 
-
     td1 = $('<td colspan="2"></td>').append(book_button).appendTo(order_table);
     td2 = $('<td colspan="2"></td>').append(checkin_button).appendTo(order_table);
     td3 = $('<td colspan="2"></td>').append(checkout_button).appendTo(order_table);
@@ -313,6 +318,7 @@ function invokeOrderDialog(start_day, end_day, interval, room_id, bed_index)
     });
 };
 
+// orderScreen::book_button click procedure
 function book_button_click(event)
 {
     var name_surname = $('input[name="guest_name"]').val();
@@ -385,8 +391,7 @@ function loadOrderDialogDependencies()
       .mousemove(rangeMouseMove);
 }
 
-var days_to_show = 0;
-
+var days_to_show = 15;
 jQuery(document).ready(function ($) {
     if (typeof QueryString.slider_position == "string") {
         days_to_show = QueryString.slider_position;

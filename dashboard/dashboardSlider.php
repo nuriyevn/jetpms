@@ -122,7 +122,7 @@ include(ABSPATH . "/dashboard/navbar.php");
 <div class="mainTable table-responsive">
     <div id="loadingScreen"></div>
     <table class="table table-bordered text-center">
-        <table id="header_table" class="table-bordered table-hover table-striped text-center">
+        <table id="calender_table" class="table-bordered table-hover table-striped text-center">
         </table>
     </table>
 </div>

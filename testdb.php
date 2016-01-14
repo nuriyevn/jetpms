@@ -3,7 +3,8 @@
 require_once './app-config.php';
 include_once( ABSPATH."/php/CDBConn.php");
 include_once(ABSPATH."/php/hostconfig.php");
-$conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", TRUE);
+
+$conn = new CDBConn($jet_ip, $db_name, $db_user, $db_pass);
 
 echo "CDBConn::connect_no_locathost();<br>";
 $conn->connect_no_localhost();
@@ -14,7 +15,7 @@ echo "<div style=\"background-color:#00FF00\">".$conn->run_select($sql)."</div>"
 
 $conn->close();
 
-$conn2 = new CDBConn("127.0.0.1", $db_name, $db_user, "qwerty123", TRUE);
+$conn2 = new CDBConn("127.0.0.1", $db_name, $db_user, $db_pass);
 
 echo "<br>--------------<br>";
 echo "CDBConn::connect()<br>";
