@@ -89,9 +89,9 @@
         <h2 class="line-height">Cистема легко продает номера и автоматизирует управление хостелом</h2>
 
         <div class="col-md-4">
-            <div class="row">
-                <img src="img/jet_blue.png" alt="jet_logo">
-            </div>
+<!--            <div class="row">-->
+<!--                <img src="img/jet_blue.png" alt="jet_logo">-->
+<!--            </div>-->
             <a href="/features/calendar.php">
                 <h2 class="text-center" id="calendar">Calendar PMS</h2>
             </a>визуализация всех заказов по датам и номерам
@@ -112,9 +112,9 @@
         </div>
 
         <div class="col-md-4">
-            <div class="row text-center">
-                <img src="img/jet_orange.png" alt="Chanel_manager_logo.png">
-            </div>
+<!--            <div class="row text-center">-->
+<!--                <img src="img/jet_orange.png" alt="Chanel_manager_logo.png">-->
+<!--            </div>-->
             <a href="#">
                 <h2>Channel Manager</h2>
             </a>инструмент управления online продажами
@@ -135,9 +135,9 @@
         </div>
 
         <div class="col-md-4">
-            <div class="row text-center">
-                <img src="img/jet_green.png" alt="OBooking_buttom_logo">
-            </div>
+<!--            <div class="row text-center">-->
+<!--                <img src="img/jet_green.png" alt="OBooking_buttom_logo">-->
+<!--            </div>-->
             <a href="#">
                 <h2>Booking Button</h2></a>
             модуль online бронирования на сайте хостела
@@ -160,9 +160,9 @@
 
     <div class="row text-center">
         <div class="col-md-4">
-            <div class="row">
-                <img src="img/jet_blue.png" alt="jet_logo">
-            </div>
+<!--            <div class="row">-->
+<!--                <img src="img/jet_blue.png" alt="jet_logo">-->
+<!--            </div>-->
             <a href="#">
                 <h2 class="">Accounting</h2>
             </a>
@@ -183,9 +183,9 @@
         </div>
 
         <div class="col-md-4">
-            <div class="row text-center">
-                <img src="img/jet_orange.png" alt="Chanel_manager_logo.png">
-            </div>
+<!--            <div class="row text-center">-->
+<!--                <img src="img/jet_orange.png" alt="Chanel_manager_logo.png">-->
+<!--            </div>-->
             <a href="#">
                 <h2>Gmail integration</h2>
             </a>
@@ -204,9 +204,9 @@
         </div>
 
         <div class="col-md-4">
-            <div class="row text-center">
-                <img src="img/jet_green.png" alt="OBooking_buttom_logo">
-            </div>
+<!--            <div class="row text-center">-->
+<!--                <img src="img/jet_green.png" alt="OBooking_buttom_logo">-->
+<!--            </div>-->
             <a href="#">
                 <h2>Todoist</h2></a>
             Списки дел и напоминания
@@ -226,27 +226,27 @@
 
     <br><br>
 
-
-    <div class="row">
-        <h2 class="text-center">Наши партнеры</h2>
-        <img src="img/baner.png" alt="baner" width="100%">
-    </div>
-    <br><br>
+<!---->
+<!--    <div class="row">-->
+<!--        <h2 class="text-center">Наши партнеры</h2>-->
+<!--        <img src="img/baner.png" alt="baner" width="100%">-->
+<!--    </div>-->
+<!--    <br><br>-->
     <h2 class="line-height text-center">Преимущества работы с Jet PMS</h2>
 
     <div class="row">
-        <div class="col-md-4">
-            <p><img src="img/deva.png" alt="deva_logo"></p>
-
-        </div>
-
-        <div class="col-md-4">
-            <p><img src="img/inova.png" alt="inova_logo"></p>
-        </div>
-
-        <div class="col-md-4">
-            <p><img src="img/share.png" alt="share_logo"></p>
-        </div>
+<!--        <div class="col-md-4">-->
+<!--            <p><img src="img/deva.png" alt="deva_logo"></p>-->
+<!---->
+<!--        </div>-->
+<!---->
+<!--        <div class="col-md-4">-->
+<!--            <p><img src="img/inova.png" alt="inova_logo"></p>-->
+<!--        </div>-->
+<!---->
+<!--        <div class="col-md-4">-->
+<!--            <p><img src="img/share.png" alt="share_logo"></p>-->
+<!--        </div>-->
     </div>
     <div class="row">
         <div class="col-md-4 lead">
@@ -274,23 +274,13 @@
 
     <div class="row">
         <div class="col-md-4 text-muted small">
-            Система автоматизации гостиничного бизнеса PMS Cloud работает, как на
-            стационарных ПК, так и на мобильных устройствах. Вы не привязаны к своему рабочему месту, а
-            контролировать рабочий процесс можете повсюду. Все, что вам нужно для работы – это доступ к
-            Интернету
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consectetur debitis dolore ex iusto nam, perspiciatis quam tenetur voluptatibus. Amet deserunt doloribus eum ipsum necessitatibus numquam repellat repellendus sint unde!
         </div>
         <div class="col-md-4 text-muted small">
-            Наша система для отелей позволяет автоматизировать все важные бизнес-процессы,
-            такие как: заселяемость номерного фонда, контроль сезонов, тарифов и цен, финансовая аналитика, учет и
-            контроль работы Вашего персонала, но наиболее важным аспектом является, продажа номеров отеля онлайн.
-            Благодаря PMS Cloud, вы можете добавлять пользователей с разным уровнем доступа, управлять финансами,
-            контролировать действия сотрудников – без ограничений. Подключайтесь ко всем OTA системам, работайте
-            online и Вы получите увеличение прибыли вашего отеля.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias blanditiis cum dolorem ipsa magni, quod veritatis voluptates? Ab assumenda atque enim in laborum nam non provident rem saepe velit.
         </div>
         <div class="col-md-4 text-muted small">
-            Красивый, яркий, интуитивно понятный интерфейс программы разработан таким
-            образом, чтобы в нем было приятно и просто работать. Все кнопки и меню легкодоступны, вы выполняете все
-            операции в несколько кликов.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cumque eligendi excepturi facere, facilis fugiat ipsum maiores molestiae mollitia nam nesciunt nulla pariatur porro quas quibusdam recusandae suscipit temporibus voluptatum!
         </div>
     </div>
 </div>
@@ -367,7 +357,7 @@
             <a href="#">
                 <div class="col-md-4 client_block">
                     <div class="row text-center">
-                        <img src="img/hotel_1.jpg" alt="hotel_1" class="hotel_logo">
+                        <img src="img/jet_blue.png" alt="hotel_1" class="hotel_logo">
                     </div>
                     <h4 class="hotel_name">Отель "Беспечный тюлень"</h4>
                     <h4 class="hotel_city"><b>Сахалин</b></h4>
@@ -381,7 +371,7 @@
             <a href="#">
                 <div class="col-md-4 client_block">
                     <div class="row text-center">
-                        <img src="img/hotel_2.jpg" alt="hotel_2" class="hotel_logo">
+                        <img src="img/jet_green.png" alt="hotel_2" class="hotel_logo">
                     </div>
                     <h4 class="hotel_name">Апартаменты "Лежбище тюленей"</h4>
                     <h4 class="hotel_city"><b>Берега Охотского моря</b></h4>
@@ -393,7 +383,7 @@
             <a href="#">
                 <div class="col-md-4 client_block">
                     <div class="row text-center">
-                        <img src="img/hotel_3.jpg" alt="hotel_3" class="hotel_logo">
+                        <img src="img/jet_orange.png" alt="hotel_3" class="hotel_logo">
                     </div>
                     <h4 class="hotel_name">Загородный клуб "Тюлененок"</h4>
                     <h4 class="hotel_city"><b>Побережье Тихого океана</b></h4>
@@ -405,16 +395,16 @@
                 </div>
             </a></div>
     </div>
-    <div class="row">
-        <h1><b>Технология системы</b></h1>
-
-        <p><img src="img/tehno.png" alt="tehno_logo"></p>
-
-        <p class="text-muted small">Использование облачных технологий обеспечивает стабильность работы, гарантию
-            безопасности данных, доступ из любой точки планеты. Для работы с PMS Cloud не нужна установка и настройка
-            дополнительного оборудования, а также его обслуживание. Вы можете быть абсолютно уверены, что все данные
-            находятся в безопасности.</p>
-    </div>
+<!--    <div class="row">-->
+<!--        <h1><b>Технология системы</b></h1>-->
+<!---->
+<!--        <p><img src="img/tehno.png" alt="tehno_logo"></p>-->
+<!---->
+<!--        <p class="text-muted small">Использование облачных технологий обеспечивает стабильность работы, гарантию-->
+<!--            безопасности данных, доступ из любой точки планеты. Для работы с PMS Cloud не нужна установка и настройка-->
+<!--            дополнительного оборудования, а также его обслуживание. Вы можете быть абсолютно уверены, что все данные-->
+<!--            находятся в безопасности.</p>-->
+<!--    </div>-->
     <div class="row">
         <div class="col-md-offset-5">
             <a href="#">
@@ -430,7 +420,7 @@
 <div class="blue_block">
     <div class="container">
         <div class="row">
-            <img src="img/clock.png" alt="clock_logo">
+<!--            <img src="img/clock.png" alt="clock_logo">-->
 
             <p style="font-size: 40px">Мы вас поддерживаем 24/7</p>
 
@@ -450,7 +440,7 @@
         </div>
         <div class="row">
             <footer class="blue_block">
-                Copyright © 2014 bla-bla-bla
+                Copyright © 2016 all rights are right
             </footer>
         </div>
     </div>

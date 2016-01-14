@@ -24,7 +24,7 @@
 <body>
 
 <!--nav bar-->
-<?php include("navbar.php"); ?>
+<?php include("../dashboard/navbar.php"); ?>
 <!-- nav bar end here -->
 
 <div class="container">
