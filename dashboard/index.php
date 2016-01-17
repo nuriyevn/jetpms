@@ -93,7 +93,7 @@ include(ABSPATH."/dashboard/navbar.php");
 <div class="row1">
     <div class="col-md-2">
         <div class="row">
-            <p id="date">Start calendar: <input type="text" id="datepicker"></p>
+            <p id="date">Start calendar: <input type="text" id="datepicker_start"></p>
         </div>
     </div>
     <div class="col-md-2">
@@ -124,8 +124,14 @@ include(ABSPATH."/dashboard/navbar.php");
     <div id="loadingScreen"></div>
     <!--table class="table table-bordered text-center"-->
     <table id="calendar_table" class="table-bordered table-hover table-striped text-center">
+        <tr id="tr_year"></tr>
+        <tr id="tr_month"></tr>
+        <tr id="tr_day">
+
+        </tr>
     </table>
-    </table>
+
+
 </div>
 
 
@@ -137,6 +143,7 @@ include(ABSPATH."/dashboard/navbar.php");
 <script src="/js/redirectPost.js"></script>
 <script src="/js/orderDialog.js"></script>
 <script src="/js/selectDatesByDrag.js"></script>
+<script src="/js/generateCalendar.js"></script>
 <script src="/js/dashboard.js"></script>
 <script src="/js/navbar.js"></script>
 <script src="/js/dashboardSlider.js"></script>

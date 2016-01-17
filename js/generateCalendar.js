@@ -29,6 +29,11 @@ function generateCalendar(startDate, endDate)
     $('#tr_month').empty();
     $('#tr_day').empty();
 
+    $('<td class="roomName"></td>').html("Room #").appendTo($('#tr_day'));
+    $('<td class="roomName"></td>').html("").appendTo($('#tr_month'));
+    $('<td class="roomName"></td>').html("").appendTo($('#tr_year'));
+
+
     // If clause writes all detail of the start date
     if (new Date(prev_date).getTime() === new Date(startDate).getTime())
     {
