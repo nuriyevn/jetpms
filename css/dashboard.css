@@ -2,10 +2,11 @@ body {
     background-color: #00A2E9;
     color: #f1f1f1;
 }
-.navbar-nav, .nav, li  {
-    height: 20px;
-    padding: 0;
-}
+/*.navbar-nav, .nav, li  {*/
+    /*height: 20px;*/
+    /*padding: 0;*/
+/*}*/
+/*these styles were leading to disorder collapsed menu*/
 
 input[type="text"] {
     background-color: #dddddd;
