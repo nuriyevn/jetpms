@@ -67,7 +67,11 @@ function generateCalendar(startDate, endDate)
         }
 
         var date = cur_date.getUTCDate();
-        $('<td></td>').text(date).appendTo("#tr_day");
+        var date_padded = date;
+        if (date_padded < 10)
+            date_padded = "0" + date_padded;
+
+        $('<td></td>').text(date_padded).appendTo("#tr_day");
         prev_date = new Date(cur_date);
     }
 }

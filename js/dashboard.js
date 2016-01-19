@@ -77,8 +77,10 @@ function loadRooms(rooms, room_count, days_to_show)
             end_date.setTime(end_date.getTime() + (days_to_show)*ms_per_day);
 
             while (new Date(prev_date).getTime() < new Date(end_date).getTime()) {
-
-                $('<td class="clickable_td"></td>').html(prev_date.getUTCDate()).appendTo($tr_bed_row);
+                var prev_date_padded = prev_date.getUTCDate();
+                if (prev_date_padded < 10)
+                    prev_date_padded = "0" + prev_date_padded;
+                $('<td class="clickable_td"></td>').html(prev_date_padded).appendTo($tr_bed_row);
                 prev_date = new Date(prev_date.getTime() + ms_per_day);
             }
             /*for (d = 0; d < days_to_show; d++)
