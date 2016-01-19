@@ -44,8 +44,12 @@ function generateCalendar(startDate, endDate)
         var till_year_end = daysBetween(prev_date,  start_of_next_year );
 
         $('#tr_year').append($('<td></td>>').attr('colspan', till_year_end + 1).text(prev_date.getUTCFullYear()));
-        $('#tr_month').append($('<td></td>').attr('colspan', till_month_end + 1).text(monthsName[prev_date.getUTCMonth()]));
-        $('#tr_day').append($('<td></td>').text(prev_date.getUTCDate()));
+        $('#tr_month').append($('<td></td>').attr('colspan', till_month_end + 1).text(monthsName[prev_date.getUTCMonth()] + " #" + prev_date.getUTCMonth()));
+        var date_padded = prev_date.getUTCDate()
+        if (date_padded < 10)
+            date_padded = "0" + date_padded;
+
+        $('#tr_day').append($('<td></td>').text(date_padded));
     }
 
     while (new Date(prev_date).getTime() < new Date(end_date).getTime())
@@ -56,7 +60,7 @@ function generateCalendar(startDate, endDate)
 
             var start_of_next_month = new Date(cur_date.getUTCFullYear(), cur_date.getUTCMonth() + 1, 0);
             var till_month_end = daysBetween( cur_date, start_of_next_month) + 1;
-            $('<td></td>').attr('colspan', till_month_end + 1 ).text(monthsName[cur_date.getUTCMonth()]).appendTo('#tr_month');
+            $('<td></td>').attr('colspan', till_month_end + 1 ).text(monthsName[cur_date.getUTCMonth()] + " #" + cur_date.getUTCMonth()).appendTo('#tr_month');
         }
         if (cur_date.getUTCFullYear() != prev_date.getUTCFullYear())
         {
@@ -75,49 +79,3 @@ function generateCalendar(startDate, endDate)
         prev_date = new Date(cur_date);
     }
 }
-
-/*
-$(document).ready(function(){
-
-    var calendar = $('#calendar_id');
-
-    $('<input type="text" id="datepicker_in" />').appendTo($('body'));
-    $('<input type="text" id="datepicker_out"/>').appendTo($('body'));
-
-    $('#datepicker_in').datepicker({
-        defaultDate: "0",
-        dateFormat: "dd/mm/yy",
-        changeMonth: true,
-        changeYear: true,
-        numberOfMonths: 1,
-        onSelect: function(selectedDate) {
-            if (selectedDate != '' && $('#datepicker_out').datepicker('getDate'))
-            {
-                console.log("Generate called");
-                var end =  new Date ($('#datepicker_out').datepicker('getDate'));
-                var start = new Date ($('#datepicker_in').datepicker('getDate'));
-                generateCalendar(Date.UTC(start.getFullYear(), start.getMonth(), start.getDate()),
-                    Date.UTC(end.getFullYear(), end.getMonth(), end.getDate()));
-            }
-        }
-    });
-
-    $('#datepicker_out').datepicker({
-        defaultDate: "0",
-        dateFormat: "dd/mm/yy",
-        changeMonth: true,
-        changeYear: true,
-        numberOfMonths: 1,
-        onSelect:function(selectedDate) {
-            if (selectedDate != '' && $('#datepicker_in').datepicker('getDate'))
-            {
-                var start = new Date($('#datepicker_in').datepicker('getDate'));
-                var end = new Date($('#datepicker_out').datepicker('getDate'));
-                generateCalendar(Date.UTC(start.getFullYear(), start.getMonth(), start.getDate()),
-                    Date.UTC(end.getFullYear(), end.getMonth(), end.getDate()));
-            }
-        }
-    });
-
-});
-*/
