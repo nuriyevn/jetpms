@@ -20,6 +20,9 @@ include_once(ABSPATH.'/php/hostconfig.php');
 $conn = new CDBConn($jet_ip, $db_name, $db_user, 'qwerty123', FALSE);
 $conn->connect();
 
+
+// Finding whether it overlaps with some of existing orders
+
 $check_availability = "SELECT  guest_id, date_in, date_out, date_overlap(date_in, date_out, '$date_in', '$date_out') FROM orders WHERE bed_index=$bed_index AND room_id=$room_id";
 $conn->run_query($check_availability);
 
@@ -29,7 +32,8 @@ $order_info = [];
 while ($line = $conn->fetch_array())
 {
     if ($line['date_overlap'] == 1) {
-
+        // avail = 0; does mean there exists at least on order
+        // which conflicts with the current order.
         $order_info[0]->avail = 0;
         $order_info[0]->date_in = $line['date_in'];
         $order_info[0]->date_out = $line['date_out'];
@@ -59,6 +63,11 @@ while ($line = $conn->fetch_array())
         exit();
     }
 }
+
+
+// if it passes the while cause
+// That's a good sign of availability of the current order
+// for selected dates
 
 $order_info[0]->avail = 1;
 echo json_encode($order_info); // Available

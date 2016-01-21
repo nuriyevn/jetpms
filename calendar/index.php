@@ -14,8 +14,15 @@
     <tr id="tr_day"></tr>
 </table>
 
+
+
+<table id="test_table">
+    <tr><td></td><td colspan="2">Colspan 2</td></tr>
+</table>
 <script src="/js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <script src="/js/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+<script src="/js/include.js"></script>
+<script src="/js/generateCalendar.js"></script>
 <script src="/calendar/calendar.js"></script>
 </body>
 </html>

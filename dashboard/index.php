@@ -143,6 +143,7 @@ include(ABSPATH."/dashboard/navbar.php");
 <script src="/js/redirectPost.js"></script>
 <script src="/js/orderDialog.js"></script>
 <script src="/js/selectDatesByDrag.js"></script>
+<script src="/js/include.js"></script>
 <script src="/js/generateCalendar.js"></script>
 <script src="/js/dashboard.js"></script>
 <script src="/js/navbar.js"></script>

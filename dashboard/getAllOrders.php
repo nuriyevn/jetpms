@@ -9,7 +9,6 @@ if (!isset($_SESSION['g_username']))
 
 $room_id =  $_POST['room_id'];
 
-
 require_once '../app-config.php';
 include_once(ABSPATH.'/php/CDBConn.php');
 include_once(ABSPATH.'/php/hostconfig.php');

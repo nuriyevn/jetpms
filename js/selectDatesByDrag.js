@@ -1,5 +1,7 @@
 var dragStart = 0;
 var dragEnd = 0;
+
+
 var isDragging = false;
 var start_td_parent = 0;
 
@@ -15,6 +17,16 @@ function rangeMouseDown(e) {
         isDragging = true;
         if (typeof e.preventDefault != 'undefined') { e.preventDefault(); }
         document.documentElement.onselectstart = function () { return false; };
+
+        // Test
+        /*var id_string = $(this).attr('id');
+        var res  = id_string.split('/');
+        var month = res[0];
+        var year = res[1];
+
+        console.log("my id = " + id_string + ' month = ' + monthsName[month] + "; year = "
+            + year);*/
+
     }
 }
 
@@ -27,23 +39,34 @@ function rangeMouseUp(e) {
         var start = $(allCells.get(dragStart)).html();
         var end = $(allCells.get(dragEnd)).html();
 
+        var start_id_string =  $(allCells.get(dragStart)).attr('id');
+        var end_id_string = $(allCells.get(dragEnd)).attr('id');
+
+
+        var res_start = start_id_string.split('/');
+        var res_end = end_id_string.split('/');
+
+        var start_day = Date.UTC(res_start[1], res_start[0], start);
+        var end_day = Date.UTC(res_end[1], res_end[0], end);
+
         var interval = end - start + 1;
-        console.log(start + ' ' + end  + ' ' + interval);
 
         isDragging = false;
         document.documentElement.onselectstart = function () { return true; };
         if (dragStart <= dragEnd)
         {
-
             var room_row = $(this).parent().parent();
             var room_h4_tag = $(room_row).children(':first').children(':first').children(':first');
             var room_id = room_h4_tag.html().split('#')[1];
 
-
             var bed_index_tag = $(this).parent().children(':first');
             var bed_index = bed_index_tag.html().split(' ')[0];
 
-            invokeOrderDialog(start, end, interval, room_id, bed_index);
+            //invokeOrderDialog(start, end, interval, room_id, bed_index);
+            console.log("MouseUp: start_day = " + start_day
+                        + "end_day = " + end_day);
+
+            invokeOrderDialog(start_day, end_day, interval, room_id, bed_index);
         }
     }
 }

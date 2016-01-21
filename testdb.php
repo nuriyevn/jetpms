@@ -24,3 +24,9 @@ $conn2->printinfo();
 $sql = "SELECT * FROM rooms";
 echo "<div style=\"background-color:#00FF00\">".$conn2->run_select($sql)."</div>";
 $conn2->close();
+
+
+
+
+
+

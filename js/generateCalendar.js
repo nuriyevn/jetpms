@@ -5,8 +5,6 @@
  * Created by root on 1/7/16.
  */
 
-var ms_per_day = 24*60*60*1000;
-var monthsName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 function treatAsUTC(date) {
     var result = new Date(date);
@@ -30,8 +28,8 @@ function generateCalendar(startDate, endDate)
     $('#tr_day').empty();
 
     $('<td class="roomName"></td>').html("Room #").appendTo($('#tr_day'));
-    $('<td class="roomName"></td>').html("").appendTo($('#tr_month'));
-    $('<td class="roomName"></td>').html("").appendTo($('#tr_year'));
+    $('<td class="roomName"></td>').html("Month #").appendTo($('#tr_month'));
+    $('<td class="roomName"></td>').html("Year #").appendTo($('#tr_year'));
 
 
     // If clause writes all detail of the start date
@@ -78,4 +76,5 @@ function generateCalendar(startDate, endDate)
         $('<td></td>').text(date_padded).appendTo("#tr_day");
         prev_date = new Date(cur_date);
     }
+
 }

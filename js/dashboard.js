@@ -38,7 +38,8 @@ function loadRooms(rooms, room_count, days_to_show)
     }
     else if (rooms.length < room_count)
     {
-        // some rooms are not full empty;
+        // some rooms are not filled up;
+        alert("Some rooms are not filled up");
     }
 
     $("[id^=room_id_]").remove();
@@ -56,8 +57,6 @@ function loadRooms(rooms, room_count, days_to_show)
         var $tr_room_name = $('<tr></tr>').append($td_room_name);
 
         $room_table.append($tr_room_name);
-
-        console.log("getDate = " +  $('#datepicker_start').datepicker('getDate'));
 
         for (b = 0; b < room.bed_count; b++)
         {
@@ -80,7 +79,11 @@ function loadRooms(rooms, room_count, days_to_show)
                 var prev_date_padded = prev_date.getUTCDate();
                 if (prev_date_padded < 10)
                     prev_date_padded = "0" + prev_date_padded;
-                $('<td class="clickable_td"></td>').html(prev_date_padded).appendTo($tr_bed_row);
+
+                // First in id is month, second is year, they are separated by forward slash (ex. "0/2015");
+                // January 2015;
+                var id_string = prev_date.getUTCMonth() + '/' + prev_date.getUTCFullYear();
+                $('<td class="clickable_td"></td>').html(prev_date_padded).attr('id', id_string).appendTo($tr_bed_row);
                 prev_date = new Date(prev_date.getTime() + ms_per_day);
             }
             /*for (d = 0; d < days_to_show; d++)
@@ -95,6 +98,7 @@ function loadRooms(rooms, room_count, days_to_show)
             }*/
 
             $room_table.append($tr_bed_row);
+            //$room_table.insertAfter($('#tr_day'));
         }
         $('#calendar_table').after($room_table);
     }
@@ -110,60 +114,33 @@ function drawOrder(order)
     var room_id = order.room_id;
     var bed_index = order.bed_index;
 
-    var day_in = new Date(date_in);
-    day_in = day_in.getDate();
-    var day_out = new Date(date_out);
-    day_out = day_out.getDate();
+    var day_in = new Date(Date.parse(date_in));
+    var day_out = new Date(Date.parse(date_out));
 
     var $room_table = $('#room_id_' + room_id);
     var room_row = $room_table.children().eq(0).children().eq(bed_index);
-
     var len = room_row.children().length;
+
     for (var i = 0; i < len; i++)
     {
-        var t = Number(room_row.children().eq(i).text());
-        if (t >= day_in && t < day_out)
+        var node = room_row.children().eq(i);
+        var id_string = room_row.children().eq(i).attr('id');
+
+        if (typeof id_string != 'string')
+            continue;
+
+        var res = id_string.split('/');
+        var t_day = Number(room_row.children().eq(i).text());
+        var t_month = res[0];
+        var t_year = res[1];
+
+        var t_new = Date.UTC(t_year, t_month, t_day);
+
+        if (t_new >= day_in && t_new < day_out)
         {
             room_row.children().eq(i).addClass('booked');
         }
     }
-}
-
-function drawAllOrders()
-{
-    //$('.clickable_td').removeClass('booked');
-
-    $.ajax({
-        url: '/dashboard/getRooms.php',
-        type: 'POST',
-        data: '',
-        complete: function(e, xhr, settings)
-        {
-            if (e.status === 200)
-            {
-                var rooms = jQuery.parseJSON(e.responseText);
-                for (var r = 0; r < rooms.length; r++)
-                {
-                    $.ajax({
-                        url:'/dashboard/getAllOrders.php',
-                        type: 'POST',
-                        data: 'room_id=' + encodeURIComponent(rooms[r].id),
-                        complete: function(e, xhr, settings) {
-                            if (e.status === 200)
-                            {
-                                var orders = jQuery.parseJSON(e.responseText);
-                                for (var i = 0; i < orders.length; i++)
-                                {
-                                    drawOrder(orders[i]);
-                                }
-                            }
-                        }
-                    });
-                }
-            }
-        }
-    });
-
 }
 
 function invokeOrderDialog(start_day, end_day, interval, room_id, bed_index)
@@ -267,8 +244,10 @@ function invokeOrderDialog(start_day, end_day, interval, room_id, bed_index)
     tr3.append(td3);
     tr3.appendTo(order_table);
 
-    var startDate = new Date(dateToday.getFullYear(), dateToday.getMonth(), start_day);
-    var endDate = new Date(dateToday.getFullYear(), dateToday.getMonth(), end_day);
+    //var startDate = new Date(dateToday.getFullYear(), dateToday.getMonth(), start_day);
+    //var endDate = new Date(dateToday.getFullYear(), dateToday.getMonth(), end_day);
+    var startDate = new Date(start_day);
+    var endDate = new Date(end_day);
 
     $('#datepicker_in').datepicker('setDate',  startDate );
     $('#datepicker_out').datepicker('setDate', new Date(endDate.getTime() + 24 * 60 * 60 * 1000) );
@@ -297,12 +276,14 @@ function invokeOrderDialog(start_day, end_day, interval, room_id, bed_index)
                 console.log(info);
                 console.log(info.avail);
 
+                // In case if it's available to make order
                 if (info.avail == 1)
                 {
                     $('#book_button').click({room_id: room_id, bed_index: bed_index}, book_button_click);
                     orderDialog({title: 'Order details', message : ''});
 
                 }
+                // Otherwise it must show existing info
                 else if (info.avail == 0)
                 {
                     $('#datepicker_in').datepicker('option', 'maxDate', new Date(info.date_in));
@@ -314,7 +295,9 @@ function invokeOrderDialog(start_day, end_day, interval, room_id, bed_index)
                     $('input[name="guest_telephone"]').val(info.telephone).attr("disabled", true);
                     $('#book_button').attr('disabled', true).css('background-color', 'grey');
                     orderDialog({title: 'Order details', message: ''});
-                    drawAllOrders();
+
+                    console.log('rooms from invokeOrderDialog = ' + rooms);
+                    performOrdersDrawing(rooms);
                     console.log('Already booked');
                 }
             }
@@ -385,8 +368,19 @@ function loadOrderDialogDependencies()
         close: function(){
             $('body').css('overflow', 'auto');
             removeRange();
-            drawAllOrders();
+            // Redrawing all orders
+            // instead whole redraw
+            // must draw only the new single orders
 
+            $.ajax({
+            type: 'POST',
+            url: '/dashboard/getRooms.php',
+            data: 'hostel_id=' + encodeURIComponent(g_hostel_id),
+            complete: function (event, request, settings) {
+                var rooms = getRoomsComplete(event, request, settings);
+                performOrdersDrawing(rooms);
+            }
+            });
         }
     });
 
@@ -407,6 +401,7 @@ jQuery(document).ready(function ($) {
     initLoad();
 });
 
+
 function getUsernameComplete(event, request, settings)
 {
     if (event.status === 200)
@@ -423,11 +418,13 @@ function getHostelNameComplete(event, request, settings)
     if (event.status === 200) {
         var hostel_info = jQuery.parseJSON(event.responseText);
         $('#hostel_name_id').text(hostel_info[0].name + ' #' + hostel_info[0].id);
+
         g_hostel_id = hostel_info[0].id;
         return g_hostel_id;
     }
 }
 
+// Get Room count from hostels tables
 function getRoomCountComplete(event, request, settings, room_count)
 {
     if (event.status === 200)
@@ -436,26 +433,61 @@ function getRoomCountComplete(event, request, settings, room_count)
         return room_count;
     }
 }
+// ROOMS drawing
+function performRoomsDrawing(rooms, room_count)
+{
+    loadRooms(rooms, room_count, days_to_show);
+    closeWaitingDialog();
+    $('table').removeClass('table-hover');
+    loadOrderDialogDependencies();
+    return rooms;
+}
 
-function getRoomsComplete(event, request, settings, rooms, room_count)
+// ALL ORDERS drawing
+function performOrdersDrawing(rooms)
+{
+    for (var r = 0; r < rooms.length; r++)
+    {
+        $.ajax({
+        type: 'POST',
+        url: '/dashboard/getAllOrders.php',
+        data: 'room_id=' + encodeURIComponent(rooms[r].id),
+        complete: function (e, xhr, settings) {
+            if (e.status === 200)
+            {
+                var orders = $.parseJSON(e.responseText);
+                for (var i = 0; i < orders.length; i++)
+                {
+                    drawOrder(orders[i]);
+                }
+            }
+        }
+        });
+    }
+}
+
+function getRoomsComplete(event, request, settings)
 {
     if (event.status === 200)
     {
         rooms = jQuery.parseJSON(event.responseText);
-        loadRooms(rooms, room_count, days_to_show);
-        closeWaitingDialog();
-        $('table').removeClass('table-hover');
-        loadOrderDialogDependencies();
-        drawAllOrders();
         return rooms;
     }
+    else
+    {
+        console.log('getRoomsComplete non OK code = ' +
+            event.status + " responseText = " + event.responseText);
+    }
 }
+
+var g_hostel_id = -1;
 
 function initLoad() {
     waitingDialog({});
 
     var g_username = "";
-    var g_hostel_id = -1;
+    // Now g_hostel_id is global
+    //var g_hostel_id = -1;
     var room_count = -1;
 
     $.ajax({
@@ -488,11 +520,13 @@ function initLoad() {
                 $.ajax({
                 type: 'POST',
                 url: '/dashboard/getRooms.php',
-                date: 'hostel_id=' + g_hostel_id,
+                data: 'hostel_id=' + g_hostel_id,
                 complete: function(event, request, settings)
                 {
                     // Rooms
-                    var rooms = getRoomsComplete(event, request, settings, rooms, room_count);
+                    var rooms = getRoomsComplete(event, request, settings);
+                    performRoomsDrawing(rooms, room_count);
+                    performOrdersDrawing(rooms);
                 }
                 });
             }
