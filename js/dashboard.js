@@ -123,9 +123,11 @@ function drawOrder(order)
 
     for (var i = 0; i < len; i++)
     {
-        var node = room_row.children().eq(i);
+
         var id_string = room_row.children().eq(i).attr('id');
 
+        // in case if id_string of current node is bed name, so it does not contain id attribute.
+        // id attributes contains only objects with clickable_td class
         if (typeof id_string != 'string')
             continue;
 
@@ -133,7 +135,6 @@ function drawOrder(order)
         var t_day = Number(room_row.children().eq(i).text());
         var t_month = res[0];
         var t_year = res[1];
-
         var t_new = Date.UTC(t_year, t_month, t_day);
 
         if (t_new >= day_in && t_new < day_out)
@@ -436,7 +437,7 @@ function getRoomCountComplete(event, request, settings, room_count)
 function performRoomsDrawing(rooms, room_count)
 {
     loadRooms(rooms, room_count, days_to_show);
-    closeWaitingDialog();
+
     $('table').removeClass('table-hover');
     loadOrderDialogDependencies();
     return rooms;
@@ -445,24 +446,34 @@ function performRoomsDrawing(rooms, room_count)
 // ALL ORDERS drawing
 function performOrdersDrawing(rooms)
 {
+
+    var room_ids = [];
     for (var r = 0; r < rooms.length; r++)
     {
-        $.ajax({
-        type: 'POST',
-        url: '/dashboard/getAllOrders.php',
-        data: 'room_id=' + encodeURIComponent(rooms[r].id),
-        complete: function (e, xhr, settings) {
-            if (e.status === 200)
-            {
-                var orders = $.parseJSON(e.responseText);
-                for (var i = 0; i < orders.length; i++)
-                {
-                    drawOrder(orders[i]);
-                }
-            }
-        }
-        });
+        room_ids.push(rooms[r].id);
     }
+
+    $.ajax({
+    type: 'POST',
+    url: '/dashboard/getAllRoomsOrders.php',
+    data: { 'room_ids' : room_ids },
+    complete: function(event, request, settings)
+    {
+        if (event.status === 200)
+        {
+
+            var orders = $.parseJSON(event.responseText);
+            for (var i = 0; i < orders.length; i++)
+            {
+                drawOrder(orders[i]);
+            }
+
+     //tick2 = new Date();
+     //console.log('speed = ' + (tick2 - tick1));
+     //closeWaitingDialog();
+        }
+    }
+    });
 }
 
 function getRoomsComplete(event, request, settings)
@@ -480,6 +491,9 @@ function getRoomsComplete(event, request, settings)
 }
 
 var g_hostel_id = -1;
+
+//var tick1;
+//var tick2;
 
 function initLoad() {
     waitingDialog({});
@@ -524,7 +538,12 @@ function initLoad() {
                 {
                     // Rooms
                     var rooms = getRoomsComplete(event, request, settings);
+                    closeWaitingDialog();
+
+                    waitingDialog({});
                     performRoomsDrawing(rooms, room_count);
+
+                    //tick1 = new Date();
                     performOrdersDrawing(rooms);
                 }
                 });
@@ -534,16 +553,4 @@ function initLoad() {
         });
     }
     });
-
-    /*
-    $(document).ajaxComplete(function (event, request, settings) {
-        if (settings.url === '/dashboard/getUsername.php') {
-            if (request.status === 200) {
-                g_username = request.responseText;
-                $('#username_link').text(request.responseText);
-                loadDatesInCaption(calendar_from, days_to_show);
-            }
-        }
-    });
-    */
 }
