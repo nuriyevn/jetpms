@@ -261,47 +261,46 @@ function invokeOrderDialog(start_day, end_day, interval, room_id, bed_index)
     var date_out = $.datepicker.formatDate('yy-mm-dd', new Date(_date_out)); //
 
     $.ajax({
-        url: '/dashboard/checkAvailability.php',
-        type: 'POST',
-        data: 'room_id=' + encodeURIComponent(room_id)
-            + '&bed_index=' + encodeURIComponent(bed_index)
-            + '&date_in=' + encodeURIComponent(date_in)
-            + '&date_out=' + encodeURIComponent(date_out),
-        complete: function(e, xhr, settings){
-            if (e.status === 200)
+    url: '/dashboard/checkAvailability.php',
+    type: 'POST',
+    data: 'room_id=' + encodeURIComponent(room_id)
+        + '&bed_index=' + encodeURIComponent(bed_index)
+        + '&date_in=' + encodeURIComponent(date_in)
+        + '&date_out=' + encodeURIComponent(date_out),
+    complete: function(e, xhr, settings){
+        if (e.status === 200)
+        {
+
+            var info = jQuery.parseJSON(e.responseText);
+            console.log(info);
+            console.log(info.avail);
+
+            // In case if it's available to make order
+            if (info.avail == 1)
             {
+                $('#book_button').click({room_id: room_id, bed_index: bed_index}, book_button_click);
+                orderDialog({title: 'Order details', message : ''});
 
-                var infos = jQuery.parseJSON(e.responseText);
-                var info = infos[0];
-                console.log(info);
-                console.log(info.avail);
+            }
+            // Otherwise it must show existing info
+            else if (info.avail == 0)
+            {
+                $('#datepicker_in').datepicker('option', 'maxDate', new Date(info.date_in));
+                $('#datepicker_out').datepicker('option', 'minDate', new Date(info.date_out));
 
-                // In case if it's available to make order
-                if (info.avail == 1)
-                {
-                    $('#book_button').click({room_id: room_id, bed_index: bed_index}, book_button_click);
-                    orderDialog({title: 'Order details', message : ''});
+                $('#datepicker_in').datepicker('setDate', new Date(info.date_in)).attr('disabled', true);
+                $('#datepicker_out').datepicker('setDate', new Date(info.date_out)).attr('disabled', true);
+                $('input[name="guest_name"]').val(info.first_name + ' ' + info.last_name).attr('disabled', true);
+                $('input[name="guest_telephone"]').val(info.telephone).attr("disabled", true);
+                $('#book_button').attr('disabled', true).css('background-color', 'grey');
+                orderDialog({title: 'Order details', message: ''});
 
-                }
-                // Otherwise it must show existing info
-                else if (info.avail == 0)
-                {
-                    $('#datepicker_in').datepicker('option', 'maxDate', new Date(info.date_in));
-                    $('#datepicker_out').datepicker('option', 'minDate', new Date(info.date_out));
-
-                    $('#datepicker_in').datepicker('setDate', new Date(info.date_in)).attr('disabled', true);
-                    $('#datepicker_out').datepicker('setDate', new Date(info.date_out)).attr('disabled', true);
-                    $('input[name="guest_name"]').val(info.first_name + ' ' + info.last_name).attr('disabled', true);
-                    $('input[name="guest_telephone"]').val(info.telephone).attr("disabled", true);
-                    $('#book_button').attr('disabled', true).css('background-color', 'grey');
-                    orderDialog({title: 'Order details', message: ''});
-
-                    console.log('rooms from invokeOrderDialog = ' + rooms);
-                    performOrdersDrawing(rooms);
-                    console.log('Already booked');
-                }
+                console.log('rooms from invokeOrderDialog = ' + rooms);
+                performOrdersDrawing(rooms);
+                console.log('Already booked');
             }
         }
+    }
     });
 };
 
