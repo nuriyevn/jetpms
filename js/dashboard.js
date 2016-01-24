@@ -437,7 +437,6 @@ function getRoomCountComplete(event, request, settings, room_count)
 function performRoomsDrawing(rooms, room_count)
 {
     loadRooms(rooms, room_count, days_to_show);
-
     $('table').removeClass('table-hover');
     loadOrderDialogDependencies();
     return rooms;
@@ -446,7 +445,7 @@ function performRoomsDrawing(rooms, room_count)
 // ALL ORDERS drawing
 function performOrdersDrawing(rooms)
 {
-
+    waitingDialog({message:'Loading orders...', title: 'Please wait...'});
     var room_ids = [];
     for (var r = 0; r < rooms.length; r++)
     {
@@ -461,17 +460,13 @@ function performOrdersDrawing(rooms)
     {
         if (event.status === 200)
         {
-
             var orders = $.parseJSON(event.responseText);
             for (var i = 0; i < orders.length; i++)
             {
                 drawOrder(orders[i]);
             }
-
-     //tick2 = new Date();
-     //console.log('speed = ' + (tick2 - tick1));
-     //closeWaitingDialog();
         }
+        closeWaitingDialog();
     }
     });
 }
@@ -492,12 +487,16 @@ function getRoomsComplete(event, request, settings)
 
 var g_hostel_id = -1;
 
-//var tick1;
-//var tick2;
+function pausecomp(millis)
+{
+    var date = new Date();
+    var curDate = null;
+    do { curDate = new Date(); }
+    while(curDate-date < millis);
+}
 
 function initLoad() {
-    waitingDialog({});
-
+    waitingDialog({message: 'Loading basic features...', title: 'Please wait...'});
     var g_username = "";
     // Now g_hostel_id is global
     //var g_hostel_id = -1;
@@ -540,10 +539,7 @@ function initLoad() {
                     var rooms = getRoomsComplete(event, request, settings);
                     closeWaitingDialog();
 
-                    waitingDialog({});
                     performRoomsDrawing(rooms, room_count);
-
-                    //tick1 = new Date();
                     performOrdersDrawing(rooms);
                 }
                 });
