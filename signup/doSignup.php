@@ -12,8 +12,10 @@
       http_response_code(422);
       exit(1);
    }
+
    $conn = new CDBConn($jet_ip, $db_name, $db_user, "qwerty123", FALSE);
    $conn->connect();
+   
    
    $conn->run_select("SELECT * FROM users WHERE login='$send_to'");
    if ($conn->affected_rows() > 0)
@@ -51,7 +53,7 @@
 
       // setsebool -P httpd_can_sendmail on
 
-      mail($send_to, $subject, $message, $headers);
+      $result = mail($send_to, $subject, $message, $headers);
       echo "Registration info is sent to $send_to. Please check email (also, check spam if you will have not found the email)<br/>";
       http_response_code(200);
 

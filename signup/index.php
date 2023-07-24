@@ -32,7 +32,7 @@
 
                 <input id="email_location" hidden type="text" value=""/>
                 <label for="login_id">Email:</label>
-                <input id="email_input" type="email" class="form-control" value="jetpmscom@gmail.com"
+                <input id="email_input" type="email" class="form-control" value="nuriyevn@gmail.com"
                        placeholder="Email address" required autofocus="" id="login_id"><br>
                 <input id="submit_input" class="btn btn-lg btn-success btn-block" type="submit" name="sign_up"
                        value="Sign up" onclick="registerUser(document.getElementById('email_input').value)"/>
@@ -53,7 +53,7 @@
             <ul class="text-left">
                 <li>Link in your letter is valid for 24 hours</li>
                 <li>Check spam folder if you have not found our letter in inbox. Please, mark it *non spam*. Tnx.</li>
-                <li>Have a question? Send us a letter <a href="mailto:jetpmscom@gmail.com">jetpmscom@gmail.com</a></li>
+                <li>Have a question? Send us a letter <a href="mailto:nuriyevn@gmail.com">nuriyevn@gmail.com</a></li>
             </ul>
             </p>
             <div id="accordion">

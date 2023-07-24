@@ -18,9 +18,9 @@ class CDBConn
    protected $_dbname;
    protected $_user;
    protected $_password;
-   protected $_dbconn;
+   protected mysqli $_dbconn;
    protected $_query;
-   protected $_result;
+   protected mysqli_result $_result;
    protected $_already_free;
    protected $_debug;
 
@@ -34,9 +34,9 @@ public function __construct($host, $dbname, $user, $password, $debug=null)
    $this->_dbname = $dbname;
    $this->_user = $user;
    $this->_password = $password;
-   $this->_dbconn = 0;
+   //$this->_dbconn =  null;
    $this->_query = "";
-   $this->_result = 0;
+   //$this->_result = 0;
    $this->_already_free = TRUE;
    if (null == $debug)
       $this->_debug = FALSE;
@@ -67,7 +67,7 @@ public function __destruct()
 
 public function __connect_to_localhost()
 {
-   return $this->_dbconn = pg_connect("host=localhost dbname=$this->_dbname user=$this->_user password=$this->_password");
+   return $this->_dbconn = mysqli_connect("localhost",  $this->_user, $this->_password, $this->_dbname,  );
 }
 
 public function reconnect($new_database, $username=null, $password=null)
@@ -87,11 +87,11 @@ public function reconnect($new_database, $username=null, $password=null)
 public function connect_no_localhost()
 {
    $success = TRUE;
-   $this->_dbconn = pg_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password");
+   $this->_dbconn = mysqli_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password");
 
    if ($this->_dbconn == FALSE)
    {
-      echo ("Cannot connect.".pg_last_error());
+      //echo ("Cannot connect.".mysqli_error($this->_dbconn));
       $success = FALSE;
    }
 
@@ -106,9 +106,9 @@ public function connect()
    $success = TRUE;
    if ($this->__connect_to_localhost() == FALSE)
    {
-      if (!$this->_dbconn = pg_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password"))
+      if (!$this->_dbconn = mysqli_connect("host=$this->_host dbname=$this->_dbname user=$this->_user password=$this->_password"))
       {
-         echo ("Cannot connect.".pg_last_error());
+         //echo ("Cannot connect.".mysqli_error());
          $success = FALSE;
       }
 
@@ -140,7 +140,7 @@ public function run_query($query)
    $this->free_result();
 
    $this->_query = $query;
-   $this->_result = pg_query($this->_dbconn, $this->_query);
+   $this->_result = mysqli_query($this->_dbconn, $this->_query);
    
    if ($this->_result == FALSE)
    {
@@ -157,7 +157,7 @@ public function run_query($query)
 public function affected_rows()
 {
    if ($this->_already_free == FALSE)
-      return pg_affected_rows($this->_result);
+      return mysqli_affected_rows($this->_dbconn); // TODO this is strange workflow
    else
    {  
       if ($this->_debug == TRUE)
@@ -170,7 +170,7 @@ public function run_select($query)
 {
    if ($this->run_query($query))
    {
-      $affected_rows_count = pg_affected_rows($this->_result);
+      $affected_rows_count = mysqli_affected_rows($this->_dbconn);
       if ($this->_debug)
          echo "Affected rows count: $affected_rows_count"."<br>";
       return $this->put_result_to_html();
@@ -181,7 +181,7 @@ public function run_insert($query)
 {
    if ($this->run_query($query))
    {
-      $affected_rows_count = pg_affected_rows($this->_result);
+      $affected_rows_count = mysqli_affected_rows($this->_dbconn);
       if ($this->_debug)
          echo "Affected rows count: $affected_rows_count"."<br>";
       return $affected_rows_count;
@@ -191,7 +191,7 @@ public function run_insert($query)
 
 public function fetch_array()
 {
-   return pg_fetch_array($this->_result);
+   return mysqli_fetch_array($this->_result);
 }
 
 public function put_result_to_html()
@@ -199,7 +199,7 @@ public function put_result_to_html()
    if ($this->_result != FALSE)
    {
       $html = "<table>\n";
-      while ($line = pg_fetch_array($this->_result, null, PGSQL_ASSOC))
+      while ($line = mysqli_fetch_array($this->_result, MYSQLI_ASSOC))
       {
          $html .= "\t<tr>\n";
          foreach($line as $col_value)
@@ -219,7 +219,7 @@ public function free_result()
 {
    if ($this->_already_free == FALSE)
    {
-      pg_free_result($this->_result);
+      mysqli_free_result($this->_result);
       $this->_already_free = TRUE;
    }
 }
@@ -227,7 +227,7 @@ public function free_result()
 public function close()
 {
    $this->free_result();  
-   pg_close($this->_dbconn);
+   mysqli_close($this->_dbconn);
 }
 
 
@@ -246,10 +246,12 @@ public function printinfo()
    echo "Password: $this->_password"."<br>"; 
 }
 
+/*
 public function show_databases()
 {
    return $this->run_select("SELECT datname FROM pg_database WHERE datistemplate = false");
 }
+*/
 
 public function show_tables()
 {
